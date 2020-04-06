@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Atari_2600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Atari-2600.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DC.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DC_Explain" xml:space="preserve">
+    <value>Dreamcast（简称DC，开发代号为妖刀）是日本世嘉公司于1998年11月27日发售的一款游戏机。名称“Dreamcast”意为“传播梦想”（Dream Broadcast）。目前为止世嘉最后一部家用主机。</value>
+  </data>
+  <data name="DOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DOS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FBA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FBA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FBA_Explain" xml:space="preserve">
+    <value>一个模拟街机游戏的平台，可模拟FBA、MAME等。</value>
+  </data>
+  <data name="GB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\GB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GBA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\GBA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GBA_Explain" xml:space="preserve">
+    <value>Game Boy Advance，简称GBA。是任天堂公司于2001年3月21日发售的第二代便携式游戏机，最大特点是采用了彩色的TFT液晶屏幕。售价9800日元，可向下兼容上一代的的Game Boy的游戏。2004年6月，神游推出小神游GBA，2005年小神游销量逾20万台，公司营业额破亿。
+GBA有两个改版机型，分别是2003年上市的GBA SP，和2005年上市的GBM。 截止到2010年，GBA总全球累计售出8151万部。任天堂的下一代掌机为任天堂DS。</value>
+  </data>
+  <data name="GBC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\GBC.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GBC_Explain" xml:space="preserve">
+    <value>GBC指的是Game Boy Color是日本任天堂公司开发的一种彩色屏幕携带式电子游戏机（简称掌上型游戏机）。原型任天堂Game Boy改进版。于1998年10月21日正式发售，售价6800日元，最后一款游戏于2001年5月11日发售。
+机体代码CGB-001，可以使用任天堂Game Boy游戏卡带及Game Boy Color专用彩色游戏卡带。</value>
+  </data>
+  <data name="GB_Expalin" xml:space="preserve">
+    <value>Game Boy（简称GB，日语：ゲームボーイ）是任天堂公司在1989年发售的第一代便携式游戏机。Game Boy是任天堂Game&amp;Watch的后续商品。GB拥有三个改版机型，分别是小尺寸的GBP，加入背光功能的GBL，及彩色的GBC。
+截止2003年，GB全球累计销量1.2亿台，Game Boy在2004年以前是销量最高的游戏机。任天堂GB的下一代掌机为2001年推出的任天堂GBA。GB由游戏家横井军平设计开发。使用可随时更换的游戏卡带存储游戏，并可通过通信电缆与其他Game Boy通信，进行联机对战。</value>
+  </data>
+  <data name="JAVA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JAVA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MAME.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAMEPLUS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MAMEPLUS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAMEPLUS_Explain" xml:space="preserve">
+    <value>MAME模拟器的增强版。</value>
+  </data>
+  <data name="MAME_Explain" xml:space="preserve">
+    <value>MAME 是模拟器历史上最优秀的多机种的街机模拟器之一，同时也是生命力最旺盛的街机模拟器。从 1997年2月5日发布第一个版本起，MAME 已经经历了数年的开发，同时也经历了各种版本及多个开发者的变迁。作为功能最强大的街机模拟器，覆盖面涵盖许多我们熟悉的街机机板，同时也支持各种不同的 PC 操作平台，并针对不同的 CPU 处理器开发了对应的优化版本。</value>
+  </data>
+  <data name="MD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MD_Explain" xml:space="preserve">
+    <value>SEGA MEGA DRIVE。全称“世嘉至强驱动器”，因是世嘉公司的第5代家庭用游戏机机型，故又被成为“世嘉·五代”。（之前NEC推出的PC-E游戏主机，为准16位——8位元核心CPU+16位元PPU）,日版于1988年发售，美版于1989年发售。后期为了挽回颓势和扩展性能，世嘉陆续为MD开发了MEGA-CD、SUPER 32X等附机。</value>
+  </data>
+  <data name="MRP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MRP.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="N64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\N64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="N64_Explain" xml:space="preserve">
+    <value>任天堂64（Nintendo 64，简称N64），是任天堂公司的第三代家用游戏机，是SFC的后续机种，是消费电子64位计算的先驱者。1996年6月23日在日本面世，而北美于1996年9月29日、欧洲和澳洲于1997年3月1日、法国于1997年公开发售。
+N64手柄堪称游戏史上最重要的输入设备，它有3个堪称划时代的设计：类比摇杆，扳机按键，震动包。N64上诞生了塞尔达传说：时之笛和超级马里奥64等超级大作。N64下一代产品为任天堂NGC。</value>
+  </data>
+  <data name="NDS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NDS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NDS_Explain" xml:space="preserve">
+    <value>任天堂DS，是电玩游戏生产商任天堂公司2004年发售的第三代便携式游戏机。主要的特征包括了双屏幕显示，其中下方的屏幕为触摸屏；并配置有麦克风声音输入装置和 Wi-Fi 无线网络功能。</value>
+  </data>
+  <data name="NES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\nes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NES_Explain" xml:space="preserve">
+    <value>NES（Nintendo Entertainment System的缩写），是Nintendo在20世纪80年代和20世纪90年代发售的一种家庭主机，俗称红白机，也是此类游戏机在日本以外的地区发行版本的缩写，在日本发行的游戏机型缩写为FC（Family Computer）又写作Famicom。在该游戏平台上比较著名的游戏有《Contra》，《Super Mario》等等。任天堂FC的后续机种是1990年推出的任天堂SFC。nes20世纪80年代末、90年代初进入中国，是80后最早接触的游戏机。</value>
+  </data>
+  <data name="ONS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ONS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ONS_Explain" xml:space="preserve">
+    <value>ONScripter是一个通用GalGame引擎，被很多同人乃至商业AVG游戏所采用，原身为NScripter，经过linux的改进出现了ONScripter。与NScripter为了编写新游戏不同，ONScripter设计当初就是为了在别的平台运行用NScripter制作的游戏。发展最成熟的是安卓和Linux平台，大多数游戏都能够顺利移植。通用引擎只有Waffle(AVG32)和ONScripter已经成功移植，而ONScripter又是当中资料和工具比较多的，因此也会有人把本来不是NS引擎编写的游戏用NS重新编写并用ONS在别的平台上运行，例如《Fate / stay night》和《CLANNAD》等。</value>
+  </data>
+  <data name="PCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PCE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PCE_Explain" xml:space="preserve">
+    <value>PC Engine是由Hudson与NEC两家日本公司联手开发的游戏机，1987年由NEC推出。PC Engine是第一部可选配CD模组的家用游戏机。</value>
+  </data>
+  <data name="PS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PS2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PS2_Explain" xml:space="preserve">
+    <value>PlayStation 2，简称PS2，是日本sony（Sony）旗下的索尼电脑娱乐SCEI(Sony Computer Entertainment Inc.)，于2000年3月4日推出的家用型128位游戏主机，日本推出当天即造成抢购热潮，并于2004年在全球推出了超薄版的PS2主机（名称为PlayStation Two，相对于MINI版的PS——PlayStation One来说），到2012年2月14日为止已经在全球销售超过1亿5千万台。目前，索尼官方正式宣布停售PS2。</value>
+  </data>
+  <data name="PS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PS3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PS3_Explain" xml:space="preserve">
+    <value>PlayStation 3（简称为“PS3”）是索尼电脑娱乐所开发的家用游戏机，也是该公司推出的第三款电视游戏机。PlayStation 3提供称为“PlayStation Network”（现Sony Entertainment Network）的整合网络游戏服务，使用蓝光光盘（Blu-ray Disc）作为主要的储存媒体，拥有与PlayStation Portable（PSP）的链接能力。PlayStation 3首先在2006年11月11日于日本发售，并于2009年9月，PlayStation 3推出较薄及更大容量的改良机型PS3 Slim。</value>
+  </data>
+  <data name="PS4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\ps4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PSP.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSP_Explain" xml:space="preserve">
+    <value>Play Station Portable(PSP)是日本索尼公司(Sony)旗下的新力电脑娱乐SCEI于2004年12月12日在日本发售的家用掌上型游戏机。标准售价为19800日元。PSP 主机PSP的首批出货产品在日本仅发售20万台，结果造成了疯狂的抢购。自发买前一天清晨起各大商店门前就排起了长长的队伍。12月12日一天的销量达到了17万台。在这之后12月20日各大商场的网上预定发售也在3秒钟之内被玩家抢购一空。通过各种渠道流入中国的少量PSP，也被炒至6000元的人民币天价。但经过一段时间后，价格保持在2000元左右。</value>
+  </data>
+  <data name="PSV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PSV.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSV_Explain" xml:space="preserve">
+    <value>PlayStation®VITA是索尼的一代掌机，简称PSV。Vita来自拉丁语，意思是“Life”：对于带着超越娱乐和现实的界线，力求将日常生活化为娱乐，提供高品质游戏和现实体验的联动实现革新游戏可能的“新一代便携式娱乐系统”来说，是相当适合的名称。
+索尼之所以将新一代娱乐掌机命名为PSVita，因为它带有丰富游戏体验和社交互动的结合。除了游戏外，更可以使用3G/WiFi上网、听歌看电影、拍照、应用软件、GPS定位导航等。
+2019年3月8日开始，PS Plus的月度会员游戏将不再开放给PS3和PS Vita。3月8日之前参与下载的游戏包括存档依然有效。</value>
+  </data>
+  <data name="PS_Explain" xml:space="preserve">
+    <value>PlayStation，是日本Sony（索尼）旗下的索尼电脑娱乐SCEI家用电视游戏机，现已成为最出名的家游产品之一。</value>
+  </data>
+  <data name="SNES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\snes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SNES_Explain" xml:space="preserve">
+    <value>Super Nintendo Entertainment System 的缩写，1990.11.21日发售，是FC的后续机种SFC在欧美等地的称谓。</value>
+  </data>
+  <data name="SS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SS_Explain" xml:space="preserve">
+    <value>世嘉的ss和索尼的ps都是第一代的3维游戏机。
+ss有两颗cpu，所以在cpu能力上是ps的两倍。但是ss没有3d加速卡，而ps却有一个3d加速卡。
+结果是一颗cpu+一块3d加速卡的ps在3维能力上要强于两颗cpu的ss。再加上ss的两颗cpu的构架在当时是很难编程序的，导致大量游戏都放弃了ss版，ss最终也败给了ps。
+而ps却借着3d加速卡大获全胜，索尼从此在游戏界崛起。</value>
+  </data>
+  <data name="Switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Switch.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Wii.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wiiu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Wiiu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wiiu_Explain" xml:space="preserve">
+    <value>Wii U是任天堂新推出的HD家用游戏机，是Wii的后继机种。2011年6月7日公布，2012年12月8日上市。WiiU可以向下兼容Wii所有游戏。新机支持1080P的高清输出，拥有全新触摸屏手柄，可在家中任意地点进行游戏。
+截止2015年12月底的统计，全世界Wii U销量已达1401万台，软硬件比率高达6:1。WiiU是时代杂志2012年十大科技产品之一，是福布斯2014年度最佳电视游戏主机，任天堂诸多世界级大作的唯一平台，免费且稳定的网络环境、相比之下更高的平均游戏素质，这些都是WiiU明显有别与其他家用机的优点。</value>
+  </data>
+  <data name="Wii_Explain" xml:space="preserve">
+    <value>Wii是任天堂公司2006年11月19日推出的家用游戏机。是NGC的后续机种。Wii第一次将体感引入了电视游戏主机。开发代号为 “Revolution”（革命），表示电子游戏的革命。通过体感概念和家庭娱乐模式，发售第一年销量达2000万台。截止2018年12月，Wii全球累计销量1亿零163万台，游戏9亿2千零66万份。</value>
+  </data>
+  <data name="_3DS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\3DS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3DS_Explain" xml:space="preserve">
+    <value>任天堂3DS（ 日文：ニンテンドー3DS，英文：NINTENDO 3DS），是日本任天堂公司于2011年推出的第四代便携式游戏机，属任天堂DS后续机种，2011年2月26日在日本上市。利用视差障壁技术，让玩家无需配戴特殊眼镜即可感受到裸眼3D图像。该平台向下兼容任天堂DS软件。2012年9月发行繁体中文版3DS。2012年11月发行简体中文版3DS。
+目前任天堂3DS有四个衍生机型，分别是2012年上市的大屏幕任天堂3DS LL；2014年10月起发售的新3DS与新任天堂3DS LL/XL。2015年1月26日为止，任天堂3DS日本国内销量已突破1900万台。
+主机累计销量3DS：主机7484万台，游戏3亿7千597万份。</value>
+  </data>
+</root>
