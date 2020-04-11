@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormEditEmu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEmu.Designer.cs">
+      <DependentUpon>FormEditEmu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditPC.Designer.cs">
+      <DependentUpon>FormEditPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourcePC.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormEditEmu.resx">
+      <DependentUpon>FormEditEmu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditPC.resx">
+      <DependentUpon>FormEditPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +151,10 @@
     <None Include="Resources\日志.jpg" />
     <None Include="Resources\清空.jpg" />
     <None Include="Resources\刷新.jpg" />
+    <None Include="Resources\文件夹2.jpg" />
+    <None Include="Resources\刷新2.jpg" />
+    <None Include="Resources\编辑.jpg" />
+    <None Include="Resources\删除.jpg" />
     <Content Include="UserConfig.xml" />
     <None Include="Resources\Windows应用程序.jpg" />
     <None Include="Resources\家用机.jpg" />

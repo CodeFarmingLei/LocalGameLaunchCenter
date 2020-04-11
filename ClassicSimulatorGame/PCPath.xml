@@ -1,72 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <PCMenu>
-  <PCPath GameName="鬼泣123HD合集" GameType="动作" GamePath="I:\WindowsGameCenter\鬼泣123HD合集\Devil May Cry HD Collection\" SavePath="I:\WindowsGameCenter\鬼泣123HD合集\Devil May Cry HD Collection\RemoteStorage" StartName="dmcLauncher.exe"></PCPath>
+  <PCPath GameName="鬼泣123HD合集" GameType="动作" GamePath="I:\WindowsGameCenter\Devil May Cry HD Collection\" SavePath="I:\WindowsGameCenter\鬼泣123HD合集\Devil May Cry HD Collection\RemoteStorage" StartName="dmcLauncher.exe"></PCPath>
   <PCPath GameName="鬼泣4" GameType="动作" GamePath="E:\Devil May Cry 4\" SavePath="C:\Users\ZHANGLEI\Documents\CAPCOM\DEVILMAYCRY4\" StartName="DMC4Launcher.exe"></PCPath>
   <PCPath GameName="鬼泣5" GameType="动作" GamePath="E:\Devil May Cry 5\" SavePath="C:\Users\Public\Documents\Steam\CODEX\601150\remote\win64_save" StartName="DevilMayCry5.exe"></PCPath>
   <PCPath GameName="DMC鬼泣" GameType="动作" GamePath="E:\Devil May Cry\Binaries\Win32\" SavePath="C:\ProgramData\Steam\RLD!\220440\storage\" StartName="DMC-DevilMayCry.exe"></PCPath>
-  <PCPath GameName="侠盗猎车手：罪恶都市" GameType="动作" GamePath="I:\WindowsGameCenter\侠盗猎车手：罪恶都市\GTA Vice City\" SavePath="C:\Users\ZHANGLEI\Documents\GTA Vice City User Files" StartName="gta-vc.exe"></PCPath>
+  <PCPath GameName="侠盗猎车手：罪恶都市" GameType="动作" GamePath="I:\WindowsGameCenter\GTA Vice City\" SavePath="C:\Users\ZHANGLEI\Documents\GTA Vice City User Files" StartName="gta-vc.exe"></PCPath>
   <PCPath GameName="侠盗猎车手：圣安地列斯" GameType="动作" GamePath="I:\WindowsGameCenter\侠盗猎车手：圣安地列斯\GTA San Andreas" SavePath="C:\Users\ZHANGLEI\Documents\GTA San Andreas User Files\" StartName="gta_sa.exe"></PCPath>
   <PCPath GameName="侠盗猎车手V" GameType="动作" GamePath="F:\Grand Theft Auto 5\" SavePath="C:\ProgramData\Socialclub\RLD!\271590\" StartName="GTAVLauncher.exe"></PCPath>
   <PCPath GameName="如龙：极" GameType="动作" GamePath="F:\YakuzaKiwami\media\" SavePath="F:\YakuzaKiwami\media\RemoteStorage\" StartName="YakuzaKiwami.exe"></PCPath>
   <PCPath GameName="如龙：极2" GameType="动作" GamePath="F:\Yakuza Kiwami 2\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\Sega\YakuzaKiwami2\" StartName="YakuzaKiwami2.exe"></PCPath>
   <PCPath GameName="如龙0" GameType="动作" GamePath="D:\Yakuza.0.Patch.3.Beta\media\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\CPY_SAVES\CPY\638970" StartName="Yakuza0.exe"></PCPath>
-  <PCPath GameName="生化危机1" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机1\Biohazard.1.CHS.Green.Edition-ALI213\" SavePath="" StartName="Biohazard1.Reg.Fix.exe"></PCPath>
-  <PCPath GameName="生化危机2" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机2\Biohazard.2.CHS.Green.Edition-ALI213\" SavePath="" StartName="Biohazard2.Reg.Fix.exe"></PCPath>
-  <PCPath GameName="生化危机2：重制版" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机2 重制版\RESIDENT.EVIL.2.Deluxe.Edition\" SavePath="I:\WindowsGameCenter\生化危机2 重制版\RESIDENT.EVIL.2.Deluxe.Edition\Profile\VALVE\Saves\win64_save" StartName="re2.exe"></PCPath>
-  <PCPath GameName="生化危机3" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机3\bio3pc.Green.Edition-ALI213\" SavePath="" StartName="bio3_pc.exe"></PCPath>
-  <PCPath GameName="生化危机4" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机4\biohazard 4\" SavePath="I:\WindowsGameCenter\生化危机4\biohazard 4\" StartName="bio4_cn.exe"></PCPath>
-  <PCPath GameName="生化危机4：终极HD版" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机4 终极HD版\Resident Evil 4\" SavePath="C:\ProgramData\Steam\RLD!\254700\" StartName="bio4.exe"></PCPath>
-  <PCPath GameName="生化危机5：黄金版" GameType="动作" GamePath="E:\Resident Evil 5\Resident Evil 5\" SavePath="C:\Users\ZHANGLEI\Documents\CAPCOM\RESIDENT EVIL 5\" StartName="Launcher.exe"></PCPath>
-  <PCPath GameName="生化危机6" GameType="动作" GamePath="E:\Resident Evil 6\" SavePath="C:\ProgramData\Steam\RLD!\221040\storage" StartName="BH6.exe"></PCPath>
-  <PCPath GameName="生化危机7" GameType="动作" GamePath="I:\WindowsGameCenter\生化危机7\Resident Evil 7 Biohazard RE7\Resident Evil 7 Biohazard" SavePath="C:\Users\ZHANGLEI\Documents\CPY_SAVES\CPY\418370\win64_save\" StartName="re7.exe"></PCPath>
-  <PCPath GameName="真三国无双5" GameType="动作" GamePath="I:\WindowsGameCenter\真三国无双5\Dynasty Warriors 5\" SavePath="C:\Users\ZHANGLEI\Documents\KOEI\Shin Sangokumusou 5\Savedata\" StartName="SM5_WIN.exe"></PCPath>
-  <PCPath GameName="真三国无双7：猛将传" GameType="动作" GamePath="I:\WindowsGameCenter\真三国无双7：猛将传\Dynasty Warriors 8\" SavePath="C:\Users\ZHANGLEI\Documents\TecmoKoei\Shin Sangokumusou 7 TC\" StartName="Launch.exe"></PCPath>
+  <PCPath GameName="生化危机1" GameType="动作" GamePath="I:\WindowsGameCenter\Biohazard.1.CHS.Green.Edition-ALI213\" SavePath="" StartName="Biohazard1.Reg.Fix.exe"></PCPath>
+  <PCPath GameName="生化危机2" GameType="动作" GamePath="I:\WindowsGameCenter\Biohazard.2.CHS.Green.Edition-ALI213\" SavePath="" StartName="Biohazard2.Reg.Fix.exe"></PCPath>
+  <PCPath GameName="生化危机2：重制版" GameType="动作" GamePath="I:\WindowsGameCenter\RESIDENT.EVIL.2.Deluxe.Edition\" SavePath="I:\WindowsGameCenter\生化危机2 重制版\RESIDENT.EVIL.2.Deluxe.Edition\Profile\VALVE\Saves\win64_save" StartName="re2.exe"></PCPath>
+  <PCPath GameName="生化危机3" GameType="动作" GamePath="I:\WindowsGameCenter\Biohazard.3.Green.Edition-ALI213\" SavePath="" StartName="bio3_pc.exe"></PCPath>
+  <PCPath GameName="生化危机4" GameType="动作" GamePath="I:\WindowsGameCenter\biohazard.4\" SavePath="I:\WindowsGameCenter\biohazard.4\" StartName="bio4_cn.exe"></PCPath>
+  <PCPath GameName="生化危机4：终极HD版" GameType="动作" GamePath="I:\WindowsGameCenter\Resident Evil 4\" SavePath="C:\ProgramData\Steam\RLD!\254700\" StartName="bio4.exe"></PCPath>
+  <PCPath GameName="生化危机5：黄金版" GameType="动作" GamePath="I:\WindowsGameCenter\Resident Evil 5\Resident Evil 5\" SavePath="C:\Users\ZHANGLEI\Documents\CAPCOM\RESIDENT EVIL 5\" StartName="Launcher.exe"></PCPath>
+  <PCPath GameName="生化危机6" GameType="动作" GamePath="I:\WindowsGameCenter\Resident Evil 6\" SavePath="C:\ProgramData\Steam\RLD!\221040\storage" StartName="BH6.exe"></PCPath>
+  <PCPath GameName="生化危机7" GameType="动作" GamePath="I:\WindowsGameCenter\Resident Evil 7 Biohazard RE7\Resident Evil 7 Biohazard\" SavePath="C:\Users\ZHANGLEI\Documents\CPY_SAVES\CPY\418370\win64_save\" StartName="re7.exe"></PCPath>
+  <PCPath GameName="真三国无双5" GameType="动作" GamePath="I:\WindowsGameCenter\Dynasty Warriors 5\" SavePath="C:\Users\ZHANGLEI\Documents\KOEI\Shin Sangokumusou 5\Savedata\" StartName="SM5_WIN.exe"></PCPath>
+  <PCPath GameName="真三国无双7：猛将传" GameType="动作" GamePath="I:\WindowsGameCenter\Dynasty Warriors 8\" SavePath="C:\Users\ZHANGLEI\Documents\TecmoKoei\Shin Sangokumusou 7 TC\" StartName="Launch.exe"></PCPath>
   <PCPath GameName="真三国无双8：帝国" GameType="动作" GamePath="D:\Dynasty Warriors 9\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\Dynasty Warriors 9 for Steam\" StartName="DW9.exe"></PCPath>
-  <PCPath GameName="极品飞车9：最高通缉" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\极品飞车9：最高通缉\Need For Speed Most Wanted\" SavePath="C:\Users\ZHANGLEI\Documents\NFS Most Wanted\" StartName="nfsMW.exe"></PCPath>
-  <PCPath GameName="极品飞车18：宿敌" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\极品飞车18：宿敌\Need for Speed Rivals\Need for Speed(TM) Rivals\" SavePath="C:\Users\ZHANGLEI\Documents\Ghost Games\Need for Speed(TM) Rivals\settings\" StartName="NFS14.exe"></PCPath>
-  <PCPath GameName="极品飞车20：复仇" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\极品飞车20：复仇\Need.For.Speed.Payback.Cracked\" SavePath="C:\Users\ZHANGLEI\Documents\Need for Speed(TM) Payback\SaveGame\" StartName="NeedForSpeedPayback.exe"></PCPath>
+  <PCPath GameName="极品飞车9：最高通缉" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\Need For Speed Most Wanted\" SavePath="C:\Users\ZHANGLEI\Documents\NFS Most Wanted\" StartName="nfsMW.exe"></PCPath>
+  <PCPath GameName="极品飞车18：宿敌" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\Need for Speed Rivals\Need for Speed(TM) Rivals\" SavePath="C:\Users\ZHANGLEI\Documents\Ghost Games\Need for Speed(TM) Rivals\settings\" StartName="NFS14.exe"></PCPath>
+  <PCPath GameName="极品飞车20：复仇" GameType="竞速赛车" GamePath="I:\WindowsGameCenter\Need.For.Speed.Payback.Cracked\" SavePath="C:\Users\ZHANGLEI\Documents\Need for Speed(TM) Payback\SaveGame\" StartName="NeedForSpeedPayback.exe"></PCPath>
+  <PCPath GameName="拳皇97：全球对决" GameType="格斗" GamePath="I:\WindowsGameCenter\THE KING OF FIGHTERS '97 GLOBAL MATCH\" SavePath="" StartName="KOF97.exe"></PCPath>
+  <PCPath GameName="拳皇98：终极对决" GameType="格斗" GamePath="I:\WindowsGameCenter\THE KING OF FIGHTERS 98 STEAM EDITION\" SavePath="" StartName="KingOfFighters98UM.exe"></PCPath>
   <PCPath GameName="拳皇2002：终极之战" GameType="格斗" GamePath="F:\The King of Fighters 2002 Unlimited Match\" SavePath="F:\The King of Fighters 2002 Unlimited Match\Data\" StartName="KingOfFighters2002UM.exe"></PCPath>
   <PCPath GameName="拳皇13" GameType="格斗" GamePath="F:\King of Fighters XIII\" SavePath="F:\King of Fighters XIII\3DMGAME\GamerSky\storage\" StartName="kofxiii.exe"></PCPath>
   <PCPath GameName="拳皇14" GameType="格斗" GamePath="F:\THE KING OF FIGHTERS XIV\" SavePath="F:\THE KING OF FIGHTERS XIV\RemoteStorage\game\" StartName="kofxiv.exe"></PCPath>
   <PCPath GameName="死或生5：最后一战" GameType="格斗" GamePath="E:\Dead or Alive 5 Last Round\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\DOA5LR\" StartName="Launcher.exe"></PCPath>
   <PCPath GameName="死或生6" GameType="格斗" GamePath="E:\Dead or Alive 6\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\DEADORALIVE6\" StartName="DOA6.exe"></PCPath>
-  <PCPath GameName="死亡空间" GameType="动作" GamePath="I:\WindowsGameCenter\死亡空间\Dead Space\" SavePath="C:\Users\ZHANGLEI\Documents\Electronic Arts\Dead Space\" StartName="Dead Space.exe"></PCPath>
-  <PCPath GameName="死亡空间2" GameType="动作" GamePath="I:\WindowsGameCenter\死亡空间2\Dead Space 2\" SavePath="C:\Users\ZHANGLEI\Documents\EA Games\Dead Space 2\" StartName="deadspace2.exe"></PCPath>
-  <PCPath GameName="雨血1：死镇" GameType="动作" GamePath="I:\WindowsGameCenter\雨血1：死镇\Rain blood\" SavePath="" StartName="Game.exe"></PCPath>
-  <PCPath GameName="雨血2：烨城" GameType="动作" GamePath="I:\WindowsGameCenter\雨血2：烨城\Rainblood 2 City of Flame\" SavePath="" StartName="雨血2：烨城.exe"></PCPath>
-  <PCPath GameName="雨血前传：蜃楼" GameType="动作" GamePath="I:\WindowsGameCenter\雨血前传：蜃楼\Rainblood Mirage\" SavePath="" StartName="YX_Shenlou.exe"></PCPath>
-  <PCPath GameName="最终幻想13-2" GameType="动作角色扮演" GamePath="I:\WindowsGameCenter\最终幻想 13-2\FINAL FANTASY XIII-2\" SavePath="E:\FINAL FANTASY XIII-2\3DMGAME\GamerSky\storage\" StartName="FFXiii2Launcher.exe"></PCPath>
+  <PCPath GameName="格斗领域EX" GameType="格斗" GamePath="F:\FIGHTING.EX.LAYER\" SavePath="" StartName="EXF.exe"></PCPath>
+  <PCPath GameName="死亡空间" GameType="动作" GamePath="I:\WindowsGameCenter\Dead Space\" SavePath="C:\Users\ZHANGLEI\Documents\Electronic Arts\Dead Space\" StartName="Dead Space.exe"></PCPath>
+  <PCPath GameName="死亡空间2" GameType="动作" GamePath="I:\WindowsGameCenter\Dead Space 2\" SavePath="C:\Users\ZHANGLEI\Documents\EA Games\Dead Space 2\" StartName="deadspace2.exe"></PCPath>
+  <PCPath GameName="质量效应1" GameType="动作" GamePath="I:\WindowsGameCenter\Mass Effect\Binaries\" SavePath="C:\Users\ZHANGLEI\Documents\BioWare\Mass Effect\" StartName="MassEffect.exe"></PCPath>
+  <PCPath GameName="雨血1：死镇" GameType="动作" GamePath="I:\WindowsGameCenter\Rain blood\" SavePath="" StartName="Game.exe"></PCPath>
+  <PCPath GameName="雨血2：烨城" GameType="动作" GamePath="I:\WindowsGameCenter\Rain blood 2 City of Flame\" SavePath="" StartName="雨血2：烨城.exe"></PCPath>
+  <PCPath GameName="雨血前传：蜃楼" GameType="动作" GamePath="I:\WindowsGameCenter\Rain blood Mirage\" SavePath="" StartName="YX_Shenlou.exe"></PCPath>
+  <PCPath GameName="最终幻想13-2" GameType="动作角色扮演" GamePath="I:\WindowsGameCenter\FINAL FANTASY XIII-2\" SavePath="E:\FINAL FANTASY XIII-2\3DMGAME\GamerSky\storage\" StartName="FFXiii2Launcher.exe"></PCPath>
   <PCPath GameName="只狼：影逝二度" GameType="动作" GamePath="E:\Sekiro\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\Sekiro\" StartName="sekiro.exe"></PCPath>
   <PCPath GameName="洛克人11：命运的齿轮" GameType="动作" GamePath="D:\Mega Man 11\" SavePath="C:\Users\Public\Documents\Steam\CODEX\742300\" StartName="game.exe"></PCPath>
   <PCPath GameName="洛克人Zero_ZX遗产合集" GameType="动作" GamePath="D:\Mega.Man.Zero.ZX.Legacy.Collection\" SavePath="D:\Mega.Man.Zero.ZX.Legacy.Collection\SteamEmu\Saves\RZZC\" StartName="MZZXLC_Start.exe"></PCPath>
   <PCPath GameName="尼尔：机械纪元" GameType="动作" GamePath="F:\NieR Automata CPY\" SavePath="C:\Users\ZHANGLEI\Documents\NieR_Automata\" StartName="NieRAutomata.exe"></PCPath>
   <PCPath GameName="合金装备崛起：复仇" GameType="动作" GamePath="F:\METAL GEAR RISING REVENGEANCE\" SavePath="C:\Users\ZHANGLEI\Documents\MGR\" StartName="METAL GEAR RISING REVENGEANCE.exe"></PCPath>
-  <PCPath GameName="讨鬼传：极" GameType="动作" GamePath="E:\TOUKIDEN Kiwami\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\TOUKIDEN KIWAMI\" StartName="ToukidenKiwamiLauncher.exe"></PCPath>
-  <PCPath GameName="遥远之地：伊甸计划" GameType="动作" GamePath="I:\WindowsGameCenter\遥远之地：伊甸计划\Everreach.Project.Eden\" SavePath="" StartName="Everreach.exe"></PCPath>
+  <PCPath GameName="讨鬼传：极" GameType="动作" GamePath="I:\WindowsGameCenter\TOUKIDEN Kiwami\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\TOUKIDEN KIWAMI\" StartName="ToukidenKiwamiLauncher.exe"></PCPath>
+  <PCPath GameName="遥远之地：伊甸计划" GameType="动作" GamePath="I:\WindowsGameCenter\Everreach.Project.Eden\" SavePath="" StartName="Everreach.exe"></PCPath>
   <PCPath GameName="热血无赖：终极版" GameType="动作" GamePath="E:\Sleeping Dogs\" SavePath="E:\Sleeping Dogs\data\" StartName="sdhdship.exe"></PCPath>
   <PCPath GameName="战地5" GameType="第一人称射击" GamePath="F:\Battlefield.V\" SavePath="C:\Users\ZHANGLEI\Documents\Battlefield V\" StartName="bfv.exe"></PCPath>
-  <PCPath GameName="使命召唤10：幽灵" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\使命召唤10：幽灵\Call.of.Duty.Ghosts.CHS\" SavePath="I:\WindowsGameCenter\使命召唤10：幽灵\Call.of.Duty.Ghosts.CHS\players2\" StartName="iw6sp64_ship.exe"></PCPath>
+  <PCPath GameName="使命召唤10：幽灵" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\Call.of.Duty.Ghosts.CHS\" SavePath="I:\WindowsGameCenter\使命召唤10：幽灵\Call.of.Duty.Ghosts.CHS\players2\" StartName="iw6sp64_ship.exe"></PCPath>
   <PCPath GameName="猎天使魔女" GameType="动作" GamePath="E:\Bayonetta\" SavePath="E:\Bayonetta\OfflineStorage\User\remote\" StartName="Bayonetta.exe"></PCPath>
   <PCPath GameName="铁拳7" GameType="格斗" GamePath="D:\Tekken7_cht\" SavePath="C:\Users\ZHANGLEI\AppData\Local\TekkenGame\Saved\SaveGames\TEKKEN7\1\" StartName="TEKKEN 7.exe"></PCPath>
-  <PCPath GameName="镜之边缘" GameType="动作" GamePath="F:\Mirror's Edge\Binaries\" SavePath="C:\Users\ZHANGLEI\Documents\EA Games\Mirror's Edge\TdGame\" StartName="MirrorsEdge.exe"></PCPath>
+  <PCPath GameName="镜之边缘" GameType="动作" GamePath="I:\WindowsGameCenter\Mirror's Edge\Binaries\" SavePath="C:\Users\ZHANGLEI\Documents\EA Games\Mirror's Edge\TdGame\" StartName="MirrorsEdge.exe"></PCPath>
   <PCPath GameName="蝙蝠侠：故事版" GameType="动作/冒险" GamePath="E:\Batman.The.Telltale.Series.Shadows.Edition\" SavePath="C:\Users\ZHANGLEI\Documents\Telltale Games\Batman The Telltale Series\" StartName="Batman.exe"></PCPath>
   <PCPath GameName="港诡实录" GameType="恐怖/动作" GamePath="E:\ParanormalHK\" SavePath="" StartName="PuzzleGame.exe"></PCPath>
-  <PCPath GameName="恐怖学校：白色情人节" GameType="恐怖/动作" GamePath="I:\WindowsGameCenter\恐怖学校：白色情人节\White Day a labyrinth named school\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\SONNORI\White Day_a labyrinth named school\" StartName="WhiteDay.exe"></PCPath>
-  <PCPath GameName="死亡细胞" GameType="动作" GamePath="I:\WindowsGameCenter\死亡细胞\deadcells\" SavePath="I:\WindowsGameCenter\死亡细胞\deadcells\save\" StartName="deadcells.exe"></PCPath>
-  <PCPath GameName="双截龙4" GameType="动作" GamePath="I:\WindowsGameCenter\双截龙4\Double Dragon IV\" SavePath="" StartName="Sousairyu4.exe"></PCPath>
-  <PCPath GameName="太吾绘卷" GameType="即时策略" GamePath="I:\WindowsGameCenter\太吾绘卷 抢险体验版\The Scroll Of Taiwu\" SavePath="" StartName="The Scroll Of Taiwu Alpha V1.0.exe"></PCPath>
-  <PCPath GameName="人类：一败涂地" GameType="动作" GamePath="F:\Human Fall Flat\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\NoBrakesGames\Human\Unity\" StartName="Human.exe"></PCPath>
-  <PCPath GameName="欧洲卡车模拟2" GameType="模拟经营" GamePath="I:\WindowsGameCenter\欧洲卡车模拟2\Euro.Truck.Simulator.2.Beyond.the.Baltic.Sea.repack\bin\win_x64\" SavePath="C:\Users\ZHANGLEI\Documents\Euro Truck Simulator 2\profile\" StartName="eurotrucks2.exe"></PCPath>
+  <PCPath GameName="恐怖学校：白色情人节" GameType="恐怖/动作" GamePath="I:\WindowsGameCenter\White Day a labyrinth named school\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\SONNORI\White Day_a labyrinth named school\" StartName="WhiteDay.exe"></PCPath>
+  <PCPath GameName="死亡细胞" GameType="动作" GamePath="I:\WindowsGameCenter\Deadcells\" SavePath="I:\WindowsGameCenter\死亡细胞\deadcells\save\" StartName="deadcells.exe"></PCPath>
+  <PCPath GameName="双截龙4" GameType="动作" GamePath="I:\WindowsGameCenter\Double Dragon IV\" SavePath="" StartName="Sousairyu4.exe"></PCPath>
+  <PCPath GameName="太吾绘卷" GameType="即时策略" GamePath="I:\WindowsGameCenter\The Scroll Of Taiwu\" SavePath="" StartName="The Scroll Of Taiwu Alpha V1.0.exe"></PCPath>
+  <PCPath GameName="人类：一败涂地" GameType="动作" GamePath="I:\WindowsGameCenter\Human Fall Flat\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\NoBrakesGames\Human\Unity\" StartName="Human.exe"></PCPath>
+  <PCPath GameName="欧洲卡车模拟2" GameType="模拟经营" GamePath="I:\WindowsGameCenter\Euro.Truck.Simulator.2.Beyond.the.Baltic.Sea.repack\bin\win_x64\" SavePath="C:\Users\ZHANGLEI\Documents\Euro Truck Simulator 2\profile\" StartName="eurotrucks2.exe"></PCPath>
   <PCPath GameName="逆转裁判123精选集" GameType="文字/冒险" GamePath="D:\Phoenix.Wright.Ace.Attorney.Trilogy.Build.20190924\" SavePath="C:\Users\Public\Documents\Steam\CODEX\787480\remote\" StartName="PWAAT.exe"></PCPath>
-  <PCPath GameName="星之梦HD" GameType="文字/冒险" GamePath="F:\PlanetarianHD_chs\" SavePath="F:\PlanetarianHD_chs\savedata_zh\" StartName="LAUNCHER.exe"></PCPath>
-  <PCPath GameName="ICEY艾希" GameType="动作" GamePath="I:\WindowsGameCenter\ICEY 艾希\ICEY\win64\" SavePath="" StartName="ICEY.exe"></PCPath>
-  <PCPath GameName="VR女友" GameType="模拟经营" GamePath="I:\WindowsGameCenter\VR女友正式版\" SavePath="" StartName="VRKanojo.exe"></PCPath>
-  <PCPath GameName="和班尼福特迪一起攻克难关" GameType="动作" GamePath="F:\Getting Over It with Bennett Foddy\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\Bennett Foddy\Getting Over It\" StartName="GettingOverIt.exe"></PCPath>
-  <PCPath GameName="我的世界" GameType="沙盒" GamePath="I:\WindowsGameCenter\我的世界\Minecraft-1.7.10WZ\" SavePath="I:\WindowsGameCenter\我的世界\Minecraft-1.7.10WZ\.minecraft\saves\" StartName="点击启动.exe"></PCPath>
-  <PCPath GameName="模拟人生3" GameType="模拟经营" GamePath="I:\WindowsGameCenter\模拟人生3\The Sims 3\Game\Bin\" SavePath="C:\Users\ZHANGLEI\Documents\Electronic Arts\模擬市民3\" StartName="Sims3Launcher.exe"></PCPath>
-  <PCPath GameName="进击的巨人" GameType="动作" GamePath="I:\WindowsGameCenter\进击的巨人\AoT\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\Attack on Titan\SAVEDATA\" StartName="AoT.exe"></PCPath>
+  <PCPath GameName="星之梦HD" GameType="文字/冒险" GamePath="I:\WindowsGameCenter\PlanetarianHD_chs\" SavePath="F:\PlanetarianHD_chs\savedata_zh\" StartName="LAUNCHER.exe"></PCPath>
+  <PCPath GameName="ICEY艾希" GameType="动作" GamePath="I:\WindowsGameCenter\ICEY\win64\" SavePath="" StartName="ICEY.exe"></PCPath>
+  <PCPath GameName="VR女友" GameType="模拟经营" GamePath="I:\WindowsGameCenter\VRKanojo\" SavePath="" StartName="VRKanojo.exe"></PCPath>
+  <PCPath GameName="和班尼福特迪一起攻克难关" GameType="动作" GamePath="I:\WindowsGameCenter\Getting Over It with Bennett Foddy\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\Bennett Foddy\Getting Over It\" StartName="GettingOverIt.exe"></PCPath>
+  <PCPath GameName="我的世界" GameType="沙盒" GamePath="I:\WindowsGameCenter\Minecraft-1.7.10WZ\" SavePath="I:\WindowsGameCenter\我的世界\Minecraft-1.7.10WZ\.minecraft\saves\" StartName="点击启动.exe"></PCPath>
+  <PCPath GameName="模拟人生3" GameType="模拟经营" GamePath="I:\WindowsGameCenter\The Sims 3\Game\Bin\" SavePath="C:\Users\ZHANGLEI\Documents\Electronic Arts\模擬市民3\" StartName="Sims3Launcher.exe"></PCPath>
+  <PCPath GameName="进击的巨人" GameType="动作" GamePath="I:\WindowsGameCenter\Attack on Titan\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\Attack on Titan\SAVEDATA\" StartName="AoT.exe"></PCPath>
   <PCPath GameName="神奇蜘蛛侠2" GameType="动作" GamePath="I:\WindowsGameCenter\神奇蜘蛛侠2\The.Amazing.Spider.Man.2.CHS\" SavePath="C:\Users\ZHANGLEI\Documents\Activision\The Amazing Spider-Man 2 (TM)\Save\" StartName="Game.exe"></PCPath>
   <PCPath GameName="仙剑奇侠传98 柔情版" GameType="角色扮演" GamePath="I:\WindowsGameCenter\仙剑奇侠传98 柔情版\" SavePath="" StartName="Pal.exe"></PCPath>
-  <PCPath GameName="抗日：血战上海滩" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\抗日：血战上海滩\KangRi：XueZhanShangHaiTan\" SavePath="" StartName="shanghai.exe"></PCPath>
-  <PCPath GameName="CS反恐精英" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\CS反恐精英\CstrikeSetup\" SavePath="" StartName="cstrike.exe"></PCPath>
+  <PCPath GameName="抗日：血战上海滩" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\KangRi：XueZhanShangHaiTan\" SavePath="" StartName="shanghai.exe"></PCPath>
+  <PCPath GameName="CS反恐精英" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\CstrikeSetup\" SavePath="" StartName="cstrike.exe"></PCPath>
 </PCMenu>

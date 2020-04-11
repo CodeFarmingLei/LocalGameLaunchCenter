@@ -1,15 +1,14 @@
 ﻿using CCWin;
+using IWshRuntimeLibrary;
 using LocalGameLaunchCenter;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Text;
-using IWshRuntimeLibrary;
 
 namespace ClassicSimulatorGame
 {
@@ -45,8 +44,9 @@ namespace ClassicSimulatorGame
         string EmuShortcut = null;
         //临时日志存储字符串
         string thisLog = null;
-        //临时内存表
-        DataTable dt = new DataTable();
+        //临时数据内存表
+        DataTable PCdt = new DataTable();
+        DataTable Emudt = new DataTable();
 
         public FormMain()
         {
@@ -69,6 +69,8 @@ namespace ClassicSimulatorGame
             //测试图片显示
             //this.pictureBoxPC.Load(@"Resource\images\PC\DMC鬼泣.jpg");
         }
+
+        #region 数据配置读取方法
 
         /// <summary>
         /// 配置模拟器信息数据
@@ -121,7 +123,8 @@ namespace ClassicSimulatorGame
         {
             DataSet myds = new DataSet();
             myds.ReadXml(emuPath);
-            skinDataGridViewEmu.DataSource = myds.Tables[0];
+            Emudt = myds.Tables[0];
+            skinDataGridViewEmu.DataSource = Emudt;
         }
 
         /// <summary>
@@ -131,15 +134,20 @@ namespace ClassicSimulatorGame
         {
             DataSet myds = new DataSet();
             myds.ReadXml(PCPath);
-            dataGridViewPC.DataSource = myds.Tables[0];
+            PCdt = myds.Tables[0];
+            dataGridViewPC.DataSource = PCdt;
         }
+
+        #endregion
+
+        #region 程序运行日志文件操作
 
         /// <summary>
         /// 读取程序运行日志信息
         /// </summary>
         public void LoadLog()
         {
-            FileStream myFs = new FileStream(Application.StartupPath+ @"\Functionlog.txt", FileMode.Open);
+            FileStream myFs = new FileStream(Application.StartupPath + @"\Functionlog.txt", FileMode.Open);
             //创建读取器
             StreamReader mySr = new StreamReader(myFs, Encoding.GetEncoding("UTF-8"));
             thisLog = mySr.ReadToEnd();  //读取整个文本文档
@@ -167,6 +175,36 @@ namespace ClassicSimulatorGame
             creSw.Close();   //关闭写入器
             creFs.Close();   //关闭文件流
         }
+
+        #endregion
+
+        #region 磁盘验证方法
+
+        /// <summary>
+        /// 验证磁盘文件
+        /// </summary>
+        public void FileCheck()
+        {
+            //判断磁盘是否存在
+            if (Directory.Exists(@"I:\"))
+            {
+                this.buttonRomFilePath.Enabled = true;
+                this.buttonEmuFilePath.Enabled = true;
+                this.buttonEmuStart.Enabled = true;
+                this.toolStripStatusLabelResult.ForeColor = Color.Green;
+                this.toolStripStatusLabelResult.Text = "已存在,可正常使用!!";
+            }
+            else
+            {
+                this.buttonRomFilePath.Enabled = false;
+                this.buttonEmuFilePath.Enabled = false;
+                this.buttonEmuStart.Enabled = false;
+                this.toolStripStatusLabelResult.ForeColor = Color.Red;
+                this.toolStripStatusLabelResult.Text = "未存在!! 请重新检测...";
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// 打开模拟器程序所在路径
@@ -264,35 +302,6 @@ namespace ClassicSimulatorGame
 
         }
 
-        /// <summary>
-        /// 验证磁盘文件
-        /// </summary>
-        public void FileCheck()
-        {
-            //判断磁盘是否存在
-            if (Directory.Exists(@"I:\"))
-            {
-                this.buttonRomFilePath.Enabled = true;
-                this.buttonEmuFilePath.Enabled = true;
-                this.buttonEmuStart.Enabled = true;
-                this.toolStripStatusLabelResult.ForeColor = Color.Green;
-                this.toolStripStatusLabelResult.Text = "已存在,可正常使用!!";
-            }
-            else
-            {
-                this.buttonRomFilePath.Enabled = false;
-                this.buttonEmuFilePath.Enabled = false;
-                this.buttonEmuStart.Enabled = false;
-                this.toolStripStatusLabelResult.ForeColor = Color.Red;
-                this.toolStripStatusLabelResult.Text = "未存在!! 请重新检测...";
-            }
-        }
-
-        private void 程序功能ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -321,57 +330,6 @@ namespace ClassicSimulatorGame
                 MessageBox.Show("未检测到该磁盘，请插入磁盘后重新检测~", "检测结果", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-        }
-
-        /// <summary>
-        /// 打开我的数据文件夹
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonMyFile_Click(object sender, EventArgs e)
-        {
-            if (Directory.Exists(MyDateFiles))
-            {
-                System.Diagnostics.Process.Start(MyDateFiles);
-            }
-            else
-            {
-                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息："+ MyDateFiles + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        /// <summary>
-        /// 打开PC游戏快捷方式文件夹
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ToolStripButtonPC_Click(object sender, EventArgs e)
-        {
-            if (Directory.Exists(PCShortcut))
-            {
-                System.Diagnostics.Process.Start(PCShortcut);
-            }
-            else
-            {
-                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息：" + PCShortcut + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        /// <summary>
-        /// 打开模拟器软件快捷方式文件夹
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ToolStripButtonEmu_Click(object sender, EventArgs e)
-        {
-            if (Directory.Exists(EmuShortcut))
-            {
-                System.Diagnostics.Process.Start(EmuShortcut);
-            }
-            else
-            {
-                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息：" + EmuShortcut + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         /// <summary>
@@ -676,6 +634,181 @@ namespace ClassicSimulatorGame
                 this.WindowState = FormWindowState.Normal;  //显示窗口
             }
             
+        }
+
+        private void 打开我的数据文件夹ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(MyDateFiles))
+            {
+                System.Diagnostics.Process.Start(MyDateFiles);
+            }
+            else
+            {
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息：" + MyDateFiles + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void 打开PC游戏快捷方式文件夹ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(PCShortcut))
+            {
+                System.Diagnostics.Process.Start(PCShortcut);
+            }
+            else
+            {
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息：" + PCShortcut + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void 打开模拟器软件快捷方式文件夹ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(EmuShortcut))
+            {
+                System.Diagnostics.Process.Start(EmuShortcut);
+            }
+            else
+            {
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径信息：" + EmuShortcut + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// 刷新数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripButtonRefresh_Click(object sender, EventArgs e)
+        {
+            //清空临时数据表
+            PCdt.Clear();
+            Emudt.Clear();
+            //重新填充数据
+            SetEmuData();
+            SetPCData();
+            //填充日志信息
+            thisLog = richTextBoxLog.Text;
+            richTextBoxLog.Text = "";
+            richTextBoxLog.Text += DateTime.Now + " ---- 显示数据刷新成功\n" + thisLog;
+            //MessageBox.Show("数据刷新成功","提示",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+        }
+
+        /// <summary>
+        /// 菜单启动事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SkinContextMenuStripEdit_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //对每个选项卡进行分支处理
+            if (skinTabControlSelect.SelectedTab == skinTabPagePC)
+            {
+                if (this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString() != "")
+                {
+                    skinContextMenuStripEdit.Enabled = true;
+                }
+                else
+                {
+                    skinContextMenuStripEdit.Enabled = false;
+                }
+            }
+            else if(skinTabControlSelect.SelectedTab == skinTabPageEmu)
+            {
+                if (this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString() != "")
+                {
+                    skinContextMenuStripEdit.Enabled = true;
+                }
+                else
+                {
+                    skinContextMenuStripEdit.Enabled = false;
+                }
+            }
+        }
+
+        #region 数据控件右键菜单
+
+        //编辑数据菜单
+        private void 编辑ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //对每个选项卡进行分支处理
+            if (skinTabControlSelect.SelectedTab == skinTabPagePC)
+            {
+                FormEditPC FormEditPC = new FormEditPC();
+                FormEditPC.GameName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+                FormEditPC.GameType = this.dataGridViewPC.SelectedRows[0].Cells[1].Value.ToString();
+                FormEditPC.GamePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
+                FormEditPC.SavePath = this.dataGridViewPC.SelectedRows[0].Cells[3].Value.ToString();
+                FormEditPC.StartName = this.dataGridViewPC.SelectedRows[0].Cells[4].Value.ToString();
+                FormEditPC.Show();
+            }
+            else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
+            {
+                FormEditEmu FormEditEmu = new FormEditEmu();
+                FormEditEmu.name = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+                FormEditEmu.GamePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[1].Value.ToString();
+                FormEditEmu.FilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
+                FormEditEmu.EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[3].Value.ToString();
+                FormEditEmu.Explain = this.skinDataGridViewEmu.SelectedRows[0].Cells[4].Value.ToString();
+                FormEditEmu.Show();
+            }
+
+        }
+
+        #endregion
+
+        /// <summary>
+        /// 删除数据信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //对每个选项卡进行分支处理
+            if (skinTabControlSelect.SelectedTab == skinTabPagePC)
+            {
+                string PCName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dr = MessageBox.Show("是否删除此数据？？\n数据名称："+ PCName + "\n\n(提示：此操作不可逆!!)","确认操作",MessageBoxButtons.OKCancel,MessageBoxIcon.Asterisk);
+                if (dr == DialogResult.OK)
+                {
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load("PCPath.xml");   //加载配置xml文件
+                    XmlNode xNode = xmlDoc.SelectSingleNode("PCMenu");   //读取配置节点
+                    foreach (XmlNode node in xNode)
+                    {
+                        //移除数据信息
+                        XmlElement xm = (XmlElement)node;
+                        if (xm.GetAttribute("GameName") == PCName)
+                        {
+                            xm.RemoveAll();
+                            break;
+                        }
+                    }
+                    xmlDoc.Save("PCPath.xml");   //保存配置xml文件
+                    MessageBox.Show("数据移除成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
+            {
+                string EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dr = MessageBox.Show("是否删除此数据？？\n数据名称：" + EmuName + "\n\n(提示：此操作不可逆!!)", "确认操作", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                if (dr == DialogResult.OK)
+                {
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load("EmuPath.xml");   //加载配置xml文件
+                    XmlNode xNode = xmlDoc.SelectSingleNode("EmuMenu");   //读取配置节点
+                    foreach (XmlNode node in xNode)
+                    {
+                        //移除数据信息
+                        XmlElement xm = (XmlElement)node;
+                        if (xm.GetAttribute("name") == EmuName)
+                        {
+                            xm.RemoveAll();
+                            break;
+                        }
+                    }
+                    xmlDoc.Save("EmuPath.xml");   //保存配置xml文件
+                    MessageBox.Show("数据移除成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
         }
     }
 }
