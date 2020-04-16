@@ -524,7 +524,7 @@ namespace ClassicSimulatorGame
             try
             {
                 deskTop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
-                if (System.IO.File.Exists(deskTop + FileName + ".lnk"))  //
+                if (System.IO.File.Exists(deskTop + FileName + ".lnk"))  //判断原始快捷方式是存在
                 {
                     System.IO.File.Delete(deskTop + FileName + ".lnk");//删除原来的桌面快捷键方式
                 }
@@ -532,15 +532,23 @@ namespace ClassicSimulatorGame
 
                 //快捷键方式创建的位置、名称
                 IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(deskTop + FileName + ".lnk");
-                shortcut.TargetPath = exePath; //目标文件
+                //目标文件
+                shortcut.TargetPath = exePath;
                 //该属性指定应用程序的工作目录，当用户没有指定一个具体的目录时，快捷方式的目标应用程序将使用该属性所指定的目录来装载或保存文件。
-                shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
-                shortcut.WindowStyle = 1; //目标应用程序的窗口状态分为普通、最大化、最小化【1,3,7】
-                shortcut.Description = FileName; //描述
-                shortcut.IconLocation = Application.StartupPath + "\\LocalGameLaunchCenter.ico";  //快捷方式图标
+                //shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
+                shortcut.WorkingDirectory = exePath;
+                //目标应用程序的窗口状态分为普通、最大化、最小化【1,3,7】
+                shortcut.WindowStyle = 1;
+                //快捷方式的描述信息
+                shortcut.Description = FileName;
+                //shortcut.IconLocation = Application.StartupPath + "\\LocalGameLaunchCenter.ico";  //快捷方式图标
+                //快捷方式图标文件路径
+                shortcut.IconLocation = exePath;
                 shortcut.Arguments = "";
-                //shortcut.Hotkey = "CTRL+ALT+F11"; // 快捷键
-                shortcut.Save(); //必须调用保存快捷才成创建成功
+                //启动快捷方式的快捷键
+                //shortcut.Hotkey = "CTRL+ALT+F11"; 
+                //必须调用保存快捷才成创建成功
+                shortcut.Save();
                 return true;
             }
             catch (Exception)
@@ -732,23 +740,25 @@ namespace ClassicSimulatorGame
             //对每个选项卡进行分支处理
             if (skinTabControlSelect.SelectedTab == skinTabPagePC)
             {
-                FormEditPC FormEditPC = new FormEditPC();
-                FormEditPC.GameName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
-                FormEditPC.GameType = this.dataGridViewPC.SelectedRows[0].Cells[1].Value.ToString();
-                FormEditPC.GamePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
-                FormEditPC.SavePath = this.dataGridViewPC.SelectedRows[0].Cells[3].Value.ToString();
-                FormEditPC.StartName = this.dataGridViewPC.SelectedRows[0].Cells[4].Value.ToString();
-                FormEditPC.Show();
+                FormEdit FormEdit = new FormEdit();
+                FormEdit.TypeName = "PC";   //传递要编辑的数据类型
+                FormEdit.PCGameName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+                FormEdit.PCGameType = this.dataGridViewPC.SelectedRows[0].Cells[1].Value.ToString();
+                FormEdit.PCGamePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
+                FormEdit.PCSavePath = this.dataGridViewPC.SelectedRows[0].Cells[3].Value.ToString();
+                FormEdit.PCStartName = this.dataGridViewPC.SelectedRows[0].Cells[4].Value.ToString();
+                FormEdit.Show();
             }
             else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
             {
-                FormEditEmu FormEditEmu = new FormEditEmu();
-                FormEditEmu.name = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
-                FormEditEmu.GamePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[1].Value.ToString();
-                FormEditEmu.FilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
-                FormEditEmu.EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[3].Value.ToString();
-                FormEditEmu.Explain = this.skinDataGridViewEmu.SelectedRows[0].Cells[4].Value.ToString();
-                FormEditEmu.Show();
+                FormEdit FormEdit = new FormEdit();
+                FormEdit.TypeName = "Emu";  //传递要编辑的数据类型
+                FormEdit.EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+                FormEdit.EmuGamePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[1].Value.ToString();
+                FormEdit.EmuFilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
+                FormEdit.EmuStartName = this.skinDataGridViewEmu.SelectedRows[0].Cells[3].Value.ToString();
+                FormEdit.EmuExplain = this.skinDataGridViewEmu.SelectedRows[0].Cells[4].Value.ToString();
+                FormEdit.Show();
             }
 
         }
@@ -809,6 +819,53 @@ namespace ClassicSimulatorGame
                     MessageBox.Show("数据移除成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
+        }
+
+        private void 程序资源修复ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //打开设置中心
+            FormSetting FormSetting = new FormSetting();
+            FormSetting.Show();
+        }
+
+        private void 游戏所在位置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ButtonPCFilePath_Click(null,null);
+        }
+
+        private void 游戏存档路径ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ButtonPCSaveFilePath_Click(null,null);
+        }
+
+        /// <summary>
+        /// 一键批量更新快捷方式：Windows电脑游戏
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Windows电脑游戏ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUpdatelnk FormUpdatelnk = new FormUpdatelnk();
+            FormUpdatelnk.TypeName = "PC";     //传递需要更新的平台类型名称
+            FormUpdatelnk.PCdt = this.PCdt;     //传递临时内存表数据
+            FormUpdatelnk.dataGridViewPC = this.dataGridViewPC;     //传递dataGridView数据
+            FormUpdatelnk.PCShortcut = PCShortcut;      //传递快捷方式路径
+            FormUpdatelnk.Show();
+        }
+
+        /// <summary>
+        /// 一键批量更新快捷方式：模拟器软件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 模拟器软件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUpdatelnk FormUpdatelnk = new FormUpdatelnk();
+            FormUpdatelnk.TypeName = "Emu";     //传递需要更新的平台类型名称
+            FormUpdatelnk.Emudt = this.Emudt;     //传递临时内存表数据
+            FormUpdatelnk.dataGridViewEmu = this.skinDataGridViewEmu;     //传递dataGridView数据
+            FormUpdatelnk.EmuShortcut = EmuShortcut;      //传递快捷方式路径
+            FormUpdatelnk.Show();
         }
     }
 }

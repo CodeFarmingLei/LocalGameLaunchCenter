@@ -61,6 +61,38 @@ namespace LocalGameLaunchCenter {
         }
         
         /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;MainSettings&gt;
+        ///  &lt;PathConfig&gt;
+        ///    &lt;MyDateFiles&gt;MyDateFiles\&lt;/MyDateFiles&gt;
+        ///    &lt;PCShortcut&gt;Shortcut\PC&lt;/PCShortcut&gt;
+        ///    &lt;EmuShortcut&gt;Shortcut\Emulator&lt;/EmuShortcut&gt;
+        ///    &lt;BackupData&gt;ProgramData\Backup\&lt;/BackupData&gt;
+        ///    &lt;DefaultData&gt;ProgramData\DefaultData\&lt;/DefaultData&gt;
+        ///  &lt;/PathConfig&gt;
+        ///&lt;/MainSettings&gt;
+        /// 的本地化字符串。
+        /// </summary>
+        internal static string AppConfig {
+            get {
+                return ResourceManager.GetString("AppConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;EmuMenu&gt;
+        ///  &lt;EmuPath name=&quot;NES&quot; GamePath=&quot;I:\ClassicSimulatorGame\GameROM\FC\&quot; FilePath=&quot;I:\ClassicSimulatorGame\Emulator\FC\VirtuaNES\&quot; EmuName=&quot;VirtuaNES.exe&quot; Explain=&quot;Nintendo Entertainment System 家用主机游戏&quot;&gt;&lt;/EmuPath&gt;
+        ///  &lt;EmuPath name=&quot;SNES&quot; GamePath=&quot;I:\ClassicSimulatorGame\GameROM\SFC&quot; FilePath=&quot;I:\ClassicSimulatorGame\Emulator\SFC\snes9x\&quot; EmuName=&quot;snes9x.exe&quot; Explain=&quot;Super Nintendo Entertainment System 家用主机游戏&quot;&gt;&lt;/EmuPath&gt;
+        ///  &lt;EmuPath name=&quot;PCE&quot; GamePath=&quot;I:\Cla [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string EmuPath {
+            get {
+                return ResourceManager.GetString("EmuPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Icon GamePad {
@@ -81,6 +113,34 @@ namespace LocalGameLaunchCenter {
         }
         
         /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;PCMenu&gt;
+        ///  &lt;PCPath GameName=&quot;鬼泣123HD合集&quot; GameType=&quot;动作&quot; GamePath=&quot;I:\WindowsGameCenter\Devil May Cry HD Collection\&quot; SavePath=&quot;I:\WindowsGameCenter\Devil May Cry HD Collection\RemoteStorage&quot; StartName=&quot;dmcLauncher.exe&quot;&gt;
+        ///  &lt;/PCPath&gt;
+        ///  &lt;PCPath GameName=&quot;鬼泣4&quot; GameType=&quot;动作&quot; GamePath=&quot;E:\Devil May Cry 4\&quot; SavePath=&quot;C:\Users\ZHANGLEI\Documents\CAPCOM\DEVILMAYCRY4\&quot; StartName=&quot;DMC4Launcher.exe&quot;&gt;
+        ///  &lt;/PCPath&gt;
+        ///  &lt;PCPath GameName=&quot;鬼泣5&quot; GameType=&quot;动作&quot; GamePath=&quot;E:\Devil May Cry [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string PCPath {
+            get {
+                return ResourceManager.GetString("PCPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;UsersInformation&gt;
+        ///  &lt;Users uName=&quot;冬日晨曦&quot; uSex=&quot;男&quot; uTitle=&quot;游戏大师&quot; runCount=&quot;10&quot;&gt;
+        ///  &lt;/Users&gt;
+        ///&lt;/UsersInformation&gt; 的本地化字符串。
+        /// </summary>
+        internal static string UserConfig {
+            get {
+                return ResourceManager.GetString("UserConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap Windows应用程序 {
@@ -96,6 +156,16 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 下载 {
             get {
                 object obj = ResourceManager.GetObject("下载", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 关于 {
+            get {
+                object obj = ResourceManager.GetObject("关于", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +213,36 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 工具箱 {
+            get {
+                object obj = ResourceManager.GetObject("工具箱", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 帮助 {
+            get {
+                object obj = ResourceManager.GetObject("帮助", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 快捷方式 {
+            get {
+                object obj = ResourceManager.GetObject("快捷方式", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 文件夹 {
             get {
                 object obj = ResourceManager.GetObject("文件夹", resourceCulture);
@@ -183,6 +283,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 游戏手柄 {
+            get {
+                object obj = ResourceManager.GetObject("游戏手柄", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 磁盘 {
             get {
                 object obj = ResourceManager.GetObject("磁盘", resourceCulture);
@@ -196,6 +306,26 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 编辑 {
             get {
                 object obj = ResourceManager.GetObject("编辑", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 设置 {
+            get {
+                object obj = ResourceManager.GetObject("设置", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 退出 {
+            get {
+                object obj = ResourceManager.GetObject("退出", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -52,17 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormEditEmu.cs">
+    <Compile Include="FormEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditEmu.Designer.cs">
-      <DependentUpon>FormEditEmu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormEditPC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditPC.Designer.cs">
-      <DependentUpon>FormEditPC.cs</DependentUpon>
+    <Compile Include="FormEdit.Designer.cs">
+      <DependentUpon>FormEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
@@ -75,6 +69,18 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdatelnk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdatelnk.Designer.cs">
+      <DependentUpon>FormUpdatelnk.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,17 +99,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourcePC.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormEditEmu.resx">
-      <DependentUpon>FormEditEmu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEditPC.resx">
-      <DependentUpon>FormEditPC.cs</DependentUpon>
+    <EmbeddedResource Include="FormEdit.resx">
+      <DependentUpon>FormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdatelnk.resx">
+      <DependentUpon>FormUpdatelnk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +152,11 @@
   <ItemGroup>
     <Content Include="AppConfig.xml" />
     <Content Include="bin\Debug\AppConfig.xml" />
+    <None Include="bin\Debug\EmuPath.xml" />
+    <Content Include="bin\Debug\PCPath.xml" />
+    <Content Include="bin\Debug\Resource\images\PC\愤怒的小鸟：经典版.jpg" />
+    <Content Include="bin\Debug\Resource\images\PC\超凡战队：能量之战.jpg" />
+    <None Include="bin\Debug\UserConfig.xml" />
     <Content Include="EmuPath.xml" />
     <Content Include="GamePad.ico" />
     <Content Include="PCPath.xml" />
@@ -155,6 +169,13 @@
     <None Include="Resources\刷新2.jpg" />
     <None Include="Resources\编辑.jpg" />
     <None Include="Resources\删除.jpg" />
+    <None Include="Resources\游戏手柄.jpg" />
+    <None Include="Resources\帮助.jpg" />
+    <None Include="Resources\关于.jpg" />
+    <None Include="Resources\设置.jpg" />
+    <None Include="Resources\工具箱.jpg" />
+    <None Include="Resources\退出.jpg" />
+    <None Include="Resources\快捷方式.jpg" />
     <Content Include="UserConfig.xml" />
     <None Include="Resources\Windows应用程序.jpg" />
     <None Include="Resources\家用机.jpg" />

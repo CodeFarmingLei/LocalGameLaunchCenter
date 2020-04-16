@@ -4,5 +4,7 @@
     <MyDateFiles>MyDateFiles\</MyDateFiles>
     <PCShortcut>Shortcut\PC</PCShortcut>
     <EmuShortcut>Shortcut\Emulator</EmuShortcut>
+    <BackupData>ProgramData\Backup\</BackupData>
+    <DefaultData>ProgramData\DefaultData\</DefaultData>
   </PathConfig>
 </MainSettings>

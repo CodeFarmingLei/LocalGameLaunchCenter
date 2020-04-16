@@ -77,6 +77,10 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skinContextMenuStripEdit = new CCWin.SkinControl.SkinContextMenuStrip();
+            this.打开此游戏存档路径ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.游戏所在位置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.游戏存档路径ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skinTabPageEmu = new CCWin.SkinControl.SkinTabPage();
@@ -98,8 +102,12 @@
             this.skinMenuStrip1 = new CCWin.SkinControl.SkinMenuStrip();
             this.程序功能TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.将本程序添加到桌面快捷方式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.程序资源修复ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.一键批量更新快捷方式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windows电脑游戏ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.模拟器软件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.程序资源修复ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助中心HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -373,7 +381,8 @@
             // 
             // skinTabControlSelect
             // 
-            this.skinTabControlSelect.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.skinTabControlSelect.AnimationStart = true;
+            this.skinTabControlSelect.AnimatorType = CCWin.SkinControl.AnimationType.HorizBlind;
             this.skinTabControlSelect.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControlSelect.Controls.Add(this.skinTabPagePC);
             this.skinTabControlSelect.Controls.Add(this.skinTabPageEmu);
@@ -685,12 +694,14 @@
             this.skinContextMenuStripEdit.ItemRadius = 4;
             this.skinContextMenuStripEdit.ItemRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuStripEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.打开此游戏存档路径ToolStripMenuItem,
+            this.toolStripMenuItem6,
             this.编辑ToolStripMenuItem,
             this.删除ToolStripMenuItem});
             this.skinContextMenuStripEdit.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
             this.skinContextMenuStripEdit.Name = "skinContextMenuStripEdit";
             this.skinContextMenuStripEdit.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinContextMenuStripEdit.Size = new System.Drawing.Size(181, 70);
+            this.skinContextMenuStripEdit.Size = new System.Drawing.Size(185, 76);
             this.skinContextMenuStripEdit.SkinAllColor = true;
             this.skinContextMenuStripEdit.TitleAnamorphosis = true;
             this.skinContextMenuStripEdit.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
@@ -698,11 +709,40 @@
             this.skinContextMenuStripEdit.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuStripEdit.Opening += new System.ComponentModel.CancelEventHandler(this.SkinContextMenuStripEdit_Opening);
             // 
+            // 打开此游戏存档路径ToolStripMenuItem
+            // 
+            this.打开此游戏存档路径ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.游戏所在位置ToolStripMenuItem,
+            this.游戏存档路径ToolStripMenuItem});
+            this.打开此游戏存档路径ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.文件夹2;
+            this.打开此游戏存档路径ToolStripMenuItem.Name = "打开此游戏存档路径ToolStripMenuItem";
+            this.打开此游戏存档路径ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.打开此游戏存档路径ToolStripMenuItem.Text = "打开此游戏相关路径";
+            // 
+            // 游戏所在位置ToolStripMenuItem
+            // 
+            this.游戏所在位置ToolStripMenuItem.Name = "游戏所在位置ToolStripMenuItem";
+            this.游戏所在位置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.游戏所在位置ToolStripMenuItem.Text = "游戏所在路径";
+            this.游戏所在位置ToolStripMenuItem.Click += new System.EventHandler(this.游戏所在位置ToolStripMenuItem_Click);
+            // 
+            // 游戏存档路径ToolStripMenuItem
+            // 
+            this.游戏存档路径ToolStripMenuItem.Name = "游戏存档路径ToolStripMenuItem";
+            this.游戏存档路径ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.游戏存档路径ToolStripMenuItem.Text = "游戏存档路径";
+            this.游戏存档路径ToolStripMenuItem.Click += new System.EventHandler(this.游戏存档路径ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(181, 6);
+            // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.编辑;
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
-            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.编辑ToolStripMenuItem.Text = "编辑此数据";
             this.编辑ToolStripMenuItem.Click += new System.EventHandler(this.编辑ToolStripMenuItem_Click);
             // 
@@ -710,7 +750,7 @@
             // 
             this.删除ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.删除;
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.删除ToolStripMenuItem.Text = "删除此数据";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
@@ -1028,35 +1068,71 @@
             // 
             this.程序功能TToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.将本程序添加到桌面快捷方式ToolStripMenuItem,
-            this.程序资源修复ToolStripMenuItem,
+            this.一键批量更新快捷方式ToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.程序资源修复ToolStripMenuItem,
+            this.toolStripMenuItem5,
             this.退出ToolStripMenuItem});
+            this.程序功能TToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.工具箱;
             this.程序功能TToolStripMenuItem.Name = "程序功能TToolStripMenuItem";
-            this.程序功能TToolStripMenuItem.Size = new System.Drawing.Size(83, 21);
+            this.程序功能TToolStripMenuItem.Size = new System.Drawing.Size(99, 21);
             this.程序功能TToolStripMenuItem.Text = "程序功能(&T)";
             // 
             // 将本程序添加到桌面快捷方式ToolStripMenuItem
             // 
+            this.将本程序添加到桌面快捷方式ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.游戏手柄;
             this.将本程序添加到桌面快捷方式ToolStripMenuItem.Name = "将本程序添加到桌面快捷方式ToolStripMenuItem";
-            this.将本程序添加到桌面快捷方式ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.将本程序添加到桌面快捷方式ToolStripMenuItem.Text = "添加本程序的桌面快捷方式";
+            this.将本程序添加到桌面快捷方式ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.将本程序添加到桌面快捷方式ToolStripMenuItem.Text = "添加本程序的快捷方式到桌面";
             this.将本程序添加到桌面快捷方式ToolStripMenuItem.Click += new System.EventHandler(this.将本程序添加到桌面快捷方式ToolStripMenuItem_Click);
             // 
-            // 程序资源修复ToolStripMenuItem
+            // 一键批量更新快捷方式ToolStripMenuItem
             // 
-            this.程序资源修复ToolStripMenuItem.Name = "程序资源修复ToolStripMenuItem";
-            this.程序资源修复ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.程序资源修复ToolStripMenuItem.Text = "程序资源修复";
+            this.一键批量更新快捷方式ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.windows电脑游戏ToolStripMenuItem,
+            this.模拟器软件ToolStripMenuItem});
+            this.一键批量更新快捷方式ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.快捷方式;
+            this.一键批量更新快捷方式ToolStripMenuItem.Name = "一键批量更新快捷方式ToolStripMenuItem";
+            this.一键批量更新快捷方式ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.一键批量更新快捷方式ToolStripMenuItem.Text = "一键批量更新快捷方式";
+            // 
+            // windows电脑游戏ToolStripMenuItem
+            // 
+            this.windows电脑游戏ToolStripMenuItem.Name = "windows电脑游戏ToolStripMenuItem";
+            this.windows电脑游戏ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.windows电脑游戏ToolStripMenuItem.Text = "Windows电脑游戏";
+            this.windows电脑游戏ToolStripMenuItem.Click += new System.EventHandler(this.Windows电脑游戏ToolStripMenuItem_Click);
+            // 
+            // 模拟器软件ToolStripMenuItem
+            // 
+            this.模拟器软件ToolStripMenuItem.Name = "模拟器软件ToolStripMenuItem";
+            this.模拟器软件ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.模拟器软件ToolStripMenuItem.Text = "模拟器软件";
+            this.模拟器软件ToolStripMenuItem.Click += new System.EventHandler(this.模拟器软件ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(217, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // 程序资源修复ToolStripMenuItem
+            // 
+            this.程序资源修复ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.设置;
+            this.程序资源修复ToolStripMenuItem.Name = "程序资源修复ToolStripMenuItem";
+            this.程序资源修复ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.程序资源修复ToolStripMenuItem.Text = "程序设置中心";
+            this.程序资源修复ToolStripMenuItem.Click += new System.EventHandler(this.程序资源修复ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(229, 6);
             // 
             // 退出ToolStripMenuItem
             // 
+            this.退出ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.退出;
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             // 
             // 帮助中心HToolStripMenuItem
@@ -1064,8 +1140,9 @@
             this.帮助中心HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.使用说明ToolStripMenuItem,
             this.声明ToolStripMenuItem});
+            this.帮助中心HToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.帮助;
             this.帮助中心HToolStripMenuItem.Name = "帮助中心HToolStripMenuItem";
-            this.帮助中心HToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
+            this.帮助中心HToolStripMenuItem.Size = new System.Drawing.Size(101, 21);
             this.帮助中心HToolStripMenuItem.Text = "帮助中心(&H)";
             // 
             // 使用说明ToolStripMenuItem
@@ -1109,8 +1186,9 @@
             this.获取最新版本程序ToolStripMenuItem,
             this.toolStripMenuItem4,
             this.版本信息ToolStripMenuItem});
+            this.关于程序AToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.关于;
             this.关于程序AToolStripMenuItem.Name = "关于程序AToolStripMenuItem";
-            this.关于程序AToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.关于程序AToolStripMenuItem.Size = new System.Drawing.Size(100, 21);
             this.关于程序AToolStripMenuItem.Text = "关于程序(&A)";
             // 
             // 获取最新版本程序ToolStripMenuItem
@@ -1464,8 +1542,8 @@
             this.CaptionBackColorTop = System.Drawing.Color.Snow;
             this.CaptionHeight = 25;
             this.ClientSize = new System.Drawing.Size(1190, 765);
-            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ControlBoxActive = System.Drawing.Color.Black;
+            this.ControlBoxDeactive = System.Drawing.Color.Black;
             this.Controls.Add(this.skinGroupBoxThisTime);
             this.Controls.Add(this.skinGroupBoxAdvice);
             this.Controls.Add(this.skinGroupBoxUsers);
@@ -1622,6 +1700,14 @@
         private CCWin.SkinControl.SkinContextMenuStrip skinContextMenuStripEdit;
         private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem 打开此游戏存档路径ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 游戏所在位置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 游戏存档路径ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem 一键批量更新快捷方式ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windows电脑游戏ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 模拟器软件ToolStripMenuItem;
     }
 }
 
