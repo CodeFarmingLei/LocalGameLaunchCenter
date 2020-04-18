@@ -14,39 +14,45 @@ namespace ClassicSimulatorGame
 {
     public partial class FormMain : CCSkinMain
     {
-        //模拟器软件xml文档路径
-        string emuPath = @"EmuPath.xml";
-        //模拟器平台名称
-        string platformName = null;
-        //模拟器程序路径
-        string EmuFilePath = null;
-        //模拟器游戏ROM路径
-        string GameFilePath = null;
-        //模拟器程序文件名
-        string emuName = null;
-        //PC游戏xml文档路径
-        string PCPath = @"PCPath.xml";
-        //PC游戏名称
-        string PCName = null;
-        //PC游戏路径
-        string PCFilePath = null;
-        //PC游戏存档路径
-        string PCGameFilePath = null;
-        //PC启动程序文件名
-        string PCStartExeName = null;
-        //存储读取的简介文本
-        public string content;
-        //我的数据文件夹路径
-        string MyDateFiles = null;
-        //PC游戏快捷方式文件夹路径
-        string PCShortcut = null;
-        //模拟器游戏快捷方式文件夹路径
-        string EmuShortcut = null;
-        //临时日志存储字符串
-        string thisLog = null;
+        #region 主窗体相关变量
+
+        public string content;               //存储读取的简介文本
+        string PCImg = null;                //存储PC图片资源路径
+        string EmuImg = null;              //存储模拟器图片资源路径
+        string PCContent = null;           //PC简介文本资源路径
+        string EmuContent = null;        //模拟器简介文本资源路径
+        string MyDateFiles = null;        //我的数据文件夹路径
+        string PCShortcut = null;         //PC游戏快捷方式文件夹路径
+        string EmuShortcut = null;      //模拟器游戏快捷方式文件夹路径
+        string Cache = null;                //缓存文件夹路径
+        string DefaultImage = null;     //默认显示图片路径
+        string thisLog = null;              //临时日志存储字符串
+
         //临时数据内存表
         DataTable PCdt = new DataTable();
         DataTable Emudt = new DataTable();
+
+        #endregion
+
+        #region PC相关变量
+
+        string PCPath = @"PCPath.xml";   //PC游戏xml文档路径
+        string PCName = null;                   //PC游戏xml文档路径
+        string PCFilePath = null;               //PC游戏路径
+        string PCGameFilePath = null;        //PC游戏存档路径
+        string PCStartExeName = null;       //PC启动程序文件名
+
+        #endregion
+
+        #region Emu相关变量
+
+        string emuPath = @"EmuPath.xml";        //模拟器软件xml文档路径
+        string platformName = null;                   //模拟器平台名称
+        string EmuFilePath = null;                      //模拟器程序路径
+        string GameFilePath = null;                   //模拟器游戏ROM路径
+        string emuName = null;                        //模拟器程序文件名
+
+        #endregion
 
         public FormMain()
         {
@@ -84,10 +90,22 @@ namespace ClassicSimulatorGame
             {
                 //获取并设置我的数据文件夹路径
                 MyDateFiles = node.SelectSingleNode("MyDateFiles").InnerText.Trim();
+                //获取并设置PC图片资源文件夹路径
+                PCImg = node.SelectSingleNode("PCImg").InnerText.Trim();
+                //获取并设置模拟器图片资源文件夹路径
+                EmuImg = node.SelectSingleNode("EmuImg").InnerText.Trim();
+                //获取并设置PC简介文本文件夹路径
+                PCContent = node.SelectSingleNode("PCContent").InnerText.Trim();
+                //获取并设置模拟器简介文本文件夹路径
+                EmuContent = node.SelectSingleNode("EmuContent").InnerText.Trim();
                 //获取并设置PC游戏快捷方式文件夹路径
                 PCShortcut = node.SelectSingleNode("PCShortcut").InnerText.Trim();
                 //获取并设置模拟器游戏快捷方式文件夹路径
                 EmuShortcut = node.SelectSingleNode("EmuShortcut").InnerText.Trim();
+                //获取并设置缓存文件夹路径
+                Cache = node.SelectSingleNode("Cache").InnerText.Trim();
+                //获取并默认显示图片文件夹路径
+                DefaultImage = node.SelectSingleNode("DefaultImage").InnerText.Trim();
             }
         }
 
@@ -125,6 +143,7 @@ namespace ClassicSimulatorGame
             myds.ReadXml(emuPath);
             Emudt = myds.Tables[0];
             skinDataGridViewEmu.DataSource = Emudt;
+            pictureBoxEmu.Load(DefaultImage + "Emu.jpg");   //加载本地默认图像文件
         }
 
         /// <summary>
@@ -136,6 +155,7 @@ namespace ClassicSimulatorGame
             myds.ReadXml(PCPath);
             PCdt = myds.Tables[0];
             dataGridViewPC.DataSource = PCdt;
+            pictureBoxPC.Load(DefaultImage + "PC.jpg");   //加载本地默认图像文件
         }
 
         #endregion
@@ -202,6 +222,28 @@ namespace ClassicSimulatorGame
                 this.toolStripStatusLabelResult.ForeColor = Color.Red;
                 this.toolStripStatusLabelResult.Text = "未存在!! 请重新检测...";
             }
+        }
+
+        #endregion
+
+        #region 只读方式打开图片方法
+
+        /// <summary>
+        /// 通过FileStream 来打开文件，这样就可以实现不锁定Image文件，到时可以让多用户同时访问Image文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static Bitmap ReadImageFile(string path)
+        {
+            FileStream fs = System.IO.File.OpenRead(path); //OpenRead
+            int filelength = 0;
+            filelength = (int)fs.Length; //获得文件长度 
+            Byte[] image = new Byte[filelength]; //建立一个字节数组 
+            fs.Read(image, 0, filelength); //按字节流读取 
+            System.Drawing.Image result = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+            Bitmap bit = new Bitmap(result);
+            return bit;
         }
 
         #endregion
@@ -277,17 +319,15 @@ namespace ClassicSimulatorGame
         private void DataGridViewEmu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
-            //设置资源文件路径
-            string path = @"Resource\ExplanatoryText\Emulator";    //文件地址
             //设置图像路径
-            string picName = @"Resource\images\Emulator\" + platformName + ".jpg";
+            string picName = EmuImg + platformName + ".jpg";
             //设置提示文本路径
-            string tipText = path + @"\" + platformName + ".txt";
+            string tipText = EmuContent + platformName + ".txt";
 
             //验证所需文件是否存在
             if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
             {
-                //填充图像
+                //读取图片文件
                 this.pictureBoxEmu.Load(picName);
                 //创建读取器
                 StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
@@ -427,18 +467,17 @@ namespace ClassicSimulatorGame
         private void DataGridViewPC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             PCName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
-            //设置资源文件路径
-            string path = @"Resource\ExplanatoryText\PC";
             //设置图像路径
-            string picName = @"Resource\images\PC\" + PCName + ".jpg";
+            string picName = PCImg + PCName + ".jpg";
             //设置提示文本路径
-            string tipText = path + @"\" + PCName + ".txt";
+            string tipText = PCContent + PCName + ".txt";
 
             //验证所需文件是否存在
             if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
             {
-                //填充图像
+                //读取图片文件
                 this.pictureBoxPC.Load(picName);
+
                 //创建读取器
                 StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
                 content = mySr.ReadToEnd();  //读取整个文本文档
@@ -740,24 +779,44 @@ namespace ClassicSimulatorGame
             //对每个选项卡进行分支处理
             if (skinTabControlSelect.SelectedTab == skinTabPagePC)
             {
+                PCName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+                //设置图像路径
+                string picName = PCImg + PCName + ".jpg";
+                //设置提示文本路径
+                string tipText = PCContent + PCName + ".txt";
+
                 FormEdit FormEdit = new FormEdit();
                 FormEdit.TypeName = "PC";   //传递要编辑的数据类型
+                FormEdit.Pattern = "编辑数据";  //设置窗口模式
                 FormEdit.PCGameName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
                 FormEdit.PCGameType = this.dataGridViewPC.SelectedRows[0].Cells[1].Value.ToString();
                 FormEdit.PCGamePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
                 FormEdit.PCSavePath = this.dataGridViewPC.SelectedRows[0].Cells[3].Value.ToString();
                 FormEdit.PCStartName = this.dataGridViewPC.SelectedRows[0].Cells[4].Value.ToString();
+                FormEdit.ImgFilePath = picName;
+                FormEdit.TxtFilePath = tipText;
+                FormEdit.TextContent = richTextBoxPCTip.Text;
                 FormEdit.Show();
             }
             else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
             {
+                platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+                //设置图像路径
+                string picName = EmuImg + platformName + ".jpg";
+                //设置提示文本路径
+                string tipText = EmuContent + platformName + ".txt";
+
                 FormEdit FormEdit = new FormEdit();
                 FormEdit.TypeName = "Emu";  //传递要编辑的数据类型
+                FormEdit.Pattern = "编辑数据";  //设置窗口模式
                 FormEdit.EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
                 FormEdit.EmuGamePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[1].Value.ToString();
                 FormEdit.EmuFilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
                 FormEdit.EmuStartName = this.skinDataGridViewEmu.SelectedRows[0].Cells[3].Value.ToString();
                 FormEdit.EmuExplain = this.skinDataGridViewEmu.SelectedRows[0].Cells[4].Value.ToString();
+                FormEdit.ImgFilePath = picName;
+                FormEdit.TxtFilePath = tipText;
+                FormEdit.TextContent = richTextBoxEmuTip.Text;
                 FormEdit.Show();
             }
 
@@ -776,7 +835,7 @@ namespace ClassicSimulatorGame
             if (skinTabControlSelect.SelectedTab == skinTabPagePC)
             {
                 string PCName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
-                DialogResult dr = MessageBox.Show("是否删除此数据？？\n数据名称："+ PCName + "\n\n(提示：此操作不可逆!!)","确认操作",MessageBoxButtons.OKCancel,MessageBoxIcon.Asterisk);
+                DialogResult dr = MessageBox.Show("是否删除此数据？？(包括此数据的封面图片和简介文本文件)\n数据名称：" + PCName + "\n\n(提示：此操作不可逆!!)","确认操作",MessageBoxButtons.OKCancel,MessageBoxIcon.Asterisk);
                 if (dr == DialogResult.OK)
                 {
                     XmlDocument xmlDoc = new XmlDocument();
@@ -788,18 +847,27 @@ namespace ClassicSimulatorGame
                         XmlElement xm = (XmlElement)node;
                         if (xm.GetAttribute("GameName") == PCName)
                         {
-                            xm.RemoveAll();
+                            xm.ParentNode.RemoveChild(xm);
                             break;
                         }
                     }
                     xmlDoc.Save("PCPath.xml");   //保存配置xml文件
-                    MessageBox.Show("数据移除成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    //删除图片文件
+                    pictureBoxPC.Load(DefaultImage + "PC.jpg");   //加载默认图像文件
+                    System.IO.File.Delete(PCImg + PCName + @".jpg");
+                    //删除简介文本文件
+                    richTextBoxPCTip.Text = null;
+                    System.IO.File.Delete(PCContent + PCName + @".txt");
+
+                    MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    SetPCData();    //刷新数据
                 }
             }
             else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
             {
                 string EmuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
-                DialogResult dr = MessageBox.Show("是否删除此数据？？\n数据名称：" + EmuName + "\n\n(提示：此操作不可逆!!)", "确认操作", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                DialogResult dr = MessageBox.Show("是否删除此数据？？(包括此数据的封面图片和简介文本文件)\n数据名称：" + EmuName + "\n\n(提示：此操作不可逆!!)", "确认操作", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 if (dr == DialogResult.OK)
                 {
                     XmlDocument xmlDoc = new XmlDocument();
@@ -811,12 +879,21 @@ namespace ClassicSimulatorGame
                         XmlElement xm = (XmlElement)node;
                         if (xm.GetAttribute("name") == EmuName)
                         {
-                            xm.RemoveAll();
+                            xm.ParentNode.RemoveChild(xm);
                             break;
                         }
                     }
                     xmlDoc.Save("EmuPath.xml");   //保存配置xml文件
-                    MessageBox.Show("数据移除成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    //删除图片文件
+                    pictureBoxEmu.Load(DefaultImage + "Emu.jpg");    //加载默认图像文件
+                    System.IO.File.Delete(EmuImg + EmuName + @".jpg");
+                    //删除简介文本文件
+                    richTextBoxEmuTip.Text = null;
+                    System.IO.File.Delete(EmuContent + EmuName + @".txt");
+
+                    MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    SetEmuData();   //刷新数据
                 }
             }
         }
@@ -866,6 +943,46 @@ namespace ClassicSimulatorGame
             FormUpdatelnk.dataGridViewEmu = this.skinDataGridViewEmu;     //传递dataGridView数据
             FormUpdatelnk.EmuShortcut = EmuShortcut;      //传递快捷方式路径
             FormUpdatelnk.Show();
+        }
+
+        /// <summary>
+        /// 新增PC游戏数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PC游戏数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //设置图像路径
+            string picName = PCImg;
+            //设置提示文本路径
+            string tipText = PCContent;
+
+            FormEdit FormEdit = new FormEdit();
+            FormEdit.TypeName = "PC";   //传递要编辑的数据类型
+            FormEdit.Pattern = "新增数据";  //设置窗口模式
+            FormEdit.ImgFilePath = picName;
+            FormEdit.TxtFilePath = tipText;
+            FormEdit.Show();
+        }
+
+        /// <summary>
+        /// 新增模拟器软件数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 模拟器软件数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //设置图像路径
+            string picName = EmuImg;
+            //设置提示文本路径
+            string tipText = EmuContent;
+
+            FormEdit FormEdit = new FormEdit();
+            FormEdit.TypeName = "Emu";  //传递要编辑的数据类型
+            FormEdit.Pattern = "新增数据";  //设置窗口模式
+            FormEdit.ImgFilePath = picName;
+            FormEdit.TxtFilePath = tipText;
+            FormEdit.Show();
         }
     }
 }

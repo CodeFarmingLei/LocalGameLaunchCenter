@@ -161,6 +161,7 @@
     <Content Include="GamePad.ico" />
     <Content Include="PCPath.xml" />
     <None Include="Resources\GamePad2.ico" />
+    <None Include="Resources\Emu默认图像.jpg" />
     <Content Include="Resources\Main.jpg" />
     <None Include="Resources\日志.jpg" />
     <None Include="Resources\清空.jpg" />
@@ -176,6 +177,8 @@
     <None Include="Resources\工具箱.jpg" />
     <None Include="Resources\退出.jpg" />
     <None Include="Resources\快捷方式.jpg" />
+    <None Include="Resources\新增.jpg" />
+    <None Include="Resources\PC默认图像.jpg" />
     <Content Include="UserConfig.xml" />
     <None Include="Resources\Windows应用程序.jpg" />
     <None Include="Resources\家用机.jpg" />

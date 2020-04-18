@@ -2,9 +2,15 @@
 <MainSettings>
   <PathConfig>
     <MyDateFiles>MyDateFiles\</MyDateFiles>
-    <PCShortcut>Shortcut\PC</PCShortcut>
-    <EmuShortcut>Shortcut\Emulator</EmuShortcut>
+    <PCImg>Resource\images\PC\</PCImg>
+    <EmuImg>Resource\images\Emulator\</EmuImg>
+    <PCContent>Resource\ExplanatoryText\PC\</PCContent>
+    <EmuContent>Resource\ExplanatoryText\Emulator\</EmuContent>
+    <PCShortcut>Shortcut\PC\</PCShortcut>
+    <EmuShortcut>Shortcut\Emulator\</EmuShortcut>
     <BackupData>ProgramData\Backup\</BackupData>
     <DefaultData>ProgramData\DefaultData\</DefaultData>
+    <DefaultImage>ProgramData\\DefalutImage\</DefaultImage>
+    <Cache>Cache\</Cache>
   </PathConfig>
 </MainSettings>

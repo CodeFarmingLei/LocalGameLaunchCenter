@@ -34,8 +34,11 @@
             this.openFileDialogStartName = new System.Windows.Forms.OpenFileDialog();
             this.skinTabControlType = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPagePC = new CCWin.SkinControl.SkinTabPage();
-            this.buttonSave = new CCWin.SkinControl.SkinButton();
-            this.buttonClear = new CCWin.SkinControl.SkinButton();
+            this.skinButtonUpdatePCImg = new CCWin.SkinControl.SkinButton();
+            this.skinLabelPCTip = new CCWin.SkinControl.SkinLabel();
+            this.skinTextBoxPCTip = new CCWin.SkinControl.SkinTextBox();
+            this.skinPictureBoxPCImg = new CCWin.SkinControl.SkinPictureBox();
+            this.skinLabelPCImg = new CCWin.SkinControl.SkinLabel();
             this.buttonStartName = new CCWin.SkinControl.SkinButton();
             this.buttonSavePath = new CCWin.SkinControl.SkinButton();
             this.buttonGamePath = new CCWin.SkinControl.SkinButton();
@@ -50,6 +53,11 @@
             this.labelPCGameType = new CCWin.SkinControl.SkinLabel();
             this.labelPCGameName = new CCWin.SkinControl.SkinLabel();
             this.skinTabPageEmu = new CCWin.SkinControl.SkinTabPage();
+            this.skinButtonUpdateEmuImg = new CCWin.SkinControl.SkinButton();
+            this.skinPictureBoxEmuImg = new CCWin.SkinControl.SkinPictureBox();
+            this.skinLabelEmuImg = new CCWin.SkinControl.SkinLabel();
+            this.skinLabelEmuTip = new CCWin.SkinControl.SkinLabel();
+            this.skinTextBoxEmuTip = new CCWin.SkinControl.SkinTextBox();
             this.buttonEmuName = new CCWin.SkinControl.SkinButton();
             this.buttonEmuGamePath = new CCWin.SkinControl.SkinButton();
             this.buttonEmuFilePath = new CCWin.SkinControl.SkinButton();
@@ -63,9 +71,15 @@
             this.labelEmuName = new CCWin.SkinControl.SkinLabel();
             this.labelFilePath = new CCWin.SkinControl.SkinLabel();
             this.labelName = new CCWin.SkinControl.SkinLabel();
+            this.buttonSave = new CCWin.SkinControl.SkinButton();
+            this.buttonClear = new CCWin.SkinControl.SkinButton();
+            this.openFileDialogImg = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipThis = new System.Windows.Forms.ToolTip(this.components);
             this.skinTabControlType.SuspendLayout();
             this.skinTabPagePC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxPCImg)).BeginInit();
             this.skinTabPageEmu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxEmuImg)).BeginInit();
             this.SuspendLayout();
             // 
             // folderBrowserDialogPath
@@ -78,7 +92,7 @@
             // 
             // skinTabControlType
             // 
-            this.skinTabControlType.AnimatorType = CCWin.SkinControl.AnimationType.HorizBlind;
+            this.skinTabControlType.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
             this.skinTabControlType.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControlType.Controls.Add(this.skinTabPagePC);
             this.skinTabControlType.Controls.Add(this.skinTabPageEmu);
@@ -98,7 +112,7 @@
             this.skinTabControlType.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControlType.PageNorml = null;
             this.skinTabControlType.SelectedIndex = 1;
-            this.skinTabControlType.Size = new System.Drawing.Size(666, 223);
+            this.skinTabControlType.Size = new System.Drawing.Size(666, 435);
             this.skinTabControlType.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.skinTabControlType.TabIndex = 15;
             // 
@@ -106,6 +120,11 @@
             // 
             this.skinTabPagePC.BackColor = System.Drawing.Color.White;
             this.skinTabPagePC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.skinTabPagePC.Controls.Add(this.skinButtonUpdatePCImg);
+            this.skinTabPagePC.Controls.Add(this.skinLabelPCTip);
+            this.skinTabPagePC.Controls.Add(this.skinTextBoxPCTip);
+            this.skinTabPagePC.Controls.Add(this.skinPictureBoxPCImg);
+            this.skinTabPagePC.Controls.Add(this.skinLabelPCImg);
             this.skinTabPagePC.Controls.Add(this.buttonStartName);
             this.skinTabPagePC.Controls.Add(this.buttonSavePath);
             this.skinTabPagePC.Controls.Add(this.buttonGamePath);
@@ -122,44 +141,104 @@
             this.skinTabPagePC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinTabPagePC.Location = new System.Drawing.Point(0, 36);
             this.skinTabPagePC.Name = "skinTabPagePC";
-            this.skinTabPagePC.Size = new System.Drawing.Size(666, 187);
+            this.skinTabPagePC.Size = new System.Drawing.Size(666, 399);
             this.skinTabPagePC.TabIndex = 0;
             this.skinTabPagePC.TabItemImage = null;
             this.skinTabPagePC.Text = "编辑Windows电脑游戏数据";
             // 
-            // buttonSave
+            // skinButtonUpdatePCImg
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.BaseColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonSave.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonSave.DownBack = null;
-            this.buttonSave.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSave.Location = new System.Drawing.Point(543, 280);
-            this.buttonSave.MouseBack = null;
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.NormlBack = null;
-            this.buttonSave.Size = new System.Drawing.Size(111, 28);
-            this.buttonSave.TabIndex = 42;
-            this.buttonSave.Text = "保 存";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            this.skinButtonUpdatePCImg.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.skinButtonUpdatePCImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinButtonUpdatePCImg.BaseColor = System.Drawing.Color.Lavender;
+            this.skinButtonUpdatePCImg.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButtonUpdatePCImg.DownBack = null;
+            this.skinButtonUpdatePCImg.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButtonUpdatePCImg.Location = new System.Drawing.Point(10, 364);
+            this.skinButtonUpdatePCImg.MouseBack = null;
+            this.skinButtonUpdatePCImg.Name = "skinButtonUpdatePCImg";
+            this.skinButtonUpdatePCImg.NormlBack = null;
+            this.skinButtonUpdatePCImg.Size = new System.Drawing.Size(120, 28);
+            this.skinButtonUpdatePCImg.TabIndex = 6;
+            this.skinButtonUpdatePCImg.Text = "更改图片";
+            this.skinButtonUpdatePCImg.UseVisualStyleBackColor = false;
+            this.skinButtonUpdatePCImg.Click += new System.EventHandler(this.SkinButtonUpdatePCImg_Click);
             // 
-            // buttonClear
+            // skinLabelPCTip
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClear.BaseColor = System.Drawing.Color.Salmon;
-            this.buttonClear.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonClear.DownBack = null;
-            this.buttonClear.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonClear.Location = new System.Drawing.Point(426, 280);
-            this.buttonClear.MouseBack = null;
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.NormlBack = null;
-            this.buttonClear.Size = new System.Drawing.Size(111, 28);
-            this.buttonClear.TabIndex = 41;
-            this.buttonClear.Text = "重 置";
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            this.skinLabelPCTip.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabelPCTip.BorderColor = System.Drawing.Color.White;
+            this.skinLabelPCTip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabelPCTip.Location = new System.Drawing.Point(139, 178);
+            this.skinLabelPCTip.Name = "skinLabelPCTip";
+            this.skinLabelPCTip.Size = new System.Drawing.Size(506, 21);
+            this.skinLabelPCTip.TabIndex = 67;
+            this.skinLabelPCTip.Text = "游戏详细信息文本：";
+            // 
+            // skinTextBoxPCTip
+            // 
+            this.skinTextBoxPCTip.BackColor = System.Drawing.Color.Transparent;
+            this.skinTextBoxPCTip.DownBack = null;
+            this.skinTextBoxPCTip.Icon = null;
+            this.skinTextBoxPCTip.IconIsButton = false;
+            this.skinTextBoxPCTip.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBoxPCTip.IsPasswordChat = '\0';
+            this.skinTextBoxPCTip.IsSystemPasswordChar = false;
+            this.skinTextBoxPCTip.Lines = new string[0];
+            this.skinTextBoxPCTip.Location = new System.Drawing.Point(143, 201);
+            this.skinTextBoxPCTip.Margin = new System.Windows.Forms.Padding(0);
+            this.skinTextBoxPCTip.MaxLength = 32767;
+            this.skinTextBoxPCTip.MinimumSize = new System.Drawing.Size(28, 28);
+            this.skinTextBoxPCTip.MouseBack = null;
+            this.skinTextBoxPCTip.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBoxPCTip.Multiline = true;
+            this.skinTextBoxPCTip.Name = "skinTextBoxPCTip";
+            this.skinTextBoxPCTip.NormlBack = null;
+            this.skinTextBoxPCTip.Padding = new System.Windows.Forms.Padding(5);
+            this.skinTextBoxPCTip.ReadOnly = false;
+            this.skinTextBoxPCTip.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.skinTextBoxPCTip.Size = new System.Drawing.Size(502, 191);
+            // 
+            // 
+            // 
+            this.skinTextBoxPCTip.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.skinTextBoxPCTip.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTextBoxPCTip.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.skinTextBoxPCTip.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.skinTextBoxPCTip.SkinTxt.Multiline = true;
+            this.skinTextBoxPCTip.SkinTxt.Name = "BaseText";
+            this.skinTextBoxPCTip.SkinTxt.Size = new System.Drawing.Size(492, 181);
+            this.skinTextBoxPCTip.SkinTxt.TabIndex = 0;
+            this.skinTextBoxPCTip.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBoxPCTip.SkinTxt.WaterText = "在这里填写文本内容";
+            this.skinTextBoxPCTip.TabIndex = 7;
+            this.skinTextBoxPCTip.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.skinTextBoxPCTip.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBoxPCTip.WaterText = "在这里填写文本内容";
+            this.skinTextBoxPCTip.WordWrap = true;
+            // 
+            // skinPictureBoxPCImg
+            // 
+            this.skinPictureBoxPCImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinPictureBoxPCImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.skinPictureBoxPCImg.Location = new System.Drawing.Point(10, 201);
+            this.skinPictureBoxPCImg.Name = "skinPictureBoxPCImg";
+            this.skinPictureBoxPCImg.Size = new System.Drawing.Size(120, 160);
+            this.skinPictureBoxPCImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.skinPictureBoxPCImg.TabIndex = 65;
+            this.skinPictureBoxPCImg.TabStop = false;
+            this.toolTipThis.SetToolTip(this.skinPictureBoxPCImg, "建议图像规格：\r\n大小：120 x 160\r\n图片方向：竖屏\r\n图片形状：长方形\r\n");
+            // 
+            // skinLabelPCImg
+            // 
+            this.skinLabelPCImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabelPCImg.BorderColor = System.Drawing.Color.White;
+            this.skinLabelPCImg.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabelPCImg.Location = new System.Drawing.Point(10, 177);
+            this.skinLabelPCImg.Name = "skinLabelPCImg";
+            this.skinLabelPCImg.Size = new System.Drawing.Size(130, 21);
+            this.skinLabelPCImg.TabIndex = 64;
+            this.skinLabelPCImg.Text = "游戏封面图片：";
             // 
             // buttonStartName
             // 
@@ -173,7 +252,7 @@
             this.buttonStartName.Name = "buttonStartName";
             this.buttonStartName.NormlBack = null;
             this.buttonStartName.Size = new System.Drawing.Size(111, 28);
-            this.buttonStartName.TabIndex = 40;
+            this.buttonStartName.TabIndex = 5;
             this.buttonStartName.Text = "选择文件";
             this.buttonStartName.UseVisualStyleBackColor = false;
             this.buttonStartName.Click += new System.EventHandler(this.ButtonStartName_Click);
@@ -190,7 +269,7 @@
             this.buttonSavePath.Name = "buttonSavePath";
             this.buttonSavePath.NormlBack = null;
             this.buttonSavePath.Size = new System.Drawing.Size(111, 28);
-            this.buttonSavePath.TabIndex = 39;
+            this.buttonSavePath.TabIndex = 4;
             this.buttonSavePath.Text = "选择位置";
             this.buttonSavePath.UseVisualStyleBackColor = false;
             this.buttonSavePath.Click += new System.EventHandler(this.ButtonSavePath_Click);
@@ -207,7 +286,7 @@
             this.buttonGamePath.Name = "buttonGamePath";
             this.buttonGamePath.NormlBack = null;
             this.buttonGamePath.Size = new System.Drawing.Size(111, 28);
-            this.buttonGamePath.TabIndex = 38;
+            this.buttonGamePath.TabIndex = 3;
             this.buttonGamePath.Text = "选择位置";
             this.buttonGamePath.UseVisualStyleBackColor = false;
             this.buttonGamePath.Click += new System.EventHandler(this.ButtonGamePath_Click);
@@ -247,7 +326,7 @@
             this.textBoxStartName.SkinTxt.TabIndex = 0;
             this.textBoxStartName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxStartName.SkinTxt.WaterText = "";
-            this.textBoxStartName.TabIndex = 37;
+            this.textBoxStartName.TabIndex = 5;
             this.textBoxStartName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxStartName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxStartName.WaterText = "";
@@ -288,7 +367,7 @@
             this.textBoxSavePath.SkinTxt.TabIndex = 0;
             this.textBoxSavePath.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxSavePath.SkinTxt.WaterText = "";
-            this.textBoxSavePath.TabIndex = 36;
+            this.textBoxSavePath.TabIndex = 4;
             this.textBoxSavePath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxSavePath.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxSavePath.WaterText = "";
@@ -329,7 +408,7 @@
             this.textBoxGameType.SkinTxt.TabIndex = 0;
             this.textBoxGameType.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGameType.SkinTxt.WaterText = "";
-            this.textBoxGameType.TabIndex = 36;
+            this.textBoxGameType.TabIndex = 2;
             this.textBoxGameType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxGameType.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGameType.WaterText = "";
@@ -370,7 +449,7 @@
             this.textBoxGamePath.SkinTxt.TabIndex = 0;
             this.textBoxGamePath.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGamePath.SkinTxt.WaterText = "";
-            this.textBoxGamePath.TabIndex = 36;
+            this.textBoxGamePath.TabIndex = 3;
             this.textBoxGamePath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxGamePath.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGamePath.WaterText = "";
@@ -411,7 +490,7 @@
             this.textBoxGameName.SkinTxt.TabIndex = 0;
             this.textBoxGameName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGameName.SkinTxt.WaterText = "";
-            this.textBoxGameName.TabIndex = 35;
+            this.textBoxGameName.TabIndex = 1;
             this.textBoxGameName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxGameName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxGameName.WaterText = "";
@@ -481,6 +560,11 @@
             // 
             this.skinTabPageEmu.BackColor = System.Drawing.Color.White;
             this.skinTabPageEmu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.skinTabPageEmu.Controls.Add(this.skinButtonUpdateEmuImg);
+            this.skinTabPageEmu.Controls.Add(this.skinPictureBoxEmuImg);
+            this.skinTabPageEmu.Controls.Add(this.skinLabelEmuImg);
+            this.skinTabPageEmu.Controls.Add(this.skinLabelEmuTip);
+            this.skinTabPageEmu.Controls.Add(this.skinTextBoxEmuTip);
             this.skinTabPageEmu.Controls.Add(this.buttonEmuName);
             this.skinTabPageEmu.Controls.Add(this.buttonEmuGamePath);
             this.skinTabPageEmu.Controls.Add(this.buttonEmuFilePath);
@@ -497,10 +581,104 @@
             this.skinTabPageEmu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinTabPageEmu.Location = new System.Drawing.Point(0, 36);
             this.skinTabPageEmu.Name = "skinTabPageEmu";
-            this.skinTabPageEmu.Size = new System.Drawing.Size(666, 187);
+            this.skinTabPageEmu.Size = new System.Drawing.Size(666, 399);
             this.skinTabPageEmu.TabIndex = 1;
             this.skinTabPageEmu.TabItemImage = null;
             this.skinTabPageEmu.Text = "编辑模拟器软件数据";
+            // 
+            // skinButtonUpdateEmuImg
+            // 
+            this.skinButtonUpdateEmuImg.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.skinButtonUpdateEmuImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinButtonUpdateEmuImg.BaseColor = System.Drawing.Color.Lavender;
+            this.skinButtonUpdateEmuImg.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButtonUpdateEmuImg.DownBack = null;
+            this.skinButtonUpdateEmuImg.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButtonUpdateEmuImg.Location = new System.Drawing.Point(10, 335);
+            this.skinButtonUpdateEmuImg.MouseBack = null;
+            this.skinButtonUpdateEmuImg.Name = "skinButtonUpdateEmuImg";
+            this.skinButtonUpdateEmuImg.NormlBack = null;
+            this.skinButtonUpdateEmuImg.Size = new System.Drawing.Size(130, 44);
+            this.skinButtonUpdateEmuImg.TabIndex = 6;
+            this.skinButtonUpdateEmuImg.Text = "更改图片";
+            this.skinButtonUpdateEmuImg.UseVisualStyleBackColor = false;
+            this.skinButtonUpdateEmuImg.Click += new System.EventHandler(this.SkinButtonUpdateEmuImg_Click);
+            // 
+            // skinPictureBoxEmuImg
+            // 
+            this.skinPictureBoxEmuImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinPictureBoxEmuImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.skinPictureBoxEmuImg.Location = new System.Drawing.Point(10, 199);
+            this.skinPictureBoxEmuImg.Name = "skinPictureBoxEmuImg";
+            this.skinPictureBoxEmuImg.Size = new System.Drawing.Size(130, 130);
+            this.skinPictureBoxEmuImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.skinPictureBoxEmuImg.TabIndex = 71;
+            this.skinPictureBoxEmuImg.TabStop = false;
+            this.toolTipThis.SetToolTip(this.skinPictureBoxEmuImg, "建议图像规格：\r\n大小：130 x 130\r\n图片方向：竖屏\r\n图片形状：正方形\r\n");
+            // 
+            // skinLabelEmuImg
+            // 
+            this.skinLabelEmuImg.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabelEmuImg.BorderColor = System.Drawing.Color.White;
+            this.skinLabelEmuImg.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabelEmuImg.Location = new System.Drawing.Point(10, 175);
+            this.skinLabelEmuImg.Name = "skinLabelEmuImg";
+            this.skinLabelEmuImg.Size = new System.Drawing.Size(130, 21);
+            this.skinLabelEmuImg.TabIndex = 70;
+            this.skinLabelEmuImg.Text = "平台样式图：";
+            // 
+            // skinLabelEmuTip
+            // 
+            this.skinLabelEmuTip.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabelEmuTip.BorderColor = System.Drawing.Color.White;
+            this.skinLabelEmuTip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabelEmuTip.Location = new System.Drawing.Point(139, 176);
+            this.skinLabelEmuTip.Name = "skinLabelEmuTip";
+            this.skinLabelEmuTip.Size = new System.Drawing.Size(506, 21);
+            this.skinLabelEmuTip.TabIndex = 69;
+            this.skinLabelEmuTip.Text = "模拟器详细信息文本：";
+            // 
+            // skinTextBoxEmuTip
+            // 
+            this.skinTextBoxEmuTip.BackColor = System.Drawing.Color.Transparent;
+            this.skinTextBoxEmuTip.DownBack = null;
+            this.skinTextBoxEmuTip.Icon = null;
+            this.skinTextBoxEmuTip.IconIsButton = false;
+            this.skinTextBoxEmuTip.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBoxEmuTip.IsPasswordChat = '\0';
+            this.skinTextBoxEmuTip.IsSystemPasswordChar = false;
+            this.skinTextBoxEmuTip.Lines = new string[0];
+            this.skinTextBoxEmuTip.Location = new System.Drawing.Point(143, 199);
+            this.skinTextBoxEmuTip.Margin = new System.Windows.Forms.Padding(0);
+            this.skinTextBoxEmuTip.MaxLength = 32767;
+            this.skinTextBoxEmuTip.MinimumSize = new System.Drawing.Size(28, 28);
+            this.skinTextBoxEmuTip.MouseBack = null;
+            this.skinTextBoxEmuTip.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.skinTextBoxEmuTip.Multiline = true;
+            this.skinTextBoxEmuTip.Name = "skinTextBoxEmuTip";
+            this.skinTextBoxEmuTip.NormlBack = null;
+            this.skinTextBoxEmuTip.Padding = new System.Windows.Forms.Padding(5);
+            this.skinTextBoxEmuTip.ReadOnly = false;
+            this.skinTextBoxEmuTip.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.skinTextBoxEmuTip.Size = new System.Drawing.Size(502, 180);
+            // 
+            // 
+            // 
+            this.skinTextBoxEmuTip.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.skinTextBoxEmuTip.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTextBoxEmuTip.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.skinTextBoxEmuTip.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.skinTextBoxEmuTip.SkinTxt.Multiline = true;
+            this.skinTextBoxEmuTip.SkinTxt.Name = "BaseText";
+            this.skinTextBoxEmuTip.SkinTxt.Size = new System.Drawing.Size(492, 170);
+            this.skinTextBoxEmuTip.SkinTxt.TabIndex = 0;
+            this.skinTextBoxEmuTip.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBoxEmuTip.SkinTxt.WaterText = "在这里填写文本内容";
+            this.skinTextBoxEmuTip.TabIndex = 7;
+            this.skinTextBoxEmuTip.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.skinTextBoxEmuTip.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.skinTextBoxEmuTip.WaterText = "在这里填写文本内容";
+            this.skinTextBoxEmuTip.WordWrap = true;
             // 
             // buttonEmuName
             // 
@@ -514,7 +692,7 @@
             this.buttonEmuName.Name = "buttonEmuName";
             this.buttonEmuName.NormlBack = null;
             this.buttonEmuName.Size = new System.Drawing.Size(111, 28);
-            this.buttonEmuName.TabIndex = 59;
+            this.buttonEmuName.TabIndex = 3;
             this.buttonEmuName.Text = "选择文件";
             this.buttonEmuName.UseVisualStyleBackColor = false;
             this.buttonEmuName.Click += new System.EventHandler(this.ButtonEmuName_Click);
@@ -531,7 +709,7 @@
             this.buttonEmuGamePath.Name = "buttonEmuGamePath";
             this.buttonEmuGamePath.NormlBack = null;
             this.buttonEmuGamePath.Size = new System.Drawing.Size(111, 28);
-            this.buttonEmuGamePath.TabIndex = 58;
+            this.buttonEmuGamePath.TabIndex = 4;
             this.buttonEmuGamePath.Text = "选择位置";
             this.buttonEmuGamePath.UseVisualStyleBackColor = false;
             this.buttonEmuGamePath.Click += new System.EventHandler(this.ButtonEmuGamePath_Click);
@@ -548,7 +726,7 @@
             this.buttonEmuFilePath.Name = "buttonEmuFilePath";
             this.buttonEmuFilePath.NormlBack = null;
             this.buttonEmuFilePath.Size = new System.Drawing.Size(111, 28);
-            this.buttonEmuFilePath.TabIndex = 57;
+            this.buttonEmuFilePath.TabIndex = 2;
             this.buttonEmuFilePath.Text = "选择位置";
             this.buttonEmuFilePath.UseVisualStyleBackColor = false;
             this.buttonEmuFilePath.Click += new System.EventHandler(this.ButtonEmuFilePath_Click);
@@ -588,7 +766,7 @@
             this.textBoxExplain.SkinTxt.TabIndex = 0;
             this.textBoxExplain.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxExplain.SkinTxt.WaterText = "";
-            this.textBoxExplain.TabIndex = 56;
+            this.textBoxExplain.TabIndex = 5;
             this.textBoxExplain.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxExplain.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxExplain.WaterText = "";
@@ -670,7 +848,7 @@
             this.textBoxFilePath.SkinTxt.TabIndex = 0;
             this.textBoxFilePath.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxFilePath.SkinTxt.WaterText = "";
-            this.textBoxFilePath.TabIndex = 54;
+            this.textBoxFilePath.TabIndex = 2;
             this.textBoxFilePath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxFilePath.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxFilePath.WaterText = "";
@@ -752,7 +930,7 @@
             this.textBoxName.SkinTxt.TabIndex = 0;
             this.textBoxName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxName.SkinTxt.WaterText = "";
-            this.textBoxName.TabIndex = 52;
+            this.textBoxName.TabIndex = 1;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxName.WaterText = "";
@@ -818,14 +996,54 @@
             this.labelName.TabIndex = 47;
             this.labelName.Text = "模拟平台名称：";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSave.BaseColor = System.Drawing.Color.CornflowerBlue;
+            this.buttonSave.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonSave.DownBack = null;
+            this.buttonSave.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSave.Location = new System.Drawing.Point(543, 472);
+            this.buttonSave.MouseBack = null;
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.NormlBack = null;
+            this.buttonSave.Size = new System.Drawing.Size(111, 28);
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "保 存";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonClear.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClear.BaseColor = System.Drawing.Color.Salmon;
+            this.buttonClear.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonClear.DownBack = null;
+            this.buttonClear.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonClear.Location = new System.Drawing.Point(426, 472);
+            this.buttonClear.MouseBack = null;
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.NormlBack = null;
+            this.buttonClear.Size = new System.Drawing.Size(111, 28);
+            this.buttonClear.TabIndex = 9;
+            this.buttonClear.Text = "重 置";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            // 
+            // openFileDialogImg
+            // 
+            this.openFileDialogImg.DefaultExt = "jpg";
+            this.openFileDialogImg.Filter = "图片文件|*.jpg;*.png;";
+            this.openFileDialogImg.Title = "请选择图片文件";
+            // 
             // FormEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(680, 330);
-            this.ControlBoxActive = System.Drawing.Color.Black;
-            this.ControlBoxDeactive = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(680, 507);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.skinTabControlType);
@@ -839,8 +1057,10 @@
             this.skinTabControlType.ResumeLayout(false);
             this.skinTabPagePC.ResumeLayout(false);
             this.skinTabPagePC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxPCImg)).EndInit();
             this.skinTabPageEmu.ResumeLayout(false);
             this.skinTabPageEmu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxEmuImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -879,5 +1099,17 @@
         private CCWin.SkinControl.SkinLabel labelFilePath;
         private CCWin.SkinControl.SkinLabel labelName;
         private CCWin.SkinControl.SkinLabel labelRomPath;
+        private CCWin.SkinControl.SkinLabel skinLabelPCTip;
+        private CCWin.SkinControl.SkinTextBox skinTextBoxPCTip;
+        private CCWin.SkinControl.SkinPictureBox skinPictureBoxPCImg;
+        private CCWin.SkinControl.SkinLabel skinLabelPCImg;
+        private CCWin.SkinControl.SkinPictureBox skinPictureBoxEmuImg;
+        private CCWin.SkinControl.SkinLabel skinLabelEmuImg;
+        private CCWin.SkinControl.SkinLabel skinLabelEmuTip;
+        private CCWin.SkinControl.SkinTextBox skinTextBoxEmuTip;
+        private CCWin.SkinControl.SkinButton skinButtonUpdatePCImg;
+        private CCWin.SkinControl.SkinButton skinButtonUpdateEmuImg;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImg;
+        private System.Windows.Forms.ToolTip toolTipThis;
     }
 }

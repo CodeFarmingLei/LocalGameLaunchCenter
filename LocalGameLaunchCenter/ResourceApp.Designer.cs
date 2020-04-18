@@ -65,13 +65,14 @@ namespace LocalGameLaunchCenter {
         ///&lt;MainSettings&gt;
         ///  &lt;PathConfig&gt;
         ///    &lt;MyDateFiles&gt;MyDateFiles\&lt;/MyDateFiles&gt;
-        ///    &lt;PCShortcut&gt;Shortcut\PC&lt;/PCShortcut&gt;
-        ///    &lt;EmuShortcut&gt;Shortcut\Emulator&lt;/EmuShortcut&gt;
+        ///    &lt;PCImg&gt;Resource\images\PC\&lt;/PCImg&gt;
+        ///    &lt;EmuImg&gt;Resource\images\Emulator\&lt;/EmuImg&gt;
+        ///    &lt;PCContent&gt;Resource\ExplanatoryText\PC\&lt;/PCContent&gt;
+        ///    &lt;EmuContent&gt;Resource\ExplanatoryText\Emulator\&lt;/EmuContent&gt;
+        ///    &lt;PCShortcut&gt;Shortcut\PC\&lt;/PCShortcut&gt;
+        ///    &lt;EmuShortcut&gt;Shortcut\Emulator\&lt;/EmuShortcut&gt;
         ///    &lt;BackupData&gt;ProgramData\Backup\&lt;/BackupData&gt;
-        ///    &lt;DefaultData&gt;ProgramData\DefaultData\&lt;/DefaultData&gt;
-        ///  &lt;/PathConfig&gt;
-        ///&lt;/MainSettings&gt;
-        /// 的本地化字符串。
+        ///    &lt;DefaultData&gt;ProgramData\DefaultData [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string AppConfig {
             get {
@@ -89,6 +90,16 @@ namespace LocalGameLaunchCenter {
         internal static string EmuPath {
             get {
                 return ResourceManager.GetString("EmuPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Emu默认图像 {
+            get {
+                object obj = ResourceManager.GetObject("Emu默认图像", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -128,9 +139,19 @@ namespace LocalGameLaunchCenter {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PC默认图像 {
+            get {
+                object obj = ResourceManager.GetObject("PC默认图像", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;UsersInformation&gt;
-        ///  &lt;Users uName=&quot;冬日晨曦&quot; uSex=&quot;男&quot; uTitle=&quot;游戏大师&quot; runCount=&quot;10&quot;&gt;
+        ///  &lt;Users uName=&quot;冬日晨曦&quot; uSex=&quot;男&quot; uTitle=&quot;游戏大师&quot; runCount=&quot;123&quot;&gt;
         ///  &lt;/Users&gt;
         ///&lt;/UsersInformation&gt; 的本地化字符串。
         /// </summary>
@@ -256,6 +277,16 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 文件夹2 {
             get {
                 object obj = ResourceManager.GetObject("文件夹2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 新增 {
+            get {
+                object obj = ResourceManager.GetObject("新增", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

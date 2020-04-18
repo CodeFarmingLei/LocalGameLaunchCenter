@@ -124,6 +124,9 @@
   <data name="EmuPath" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>bin\Debug\EmuPath.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Emu默认图像" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Emu默认图像.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GamePad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GamePad.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="PCPath" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>bin\Debug\PCPath.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PC默认图像" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PC默认图像.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UserConfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>bin\Debug\UserConfig.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -171,6 +177,9 @@
   </data>
   <data name="文件夹2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\文件夹2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="新增" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\新增.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="日志" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\日志.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
