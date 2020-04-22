@@ -10,7 +10,9 @@
     <EmuShortcut>Shortcut\Emulator\</EmuShortcut>
     <BackupData>ProgramData\Backup\</BackupData>
     <DefaultData>ProgramData\DefaultData\</DefaultData>
-    <DefaultImage>ProgramData\\DefalutImage\</DefaultImage>
+    <DefaultImage>ProgramData\DefalutImage\</DefaultImage>
+    <PCModifier>Resource\PCModifier\</PCModifier>
+    <PCSaveBackup>ProgramData\PCSaveBackup\</PCSaveBackup>
     <Cache>Cache\</Cache>
   </PathConfig>
 </MainSettings>

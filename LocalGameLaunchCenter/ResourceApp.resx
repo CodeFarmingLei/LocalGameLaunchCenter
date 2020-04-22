@@ -148,6 +148,9 @@
   <data name="下载" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\下载.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="修改器" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\修改器.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="关于" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\关于.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,6 +163,12 @@
   <data name="刷新2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\刷新2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="备份" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\备份.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="存档" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\存档.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="家用机" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\家用机.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +180,12 @@
   </data>
   <data name="快捷方式" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\快捷方式.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="恢复" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\恢复.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="搜索" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\搜索.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="文件夹" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\文件夹.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,6 +204,9 @@
   </data>
   <data name="游戏手柄" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\游戏手柄.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\用户.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="磁盘" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\磁盘.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

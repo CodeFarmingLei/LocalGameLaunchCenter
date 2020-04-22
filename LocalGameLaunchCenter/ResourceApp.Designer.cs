@@ -151,7 +151,7 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;UsersInformation&gt;
-        ///  &lt;Users uName=&quot;冬日晨曦&quot; uSex=&quot;男&quot; uTitle=&quot;游戏大师&quot; runCount=&quot;123&quot;&gt;
+        ///  &lt;Users uName=&quot;冬日晨曦&quot; uSex=&quot;男&quot; uTitle=&quot;游戏大师&quot; runCount=&quot;219&quot;&gt;
         ///  &lt;/Users&gt;
         ///&lt;/UsersInformation&gt; 的本地化字符串。
         /// </summary>
@@ -177,6 +177,16 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 下载 {
             get {
                 object obj = ResourceManager.GetObject("下载", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 修改器 {
+            get {
+                object obj = ResourceManager.GetObject("修改器", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -224,6 +234,26 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 备份 {
+            get {
+                object obj = ResourceManager.GetObject("备份", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 存档 {
+            get {
+                object obj = ResourceManager.GetObject("存档", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 家用机 {
             get {
                 object obj = ResourceManager.GetObject("家用机", resourceCulture);
@@ -257,6 +287,26 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 快捷方式 {
             get {
                 object obj = ResourceManager.GetObject("快捷方式", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 恢复 {
+            get {
+                object obj = ResourceManager.GetObject("恢复", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 搜索 {
+            get {
+                object obj = ResourceManager.GetObject("搜索", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -317,6 +367,16 @@ namespace LocalGameLaunchCenter {
         internal static System.Drawing.Bitmap 游戏手柄 {
             get {
                 object obj = ResourceManager.GetObject("游戏手柄", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 用户 {
+            get {
+                object obj = ResourceManager.GetObject("用户", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
