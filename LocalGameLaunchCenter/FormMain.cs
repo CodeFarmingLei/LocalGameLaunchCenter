@@ -1,6 +1,5 @@
 ﻿using CCWin;
 using IWshRuntimeLibrary;
-using LocalGameLaunchCenter;
 using System;
 using System.Data;
 using System.Diagnostics;
@@ -8,10 +7,11 @@ using System.Drawing;
 using System.IO;
 using System.Speech.Synthesis;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace ClassicSimulatorGame
+namespace LocalGameLaunchCenter
 {
     public partial class FormMain : CCSkinMain
     {
@@ -71,7 +71,8 @@ namespace ClassicSimulatorGame
         {
             //默认选中第一个选项卡
             skinTabControlSelect.SelectedTab = skinTabPagePC;
-            FileCheck();        //初始化验证磁盘
+            //初始化验证磁盘
+            FileCheck();
             //初始化程序信息
             AppConfigs();
             SetEmuData();

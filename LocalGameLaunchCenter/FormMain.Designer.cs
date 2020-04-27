@@ -1,4 +1,4 @@
-﻿namespace ClassicSimulatorGame
+﻿namespace LocalGameLaunchCenter
 {
     partial class FormMain
     {

@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="CSkin">
       <HintPath>..\..\..\..\..\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,6 +73,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNew.Designer.cs">
+      <DependentUpon>FormNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,16 +103,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceApp.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ResourceEmu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceEmu.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ResourcePC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourcePC.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <EmbeddedResource Include="FormEdit.resx">
       <DependentUpon>FormEdit.cs</DependentUpon>
@@ -114,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNew.resx">
+      <DependentUpon>FormNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -135,16 +137,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ResourceApp.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceApp.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResourceEmu.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceEmu.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResourcePC.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourcePC.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -163,6 +159,10 @@
     <Content Include="AppConfig.xml" />
     <Content Include="bin\Debug\AppConfig.xml" />
     <None Include="bin\Debug\EmuPath.xml" />
+    <None Include="bin\Debug\DebugFile\AppConfig.xml" />
+    <None Include="bin\Debug\DebugFile\EmuPath.xml" />
+    <None Include="bin\Debug\DebugFile\PCPath.xml" />
+    <None Include="bin\Debug\DebugFile\UserConfig.xml" />
     <Content Include="bin\Debug\PCPath.xml" />
     <Content Include="bin\Debug\Resource\images\PC\愤怒的小鸟：经典版.jpg" />
     <Content Include="bin\Debug\Resource\images\PC\超凡战队：能量之战.jpg" />
