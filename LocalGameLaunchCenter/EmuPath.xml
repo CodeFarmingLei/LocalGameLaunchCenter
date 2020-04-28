@@ -1,26 +1,53 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <EmuMenu>
-  <EmuPath name="NES" GamePath="I:\ClassicSimulatorGame\GameROM\FC\" FilePath="I:\ClassicSimulatorGame\Emulator\FC\VirtuaNES\" EmuName="VirtuaNES.exe" Explain="Nintendo Entertainment System 家用主机游戏"></EmuPath>
-  <EmuPath name="SNES" GamePath="I:\ClassicSimulatorGame\GameROM\SFC" FilePath="I:\ClassicSimulatorGame\Emulator\SFC\snes9x\" EmuName="snes9x.exe" Explain="Super Nintendo Entertainment System 家用主机游戏"></EmuPath>
-  <EmuPath name="PCE" GamePath="I:\ClassicSimulatorGame\GameROM\PCE\" FilePath="I:\ClassicSimulatorGame\Emulator\PCE\Ootake\" EmuName="Ootake.exe" Explain="PC Engine 家用主机游戏"></EmuPath>
-  <EmuPath name="MD" GamePath="I:\ClassicSimulatorGame\GameROM\MD\" FilePath="I:\ClassicSimulatorGame\Emulator\MD\Fusion\" EmuName="Fusion.exe" Explain="Mega Drive 家用主机游戏"></EmuPath>
-  <EmuPath name="N64" GamePath="I:\ClassicSimulatorGame\GameROM\N64\" FilePath="I:\ClassicSimulatorGame\Emulator\N64\Project64\" EmuName="Project64.exe" Explain="Nintendo 64 家用主机游戏"></EmuPath>
-  <EmuPath name="DC" GamePath="I:\ClassicSimulatorGame\GameROM\DC\" FilePath="I:\ClassicSimulatorGame\Emulator\DC\nullDC\" EmuName="nullDC_Win32_Release-NoTrace.exe" Explain="Dreamcast 家用主机游戏"></EmuPath>
-  <EmuPath name="SS" GamePath="I:\ClassicSimulatorGame\GameROM\SS\" FilePath="I:\ClassicSimulatorGame\Emulator\SS\SSEmu-x64\" EmuName="Yabause Joe-One.exe" Explain="SEGA世嘉土星 家用主机游戏"></EmuPath>
-  <EmuPath name="Wii" GamePath="I:\ClassicSimulatorGame\GameROM\Wii\" FilePath="I:\ClassicSimulatorGame\Emulator\WII\Dolphin\" EmuName="Dolphin.exe" Explain="Nintendo Wii 家用主机游戏"></EmuPath>
-  <EmuPath name="Wiiu" GamePath="I:\ClassicSimulatorGame\GameROM\WiiU" FilePath="" EmuName="" Explain="Nintendo Wiiu 家用主机游戏"></EmuPath>
-  <EmuPath name="FBA" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="I:\ClassicSimulatorGame\Emulator\ARCADE\fba\" EmuName="fba_new.exe" Explain="ARCADE 街机游戏"></EmuPath>
-  <EmuPath name="MAME" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="I:\ClassicSimulatorGame\Emulator\MAME\MAMEP+GUI 0.168\" EmuName="mamepgui.exe" Explain="MAME 街机游戏"></EmuPath>
-  <EmuPath name="MAMEPLUS" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="I:\ClassicSimulatorGame\Emulator\MAMEPLUS\mame0.139\" EmuName="mame.exe" Explain="MAMEPLUS 街机游戏"></EmuPath>
-  <EmuPath name="PS" GamePath="I:\ClassicSimulatorGame\GameROM\PS\" FilePath="I:\ClassicSimulatorGame\Emulator\PS\ePSXe\" EmuName="ePSXe.exe" Explain="PlayStation 家用主机游戏"></EmuPath>
-  <EmuPath name="PS2" GamePath="I:\ClassicSimulatorGame\GameROM\PS2" FilePath="I:\ClassicSimulatorGame\Emulator\PS2\pcsx2\" EmuName="pcsx2.exe" Explain="PlayStation2 家用主机游戏"></EmuPath>
-  <EmuPath name="PS3" GamePath="I:\ClassicSimulatorGame\GameROM\PS3\" FilePath="I:\ClassicSimulatorGame\Emulator\PS3\rpcs3-v0.0.6-7804-63a94216_win64\" EmuName="rpcs3.exe" Explain="PlayStation3 家用主机游戏"></EmuPath>
-  <EmuPath name="PSP" GamePath="I:\ClassicSimulatorGame\GameROM\PSP\" FilePath="I:\ClassicSimulatorGame\Emulator\PSP\PPSSPPWindows\" EmuName="PPSSPPWindows64.exe" Explain="PlayStation Portable 掌机游戏"></EmuPath>
-  <EmuPath name="PSV" GamePath="I:\ClassicSimulatorGame\GameROM\PSV\" FilePath="I:\ClassicSimulatorGame\Emulator\PSV\Vita3K-master-v3335-2019-11-18-fa6f5bf9_win64\" EmuName="Vita3K.exe" Explain="PlayStation VITA 掌机游戏"></EmuPath>
-  <EmuPath name="GB" GamePath="I:\ClassicSimulatorGame\GameROM\GB\" FilePath="I:\ClassicSimulatorGame\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy 掌机游戏"></EmuPath>
-  <EmuPath name="GBC" GamePath="I:\ClassicSimulatorGame\GameROM\GBC\" FilePath="I:\ClassicSimulatorGame\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy Color 掌机游戏"></EmuPath>
-  <EmuPath name="GBA" GamePath="I:\ClassicSimulatorGame\GameROM\GBA\" FilePath="I:\ClassicSimulatorGame\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy Advance 掌机游戏"></EmuPath>
-  <EmuPath name="NDS" GamePath="I:\ClassicSimulatorGame\GameROM\NDS\" FilePath="I:\ClassicSimulatorGame\Emulator\NDS\DeSmuME\" EmuName="DeSmuME_X432R_x86.exe" Explain="Nintendo Dual screen 掌机游戏"></EmuPath>
-  <EmuPath name="3DS" GamePath="I:\ClassicSimulatorGame\GameROM\3DS\" FilePath="I:\ClassicSimulatorGame\Emulator\3DS\citra-sandbox2018-7-12\" EmuName="citra.exe" Explain="Nintendo 3DS 街机游戏"></EmuPath>
-  <EmuPath name="ONS" GamePath="I:\ClassicSimulatorGame\GameROM\ONS\" FilePath="I:\ClassicSimulatorGame\Emulator\ONS\ONScripter-Jh-sdl2.win64\" EmuName="ONScripter-Jh.exe" Explain="ONScripter引擎 AVG游戏"></EmuPath>
+  <EmuPath name="NES" GamePath="I:\ClassicSimulatorGame\GameROM\FC\" FilePath="F:\LocalGameLaunchCenter\Emulator\FC\VirtuaNES\" EmuName="VirtuaNES.exe" Explain="Nintendo Entertainment System 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="SNES" GamePath="I:\ClassicSimulatorGame\GameROM\SFC" FilePath="F:\LocalGameLaunchCenter\Emulator\SFC\snes9x\" EmuName="snes9x.exe" Explain="Super Nintendo Entertainment System 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="PCE" GamePath="I:\ClassicSimulatorGame\GameROM\PCE\" FilePath="F:\LocalGameLaunchCenter\Emulator\PCE\Ootake\" EmuName="Ootake.exe" Explain="PC Engine 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="MD" GamePath="I:\ClassicSimulatorGame\GameROM\MD\" FilePath="F:\LocalGameLaunchCenter\Emulator\MD\Fusion\" EmuName="Fusion.exe" Explain="Mega Drive 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="N64" GamePath="I:\ClassicSimulatorGame\GameROM\N64\" FilePath="F:\LocalGameLaunchCenter\Emulator\N64\Project64\" EmuName="Project64.exe" Explain="Nintendo 64 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="DC" GamePath="I:\ClassicSimulatorGame\GameROM\DC\" FilePath="F:\LocalGameLaunchCenter\Emulator\DC\nullDC\" EmuName="nullDC_Win32_Release-NoTrace.exe" Explain="Dreamcast 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="SS" GamePath="I:\ClassicSimulatorGame\GameROM\SS\" FilePath="F:\LocalGameLaunchCenter\Emulator\SS\SSEmu-x64\" EmuName="Yabause Joe-One.exe" Explain="SEGA世嘉土星 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="ATARI_2600" GamePath="I:\ClassicSimulatorGame\GameROM\ATARI\" FilePath="F:\LocalGameLaunchCenter\Emulator\ATARI_2600\" EmuName="StellaX.exe" Explain="雅达利2600 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="Wii" GamePath="I:\ClassicSimulatorGame\GameROM\Wii\" FilePath="F:\LocalGameLaunchCenter\Emulator\WII\Dolphin\" EmuName="Dolphin.exe" Explain="Nintendo Wii 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="Wiiu" GamePath="I:\ClassicSimulatorGame\GameROM\WiiU" FilePath="F:\LocalGameLaunchCenter\Emulator\WIIU\cemu_1.15.3\" EmuName="Cemu.exe" Explain="Nintendo Wiiu 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="FBA" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="F:\LocalGameLaunchCenter\Emulator\ARCADE\fba\" EmuName="fba_new.exe" Explain="ARCADE 街机游戏">
+  </EmuPath>
+  <EmuPath name="MAME" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="F:\LocalGameLaunchCenter\Emulator\MAME\MAMEP+GUI 0.168\" EmuName="mamepgui.exe" Explain="MAME 街机游戏">
+  </EmuPath>
+  <EmuPath name="MAMEPLUS" GamePath="I:\ClassicSimulatorGame\GameROM\FBA\" FilePath="F:\LocalGameLaunchCenter\Emulator\MAMEPLUS\mame0.139\" EmuName="mame.exe" Explain="MAMEPLUS 街机游戏">
+  </EmuPath>
+  <EmuPath name="PS" GamePath="I:\ClassicSimulatorGame\GameROM\PS\" FilePath="F:\LocalGameLaunchCenter\Emulator\PS\ePSXe\" EmuName="ePSXe.exe" Explain="PlayStation 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="PS2" GamePath="I:\ClassicSimulatorGame\GameROM\PS2" FilePath="F:\LocalGameLaunchCenter\Emulator\PS2\pcsx2\" EmuName="pcsx2.exe" Explain="PlayStation2 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="PS3" GamePath="I:\ClassicSimulatorGame\GameROM\PS3\" FilePath="F:\LocalGameLaunchCenter\Emulator\PS3\rpcs3-v0.0.6-7804-63a94216_win64\" EmuName="rpcs3.exe" Explain="PlayStation3 家用主机游戏">
+  </EmuPath>
+  <EmuPath name="PSP" GamePath="I:\ClassicSimulatorGame\GameROM\PSP\" FilePath="F:\LocalGameLaunchCenter\Emulator\PSP\PPSSPPWindows\" EmuName="PPSSPPWindows64.exe" Explain="PlayStation Portable 掌机游戏">
+  </EmuPath>
+  <EmuPath name="PSV" GamePath="I:\ClassicSimulatorGame\GameROM\PSV\" FilePath="F:\LocalGameLaunchCenter\Emulator\PSV\Vita3K-master-v3335-2019-11-18-fa6f5bf9_win64\" EmuName="Vita3K.exe" Explain="PlayStation VITA 掌机游戏">
+  </EmuPath>
+  <EmuPath name="GB" GamePath="I:\ClassicSimulatorGame\GameROM\GB\" FilePath="F:\LocalGameLaunchCenter\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy 掌机游戏">
+  </EmuPath>
+  <EmuPath name="GBC" GamePath="I:\ClassicSimulatorGame\GameROM\GBC\" FilePath="F:\LocalGameLaunchCenter\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy Color 掌机游戏">
+  </EmuPath>
+  <EmuPath name="GBA" GamePath="I:\ClassicSimulatorGame\GameROM\GBA\" FilePath="F:\LocalGameLaunchCenter\Emulator\GBA\VisualBoyAdvance\" EmuName="VisualBoyAdvance.exe" Explain="Nintendo Game Boy Advance 掌机游戏">
+  </EmuPath>
+  <EmuPath name="WSC" GamePath="I:\ClassicSimulatorGame\GameROM\WSC\" FilePath="F:\LocalGameLaunchCenter\Emulator\WSC\oswan\" EmuName="oswan.exe" Explain="Wonder Swan Color 掌机游戏">
+  </EmuPath>
+  <EmuPath name="NDS" GamePath="I:\ClassicSimulatorGame\GameROM\NDS\" FilePath="F:\LocalGameLaunchCenter\Emulator\NDS\DeSmuME\" EmuName="DeSmuME_X432R_x86.exe" Explain="Nintendo Dual screen 掌机游戏">
+  </EmuPath>
+  <EmuPath name="3DS" GamePath="I:\ClassicSimulatorGame\GameROM\3DS\" FilePath="F:\LocalGameLaunchCenter\Emulator\3DS\citra-sandbox2018-7-12\" EmuName="citra.exe" Explain="Nintendo 3DS 街机游戏">
+  </EmuPath>
+  <EmuPath name="ONS" GamePath="I:\ClassicSimulatorGame\GameROM\ONS\" FilePath="F:\LocalGameLaunchCenter\Emulator\ONS\ONScripter-Jh-sdl2.win64\" EmuName="ONScripter-Jh.exe" Explain="ONScripter引擎 AVG游戏">
+  </EmuPath>
 </EmuMenu>

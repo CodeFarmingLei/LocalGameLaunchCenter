@@ -28,6 +28,8 @@
   </PCPath>
   <PCPath GameName="生化危机3" GameType="动作" GamePath="I:\WindowsGameCenter\Biohazard.3.Green.Edition-ALI213\" SavePath="" StartName="bio3_pc.exe">
   </PCPath>
+  <PCPath GameName="生化危机3：重制版" GameType="动作" GamePath="I:\WindowsGameCenter\RESIDENT.EVIL.3.Deluxe.Edition\RE3\" SavePath="" StartName="re3.exe">
+  </PCPath>
   <PCPath GameName="生化危机4" GameType="动作" GamePath="I:\WindowsGameCenter\biohazard.4\" SavePath="I:\WindowsGameCenter\biohazard.4\" StartName="bio4_cn.exe">
   </PCPath>
   <PCPath GameName="生化危机4：终极HD版" GameType="动作" GamePath="I:\WindowsGameCenter\Resident Evil 4\" SavePath="C:\ProgramData\Steam\RLD!\254700\" StartName="bio4.exe">
@@ -104,7 +106,7 @@
   </PCPath>
   <PCPath GameName="猎天使魔女" GameType="动作" GamePath="I:\WindowsGameCenter\Bayonetta\" SavePath="E:\Bayonetta\OfflineStorage\User\remote\" StartName="Bayonetta.exe">
   </PCPath>
-  <PCPath GameName="超凡战队：能量之战" GameType="动作" GamePath="E:\Power.Rangers.Battle.for.the.Grid\" SavePath="" StartName="BattleForTheGrid.exe">
+  <PCPath GameName="超凡战队：能量之战" GameType="动作" GamePath="E:\Power.Rangers.Battle.for.the.Grid\" SavePath="C:\Users\ZHANGLEI\AppData\LocalLow\nWay Inc\Power Rangers - Battle for The Grid\" StartName="BattleForTheGrid.exe">
   </PCPath>
   <PCPath GameName="铁拳7" GameType="格斗" GamePath="D:\Tekken7_cht\" SavePath="C:\Users\ZHANGLEI\AppData\Local\TekkenGame\Saved\SaveGames\TEKKEN7\1\" StartName="TEKKEN 7.exe">
   </PCPath>

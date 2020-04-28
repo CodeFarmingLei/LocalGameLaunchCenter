@@ -7,7 +7,6 @@ using System.Drawing;
 using System.IO;
 using System.Speech.Synthesis;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -216,15 +215,13 @@ namespace LocalGameLaunchCenter
             //判断磁盘是否存在
             if (Directory.Exists(@"I:\"))
             {
-                this.buttonEmuStart.Enabled = true;
                 this.toolStripStatusLabelResult.ForeColor = Color.Green;
                 this.toolStripStatusLabelResult.Text = "已存在,可正常使用!!";
             }
             else
             {
-                this.buttonEmuStart.Enabled = false;
                 this.toolStripStatusLabelResult.ForeColor = Color.Red;
-                this.toolStripStatusLabelResult.Text = "未存在!! 请重新检测...";
+                this.toolStripStatusLabelResult.Text = "未存在!! 请插入磁盘后重新检测...";
             }
         }
 
@@ -411,7 +408,7 @@ namespace LocalGameLaunchCenter
         {
             PCModifierName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
             //设置快捷方式文件路径
-            string lnkPath = @"Shortcut\PC\" + PCModifierName + ".lnk";
+            string lnkPath = PCShortcut + PCModifierName + ".lnk";
 
             //验证所需文件是否存在
             if (System.IO.File.Exists(lnkPath))
@@ -452,6 +449,92 @@ namespace LocalGameLaunchCenter
             else
             {
                 MessageBox.Show(@"本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + EmuFilePath + "" + emuName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// 运行模拟器快捷方式 .lnk
+        /// </summary>
+        public void EmuStartlnk()
+        {
+            platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+            //设置快捷方式文件路径
+            string lnkPath = EmuShortcut + platformName + ".lnk";
+
+            //验证所需文件是否存在
+            if (System.IO.File.Exists(lnkPath))
+            {
+                this.WindowState = FormWindowState.Minimized;   //最小化
+                Process.Start(lnkPath);
+                //填充日志信息
+                thisLog = richTextBoxLog.Text;
+                richTextBoxLog.Text = "";
+                richTextBoxLog.Text += DateTime.Now + " ---- 程序已运行，模拟器名称：" + platformName + "\n" + thisLog;
+            }
+            else
+            {
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称 \n\n路径文件信息：" + lnkPath + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
+
+        #region 选择数据相关方法
+
+        /// <summary>
+        /// 选择PC游戏行数据事件
+        /// </summary>
+        public void SelectPCDataRows()
+        {
+            PCModifierName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+            //设置图像路径
+            string picName = PCImg + PCModifierName + ".jpg";
+            //设置提示文本路径
+            string tipText = PCContent + PCModifierName + ".txt";
+
+            //验证所需文件是否存在
+            if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
+            {
+                //读取图片文件
+                this.pictureBoxPC.Load(picName);
+
+                //创建读取器
+                StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
+                content = mySr.ReadToEnd();  //读取整个文本文档
+                richTextBoxPCTip.Text = content; //将读取的文本写入到控件
+                mySr.Close();   //关闭读取器
+            }
+            else
+            {
+                richTextBoxPCTip.Text = "读取异常!!! 资源文件可能不存在..."; //将提示的文本写入到控件
+            }
+        }
+
+        /// <summary>
+        /// 选择模拟器行数据事件
+        /// </summary>
+        public void SelectEmuDataRows()
+        {
+            platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+            //设置图像路径
+            string picName = EmuImg + platformName + ".jpg";
+            //设置提示文本路径
+            string tipText = EmuContent + platformName + ".txt";
+
+            //验证所需文件是否存在
+            if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
+            {
+                //读取图片文件
+                this.pictureBoxEmu.Load(picName);
+                //创建读取器
+                StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
+                content = mySr.ReadToEnd();  //读取整个文本文档
+                richTextBoxEmuTip.Text = content; //将读取的文本写入到控件
+                mySr.Close();   //关闭读取器
+            }
+            else
+            {
+                richTextBoxEmuTip.Text = "读取异常!!! 资源文件可能不存在..."; //将提示的文本写入到控件
             }
         }
 
@@ -698,6 +781,50 @@ namespace LocalGameLaunchCenter
 
         #endregion
 
+        #region DataGridView数据选择相关事件
+
+        /// <summary>
+        /// PC游戏单击选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewPC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectPCDataRows();
+        }
+
+        /// <summary>
+        /// PC游戏双击选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewPC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PCGameStartlnk();
+        }
+
+        /// <summary>
+        /// 模拟器软件数据单击选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SkinDataGridViewEmu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectEmuDataRows();
+        }
+
+        /// <summary>
+        /// 模拟器软件数据双击选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SkinDataGridViewEmu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EmuStartlnk();
+        }
+
+        #endregion
+
         /// <summary>
         /// 运行模拟器
         /// </summary>
@@ -705,38 +832,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            EmuStart();
-        }
-
-        /// <summary>
-        /// 模拟器软件数据选择事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewEmu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
-            //设置图像路径
-            string picName = EmuImg + platformName + ".jpg";
-            //设置提示文本路径
-            string tipText = EmuContent + platformName + ".txt";
-
-            //验证所需文件是否存在
-            if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
-            {
-                //读取图片文件
-                this.pictureBoxEmu.Load(picName);
-                //创建读取器
-                StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
-                content = mySr.ReadToEnd();  //读取整个文本文档
-                richTextBoxEmuTip.Text = content; //将读取的文本写入到控件
-                mySr.Close();   //关闭读取器
-            }
-            else
-            {
-                richTextBoxEmuTip.Text = "读取异常!!! 资源文件可能不存在..."; //将提示的文本写入到控件
-            }
-
+            EmuStartlnk();
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -818,37 +914,6 @@ namespace LocalGameLaunchCenter
         private void SkinTabControlSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        /// <summary>
-        /// PC游戏选择事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewPC_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            PCModifierName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
-            //设置图像路径
-            string picName = PCImg + PCModifierName + ".jpg";
-            //设置提示文本路径
-            string tipText = PCContent + PCModifierName + ".txt";
-
-            //验证所需文件是否存在
-            if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
-            {
-                //读取图片文件
-                this.pictureBoxPC.Load(picName);
-
-                //创建读取器
-                StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
-                content = mySr.ReadToEnd();  //读取整个文本文档
-                richTextBoxPCTip.Text = content; //将读取的文本写入到控件
-                mySr.Close();   //关闭读取器
-            }
-            else
-            {
-                richTextBoxPCTip.Text = "读取异常!!! 资源文件可能不存在..."; //将提示的文本写入到控件
-            }
         }
 
         private void 微软常用运行库合集ToolStripMenuItem_Click(object sender, EventArgs e)
