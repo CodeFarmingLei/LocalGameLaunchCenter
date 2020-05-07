@@ -76,7 +76,10 @@ namespace LocalGameLaunchCenter
                     textBoxGamePath.Text = PCGamePath;
                     textBoxSavePath.Text = PCSavePath;
                     textBoxStartName.Text = PCStartName;
-                    skinPictureBoxPCImg.Load(ImgFilePath);
+                    if (!(System.IO.Directory.Exists(ImgFilePath)))
+                    {
+                        skinPictureBoxPCImg.Load(ImgFilePath);
+                    }
                     skinTextBoxPCTip.Text = TextContent;
                 }
                 else if (TypeName == "Emu")
@@ -89,7 +92,10 @@ namespace LocalGameLaunchCenter
                     textBoxFilePath.Text = EmuFilePath;
                     textBoxEmuName.Text = EmuStartName;
                     textBoxExplain.Text = EmuExplain;
-                    skinPictureBoxEmuImg.Load(ImgFilePath);
+                    if (!(System.IO.Directory.Exists(ImgFilePath)))
+                    {
+                        skinPictureBoxEmuImg.Load(ImgFilePath);
+                    }
                     skinTextBoxEmuTip.Text = TextContent;
                 }
             }

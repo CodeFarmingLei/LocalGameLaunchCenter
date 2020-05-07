@@ -173,6 +173,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 取消置顶 {
+            get {
+                object obj = ResourceManager.GetObject("取消置顶", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 备份 {
             get {
                 object obj = ResourceManager.GetObject("备份", resourceCulture);
@@ -336,6 +346,16 @@ namespace LocalGameLaunchCenter {
         public static System.Drawing.Bitmap 编辑 {
             get {
                 object obj = ResourceManager.GetObject("编辑", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 置顶 {
+            get {
+                object obj = ResourceManager.GetObject("置顶", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -195,6 +195,8 @@
     <None Include="Resources\存档.jpg" />
     <None Include="Resources\备份.jpg" />
     <None Include="Resources\恢复.jpg" />
+    <None Include="Resources\取消置顶.png" />
+    <None Include="Resources\置顶.png" />
     <Content Include="UserConfig.xml" />
     <None Include="Resources\Windows应用程序.jpg" />
     <None Include="Resources\家用机.jpg" />

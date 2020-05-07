@@ -775,7 +775,7 @@ namespace LocalGameLaunchCenter
             }
             catch
             {
-                MessageBox.Show("复制文件失败，可能为以下原因：\n1.源目录及文件或目标目录及文件不存在。\n2.路径名错误\n\n请重试...","复制失败",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("复制文件失败，可能为以下原因：\n1.源目录及文件或目标目录及文件不存在。\n2.路径名错误\n\n请重试...", "复制失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -994,7 +994,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("是否退出本程序？？", "确认退出", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            DialogResult dr = MessageBox.Show("是否退出本程序？？", "确认退出", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
                 SaveLog();
@@ -1384,6 +1384,27 @@ namespace LocalGameLaunchCenter
         private void ToolStripButtonRunSearch_Click(object sender, EventArgs e)
         {
             SearchData();
+        }
+
+        /// <summary>
+        /// 窗口置顶事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripButtonTop_Click(object sender, EventArgs e)
+        {
+            if (toolStripButtonTop.Text == "窗口置顶")
+            {
+                this.TopMost = true;
+                toolStripButtonTop.Image = ResourceApp.取消置顶;
+                toolStripButtonTop.Text = "取消窗口置顶";
+            }
+            else if (toolStripButtonTop.Text == "取消窗口置顶")
+            {
+                this.TopMost = false;
+                toolStripButtonTop.Image = ResourceApp.置顶;
+                toolStripButtonTop.Text = "窗口置顶";
+            }
         }
 
         /// <summary>
