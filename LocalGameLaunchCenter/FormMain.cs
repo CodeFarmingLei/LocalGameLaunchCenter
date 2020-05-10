@@ -77,6 +77,7 @@ namespace LocalGameLaunchCenter
             SetEmuData();
             SetPCData();
             UserRunCountConfigs();
+            ComboBoxDiskAdd();
             //填充日志信息
             thisLog = richTextBoxLog.Text;
             richTextBoxLog.Text += DateTime.Now + " ---- 启动中心程序已运行";
@@ -222,6 +223,22 @@ namespace LocalGameLaunchCenter
             {
                 this.toolStripStatusLabelResult.ForeColor = Color.Red;
                 this.toolStripStatusLabelResult.Text = "未存在!! 请插入磁盘后重新检测...";
+            }
+        }
+
+        #endregion
+
+        #region 填充下拉框数据方法
+
+        /// <summary>
+        /// 填充磁盘分区筛选数据
+        /// </summary>
+        public void ComboBoxDiskAdd()
+        {
+            comboBoxDisk.Items.Add("全部分区");
+            for (int i = 67; i <= 78; i++)
+            {
+                comboBoxDisk.Items.Add((char)i + @":\");
             }
         }
 
@@ -680,7 +697,7 @@ namespace LocalGameLaunchCenter
             //判断当前选中的选项卡
             if (skinTabControlSelect.SelectedTab == skinTabPagePC)
             {
-                if (toolStripTextBoxSearch.Text != "")
+                if (toolStripTextBoxSearch.Text != "" && toolStripTextBoxSearch.Text != "在此输入要查找的程序名称")
                 {
                     SetPCData();    //默认初始化一遍信息
                     //查询DataTable的行内是否出现指定的字符串，如果没出现则临时删除，否则保留并显示
@@ -707,7 +724,7 @@ namespace LocalGameLaunchCenter
             }
             else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
             {
-                if (toolStripTextBoxSearch.Text != "")
+                if (toolStripTextBoxSearch.Text != "" && toolStripTextBoxSearch.Text != "在此输入要查找的程序名称")
                 {
                     SetEmuData();   //默认初始化一遍信息
                     //查询DataTable的行内是否出现指定的字符串，如果没出现则临时删除，否则保留并显示
@@ -721,11 +738,77 @@ namespace LocalGameLaunchCenter
                         }
                     }
                     //如果数据行为0则提示
-                    if (PCdt.Rows.Count == 0)
+                    if (Emudt.Rows.Count == 0)
                     {
                         MessageBox.Show("未找到此名称的相关数据!!\n请输入完整名称或检查后重试", "数据未找到", MessageBoxButtons.OK);
                     }
-                    skinDataGridViewEmu.DataSource = PCdt;
+                    skinDataGridViewEmu.DataSource = Emudt;
+                }
+                else
+                {
+                    SetEmuData();
+                }
+            }
+        }
+
+        #endregion
+
+        #region 筛选数据方法
+
+        /// <summary>
+        /// 按照分区刷新显示数据表
+        /// </summary>
+        public void SearchDiskData()
+        {
+            //判断当前选中的选项卡
+            if (skinTabControlSelect.SelectedTab == skinTabPagePC)
+            {
+                if (comboBoxDisk.Text != "全部分区")
+                {
+                    SetPCData();    //默认初始化一遍信息
+                    //查询DataTable的行内是否出现指定的字符串，如果没出现则临时删除，否则保留并显示
+                    string checkStr;    //存储临时名称信息，用于判断
+                    for (int i = PCdt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        checkStr = this.dataGridViewPC.Rows[i].Cells[2].Value.ToString();
+                        if (checkStr.Contains("" + comboBoxDisk.Text + "") == false)
+                        {
+                            PCdt.Rows[i].Delete();
+                        }
+                    }
+                    //如果数据行为0则提示
+                    if (PCdt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("未找到此磁盘分区的相关数据!!\n请选择其他分区后重试", "数据未找到", MessageBoxButtons.OK);
+                    }
+                    dataGridViewPC.DataSource = PCdt;
+                }
+                else
+                {
+                    SetPCData();
+                }
+            }
+            else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
+            {
+                if (comboBoxDisk.Text != "全部分区")
+                {
+                    SetEmuData();   //默认初始化一遍信息
+                    //查询DataTable的行内是否出现指定的字符串，如果没出现则临时删除，否则保留并显示
+                    string checkStr;    //存储临时名称信息，用于判断
+                    for (int i = Emudt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        checkStr = this.skinDataGridViewEmu.Rows[i].Cells[0].Value.ToString();
+                        if (checkStr.Contains("" + comboBoxDisk.Text + "") == false)
+                        {
+                            Emudt.Rows[i].Delete();
+                        }
+                    }
+                    //如果数据行为0则提示
+                    if (Emudt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("未找到此磁盘分区的相关数据!!\n请选择其他分区后重试", "数据未找到", MessageBoxButtons.OK);
+                    }
+                    skinDataGridViewEmu.DataSource = Emudt;
                 }
                 else
                 {
@@ -1153,7 +1236,7 @@ namespace LocalGameLaunchCenter
 
             if (Directory.Exists(PCModifier) && System.IO.File.Exists(PCModifier + PCModifierName))
             {
-                this.WindowState = FormWindowState.Minimized;   //最小化
+                //this.WindowState = FormWindowState.Minimized;   //最小化
                 Process.Start(PCModifier + PCModifierName);
                 //填充日志信息
                 thisLog = richTextBoxLog.Text;
@@ -1376,6 +1459,8 @@ namespace LocalGameLaunchCenter
             FormEdit.Show();
         }
 
+        #region 搜索相关事件
+
         /// <summary>
         /// 搜索项目事件
         /// </summary>
@@ -1385,6 +1470,36 @@ namespace LocalGameLaunchCenter
         {
             SearchData();
         }
+
+        /// <summary>
+        /// 搜索框为当前焦点事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripTextBoxSearch_Enter(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxSearch.Text == "" || toolStripTextBoxSearch.Text == "在此输入要查找的程序名称")
+            {
+                toolStripTextBoxSearch.ForeColor = Color.Black;
+                toolStripTextBoxSearch.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// 搜索框失去当前焦点事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripTextBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxSearch.Text == "" || toolStripTextBoxSearch.Text == "在此输入要查找的程序名称")
+            {
+                toolStripTextBoxSearch.ForeColor = Color.Gray;
+                toolStripTextBoxSearch.Text = "在此输入要查找的程序名称";
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// 窗口置顶事件
@@ -1529,6 +1644,51 @@ namespace LocalGameLaunchCenter
             DelThisData();
         }
 
-        
+        /// <summary>
+        /// 启动 DVD中文游戏300 程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripMenuItemDVD300Games_Click(object sender, EventArgs e)
+        {
+            string DVD300StartPath = @"DVD300NesGames\DVD中文游戏300.exe";
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = DVD300StartPath;
+            psi.UseShellExecute = false;
+            psi.WorkingDirectory = @"DVD300NesGames";
+            psi.CreateNoWindow = true;
+            if (System.IO.File.Exists(DVD300StartPath))
+            {
+                this.WindowState = FormWindowState.Minimized;
+                System.Diagnostics.Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show("未找到 DVD中文游戏300 启动执行程序，错误原因可能如下：\n\n1.可能您修改了文件名称或移动了位置\n2.未将此程序添加到此程序的目录内\n\n请尝试重新安装程序或联系开发者解决此问题\n\n路径信息："+ DVD300StartPath + "", "程序启动失败",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+        }
+
+        /// <summary>
+        /// 磁盘分区下拉框索引改变事件：按照分区刷新显示数据表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchDiskData();
+        }
+
+        private void 关于此程序ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAbout FormAbout = new FormAbout();
+            FormAbout.Show();
+        }
+
+        private void 使用说明ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelp FormHelp = new FormHelp();
+            FormHelp.Show();
+        }
     }
 }

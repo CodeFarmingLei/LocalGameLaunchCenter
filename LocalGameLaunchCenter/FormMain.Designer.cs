@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -79,6 +79,7 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skinTabPageEmu = new CCWin.SkinControl.SkinTabPage();
             this.skinGroupBoxEmuType = new CCWin.SkinControl.SkinGroupBox();
+            this.skinButtonDVD300Start = new CCWin.SkinControl.SkinButton();
             this.linkLabelEmuSay = new System.Windows.Forms.LinkLabel();
             this.richTextBoxEmuTip = new CCWin.SkinControl.SkinTextBox();
             this.buttonEmuStart = new CCWin.SkinControl.SkinButton();
@@ -103,7 +104,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButtonFiles = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripDropDownButtonFiles = new System.Windows.Forms.ToolStripSplitButton();
             this.打开我的数据文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开PC游戏快捷方式文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开模拟器软件快捷方式文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,18 +137,11 @@
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助中心HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.声明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.本程序无任何木马病毒请放心使用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.图片文本素材均来自网络ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于程序AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.获取最新版本程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.版本v10ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.作者ZhangLeiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.联系QQ微信2213407066ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于此程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDVD300Games = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
             this.skinGroupBoxLog = new CCWin.SkinControl.SkinGroupBox();
             this.skinGroupBoxAdvice = new CCWin.SkinControl.SkinGroupBox();
@@ -161,6 +155,9 @@
             this.双击此图标可最小化最大化显示主窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.退出程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skinGroupBoxScreen = new CCWin.SkinControl.SkinGroupBox();
+            this.comboBoxDisk = new System.Windows.Forms.ComboBox();
+            this.labelDisk = new System.Windows.Forms.Label();
             this.statusStripTip.SuspendLayout();
             this.skinContextMenuPCStrip.SuspendLayout();
             this.skinTabControlSelect.SuspendLayout();
@@ -181,6 +178,7 @@
             this.skinGroupBoxAdvice.SuspendLayout();
             this.skinGroupBoxThisTime.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
+            this.skinGroupBoxScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStripTip
@@ -462,7 +460,7 @@
             this.skinTabControlSelect.Name = "skinTabControlSelect";
             this.skinTabControlSelect.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("skinTabControlSelect.PageArrowDown")));
             this.skinTabControlSelect.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("skinTabControlSelect.PageArrowHover")));
-            this.skinTabControlSelect.PageBaseColor = System.Drawing.Color.SlateGray;
+            this.skinTabControlSelect.PageBaseColor = System.Drawing.Color.SteelBlue;
             this.skinTabControlSelect.PageBorderColor = System.Drawing.Color.SteelBlue;
             this.skinTabControlSelect.PageCloseHover = ((System.Drawing.Image)(resources.GetObject("skinTabControlSelect.PageCloseHover")));
             this.skinTabControlSelect.PageCloseNormal = ((System.Drawing.Image)(resources.GetObject("skinTabControlSelect.PageCloseNormal")));
@@ -474,7 +472,7 @@
             this.skinTabControlSelect.PageNorml = null;
             this.skinTabControlSelect.PageNormlTxtColor = System.Drawing.Color.White;
             this.skinTabControlSelect.SelectedIndex = 0;
-            this.skinTabControlSelect.Size = new System.Drawing.Size(1181, 539);
+            this.skinTabControlSelect.Size = new System.Drawing.Size(1181, 493);
             this.skinTabControlSelect.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.skinTabControlSelect.TabIndex = 4;
             this.toolTipMain.SetToolTip(this.skinTabControlSelect, "操作提示：\r\n鼠标单击数据行：选中相应的程序并查看详细信息。\r\n鼠标双击数据行：运行选中的程序。\r\n");
@@ -487,7 +485,7 @@
             this.skinTabPagePC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinTabPagePC.Location = new System.Drawing.Point(0, 36);
             this.skinTabPagePC.Name = "skinTabPagePC";
-            this.skinTabPagePC.Size = new System.Drawing.Size(1181, 503);
+            this.skinTabPagePC.Size = new System.Drawing.Size(1181, 457);
             this.skinTabPagePC.TabIndex = 1;
             this.skinTabPagePC.TabItemImage = null;
             this.skinTabPagePC.Text = "Windows电脑游戏";
@@ -505,7 +503,7 @@
             this.groupBoxPCType.Controls.Add(this.pictureBoxPC);
             this.groupBoxPCType.Controls.Add(this.buttonPCStart);
             this.groupBoxPCType.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxPCType.Location = new System.Drawing.Point(3, 295);
+            this.groupBoxPCType.Location = new System.Drawing.Point(3, 249);
             this.groupBoxPCType.Name = "groupBoxPCType";
             this.groupBoxPCType.Radius = 5;
             this.groupBoxPCType.RectBackColor = System.Drawing.Color.White;
@@ -610,7 +608,7 @@
             this.groupBoxPC.Radius = 5;
             this.groupBoxPC.RectBackColor = System.Drawing.Color.White;
             this.groupBoxPC.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.groupBoxPC.Size = new System.Drawing.Size(1172, 282);
+            this.groupBoxPC.Size = new System.Drawing.Size(1172, 236);
             this.groupBoxPC.TabIndex = 8;
             this.groupBoxPC.TabStop = false;
             this.groupBoxPC.Text = "游戏启动程序列表";
@@ -674,7 +672,7 @@
             this.dataGridViewPC.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPC.RowTemplate.Height = 23;
             this.dataGridViewPC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPC.Size = new System.Drawing.Size(1166, 262);
+            this.dataGridViewPC.Size = new System.Drawing.Size(1166, 216);
             this.dataGridViewPC.SkinGridColor = System.Drawing.Color.Black;
             this.dataGridViewPC.TabIndex = 4;
             this.dataGridViewPC.TitleBack = null;
@@ -731,7 +729,7 @@
             this.skinTabPageEmu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinTabPageEmu.Location = new System.Drawing.Point(0, 36);
             this.skinTabPageEmu.Name = "skinTabPageEmu";
-            this.skinTabPageEmu.Size = new System.Drawing.Size(1181, 503);
+            this.skinTabPageEmu.Size = new System.Drawing.Size(1181, 457);
             this.skinTabPageEmu.TabIndex = 0;
             this.skinTabPageEmu.TabItemImage = null;
             this.skinTabPageEmu.Text = "经典模拟器游戏";
@@ -742,6 +740,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxEmuType.BackColor = System.Drawing.Color.Transparent;
             this.skinGroupBoxEmuType.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxEmuType.Controls.Add(this.skinButtonDVD300Start);
             this.skinGroupBoxEmuType.Controls.Add(this.skinButtonEmuMenu);
             this.skinGroupBoxEmuType.Controls.Add(this.linkLabelEmuSay);
             this.skinGroupBoxEmuType.Controls.Add(this.richTextBoxEmuTip);
@@ -762,6 +761,27 @@
             this.skinGroupBoxEmuType.TitleRadius = 5;
             this.skinGroupBoxEmuType.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBoxEmuType.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
+            // 
+            // skinButtonDVD300Start
+            // 
+            this.skinButtonDVD300Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinButtonDVD300Start.BackColor = System.Drawing.Color.Transparent;
+            this.skinButtonDVD300Start.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.skinButtonDVD300Start.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.skinButtonDVD300Start.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButtonDVD300Start.DownBack = null;
+            this.skinButtonDVD300Start.DownBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.skinButtonDVD300Start.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButtonDVD300Start.Image = ((System.Drawing.Image)(resources.GetObject("skinButtonDVD300Start.Image")));
+            this.skinButtonDVD300Start.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.skinButtonDVD300Start.Location = new System.Drawing.Point(711, 122);
+            this.skinButtonDVD300Start.MouseBack = null;
+            this.skinButtonDVD300Start.Name = "skinButtonDVD300Start";
+            this.skinButtonDVD300Start.NormlBack = null;
+            this.skinButtonDVD300Start.Size = new System.Drawing.Size(287, 25);
+            this.skinButtonDVD300Start.TabIndex = 18;
+            this.skinButtonDVD300Start.Text = "运行 DVD中文游戏300";
+            this.skinButtonDVD300Start.UseVisualStyleBackColor = false;
             // 
             // linkLabelEmuSay
             // 
@@ -874,7 +894,7 @@
             this.skinGroupBoxEmu.Radius = 5;
             this.skinGroupBoxEmu.RectBackColor = System.Drawing.Color.White;
             this.skinGroupBoxEmu.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinGroupBoxEmu.Size = new System.Drawing.Size(1172, 337);
+            this.skinGroupBoxEmu.Size = new System.Drawing.Size(1172, 291);
             this.skinGroupBoxEmu.TabIndex = 4;
             this.skinGroupBoxEmu.TabStop = false;
             this.skinGroupBoxEmu.Text = "模拟器启动程序列表";
@@ -938,7 +958,7 @@
             this.skinDataGridViewEmu.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.skinDataGridViewEmu.RowTemplate.Height = 23;
             this.skinDataGridViewEmu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.skinDataGridViewEmu.Size = new System.Drawing.Size(1166, 317);
+            this.skinDataGridViewEmu.Size = new System.Drawing.Size(1166, 271);
             this.skinDataGridViewEmu.SkinGridColor = System.Drawing.Color.Black;
             this.skinDataGridViewEmu.TabIndex = 4;
             this.skinDataGridViewEmu.TitleBack = null;
@@ -1168,31 +1188,31 @@
             this.toolStripDropDownButtonFiles.Image = global::LocalGameLaunchCenter.ResourceApp.文件夹2;
             this.toolStripDropDownButtonFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonFiles.Name = "toolStripDropDownButtonFiles";
-            this.toolStripDropDownButtonFiles.Size = new System.Drawing.Size(121, 22);
+            this.toolStripDropDownButtonFiles.Size = new System.Drawing.Size(124, 22);
             this.toolStripDropDownButtonFiles.Text = "打开相关文件夹";
             // 
             // 打开我的数据文件夹ToolStripMenuItem
             // 
             this.打开我的数据文件夹ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.文件夹;
             this.打开我的数据文件夹ToolStripMenuItem.Name = "打开我的数据文件夹ToolStripMenuItem";
-            this.打开我的数据文件夹ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.打开我的数据文件夹ToolStripMenuItem.Text = "打开我的数据文件夹";
+            this.打开我的数据文件夹ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.打开我的数据文件夹ToolStripMenuItem.Text = "我的数据文件夹";
             this.打开我的数据文件夹ToolStripMenuItem.Click += new System.EventHandler(this.打开我的数据文件夹ToolStripMenuItem_Click);
             // 
             // 打开PC游戏快捷方式文件夹ToolStripMenuItem
             // 
             this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.Windows应用程序;
             this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Name = "打开PC游戏快捷方式文件夹ToolStripMenuItem";
-            this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Text = "打开PC游戏快捷方式文件夹";
+            this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Text = "PC游戏快捷方式文件夹";
             this.打开PC游戏快捷方式文件夹ToolStripMenuItem.Click += new System.EventHandler(this.打开PC游戏快捷方式文件夹ToolStripMenuItem_Click);
             // 
             // 打开模拟器软件快捷方式文件夹ToolStripMenuItem
             // 
             this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.家用机;
             this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Name = "打开模拟器软件快捷方式文件夹ToolStripMenuItem";
-            this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Text = "打开模拟器软件快捷方式文件夹";
+            this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Text = "模拟器软件快捷方式文件夹";
             this.打开模拟器软件快捷方式文件夹ToolStripMenuItem.Click += new System.EventHandler(this.打开模拟器软件快捷方式文件夹ToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
@@ -1321,8 +1341,12 @@
             // toolStripTextBoxSearch
             // 
             this.toolStripTextBoxSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBoxSearch.ForeColor = System.Drawing.Color.Gray;
             this.toolStripTextBoxSearch.Name = "toolStripTextBoxSearch";
-            this.toolStripTextBoxSearch.Size = new System.Drawing.Size(250, 25);
+            this.toolStripTextBoxSearch.Size = new System.Drawing.Size(180, 25);
+            this.toolStripTextBoxSearch.Text = "在此输入要查找的程序名称";
+            this.toolStripTextBoxSearch.Enter += new System.EventHandler(this.ToolStripTextBoxSearch_Enter);
+            this.toolStripTextBoxSearch.Leave += new System.EventHandler(this.ToolStripTextBoxSearch_Leave);
             // 
             // toolStripSeparator9
             // 
@@ -1364,7 +1388,8 @@
             this.skinMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.程序功能TToolStripMenuItem,
             this.帮助中心HToolStripMenuItem,
-            this.关于程序AToolStripMenuItem});
+            this.关于程序AToolStripMenuItem,
+            this.toolStripMenuItemDVD300Games});
             this.skinMenuStrip1.Location = new System.Drawing.Point(4, 29);
             this.skinMenuStrip1.Name = "skinMenuStrip1";
             this.skinMenuStrip1.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
@@ -1450,55 +1475,25 @@
             // 帮助中心HToolStripMenuItem
             // 
             this.帮助中心HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.使用说明ToolStripMenuItem,
-            this.声明ToolStripMenuItem});
+            this.使用说明ToolStripMenuItem});
             this.帮助中心HToolStripMenuItem.Name = "帮助中心HToolStripMenuItem";
             this.帮助中心HToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
             this.帮助中心HToolStripMenuItem.Text = "帮助中心(&H)";
             // 
             // 使用说明ToolStripMenuItem
             // 
-            this.使用说明ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem});
             this.使用说明ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.帮助;
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
             this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.使用说明ToolStripMenuItem.Text = "使用说明";
-            // 
-            // 先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem
-            // 
-            this.先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem.Name = "先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem";
-            this.先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem.Size = new System.Drawing.Size(412, 22);
-            this.先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem.Text = "先选择想要启动的模拟器软件项，然后点击运行此模拟器即可。";
-            // 
-            // 声明ToolStripMenuItem
-            // 
-            this.声明ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.本程序无任何木马病毒请放心使用ToolStripMenuItem,
-            this.图片文本素材均来自网络ToolStripMenuItem});
-            this.声明ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.关于;
-            this.声明ToolStripMenuItem.Name = "声明ToolStripMenuItem";
-            this.声明ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.声明ToolStripMenuItem.Text = "声明";
-            // 
-            // 本程序无任何木马病毒请放心使用ToolStripMenuItem
-            // 
-            this.本程序无任何木马病毒请放心使用ToolStripMenuItem.Name = "本程序无任何木马病毒请放心使用ToolStripMenuItem";
-            this.本程序无任何木马病毒请放心使用ToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.本程序无任何木马病毒请放心使用ToolStripMenuItem.Text = "本程序无任何木马病毒，请放心使用。";
-            // 
-            // 图片文本素材均来自网络ToolStripMenuItem
-            // 
-            this.图片文本素材均来自网络ToolStripMenuItem.Name = "图片文本素材均来自网络ToolStripMenuItem";
-            this.图片文本素材均来自网络ToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.图片文本素材均来自网络ToolStripMenuItem.Text = "图片及文本说明素材均来自网络。";
+            this.使用说明ToolStripMenuItem.Click += new System.EventHandler(this.使用说明ToolStripMenuItem_Click);
             // 
             // 关于程序AToolStripMenuItem
             // 
             this.关于程序AToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.获取最新版本程序ToolStripMenuItem,
             this.toolStripMenuItem4,
-            this.版本信息ToolStripMenuItem});
+            this.关于此程序ToolStripMenuItem});
             this.关于程序AToolStripMenuItem.Name = "关于程序AToolStripMenuItem";
             this.关于程序AToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.关于程序AToolStripMenuItem.Text = "关于程序(&A)";
@@ -1515,40 +1510,22 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(169, 6);
             // 
-            // 版本信息ToolStripMenuItem
+            // 关于此程序ToolStripMenuItem
             // 
-            this.版本信息ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.版本v10ToolStripMenuItem1,
-            this.toolStripMenuItem3,
-            this.作者ZhangLeiToolStripMenuItem,
-            this.联系QQ微信2213407066ToolStripMenuItem});
-            this.版本信息ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.关于;
-            this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
-            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.版本信息ToolStripMenuItem.Text = "版本信息";
+            this.关于此程序ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.关于;
+            this.关于此程序ToolStripMenuItem.Name = "关于此程序ToolStripMenuItem";
+            this.关于此程序ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.关于此程序ToolStripMenuItem.Text = "关于此程序";
+            this.关于此程序ToolStripMenuItem.Click += new System.EventHandler(this.关于此程序ToolStripMenuItem_Click);
             // 
-            // 版本v10ToolStripMenuItem1
+            // toolStripMenuItemDVD300Games
             // 
-            this.版本v10ToolStripMenuItem1.Name = "版本v10ToolStripMenuItem1";
-            this.版本v10ToolStripMenuItem1.Size = new System.Drawing.Size(231, 22);
-            this.版本v10ToolStripMenuItem1.Text = "版本：v1.0";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(228, 6);
-            // 
-            // 作者ZhangLeiToolStripMenuItem
-            // 
-            this.作者ZhangLeiToolStripMenuItem.Name = "作者ZhangLeiToolStripMenuItem";
-            this.作者ZhangLeiToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.作者ZhangLeiToolStripMenuItem.Text = "作者：@热血码农ZL";
-            // 
-            // 联系QQ微信2213407066ToolStripMenuItem
-            // 
-            this.联系QQ微信2213407066ToolStripMenuItem.Name = "联系QQ微信2213407066ToolStripMenuItem";
-            this.联系QQ微信2213407066ToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.联系QQ微信2213407066ToolStripMenuItem.Text = "联系QQ/微信：2213407066";
+            this.toolStripMenuItemDVD300Games.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItemDVD300Games.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemDVD300Games.Image")));
+            this.toolStripMenuItemDVD300Games.Name = "toolStripMenuItemDVD300Games";
+            this.toolStripMenuItemDVD300Games.Size = new System.Drawing.Size(238, 21);
+            this.toolStripMenuItemDVD300Games.Text = "运行附赠程序 DVD中文游戏300 PC版";
+            this.toolStripMenuItemDVD300Games.Click += new System.EventHandler(this.ToolStripMenuItemDVD300Games_Click);
             // 
             // richTextBoxLog
             // 
@@ -1696,6 +1673,49 @@
             this.退出程序ToolStripMenuItem.Text = "退出程序";
             this.退出程序ToolStripMenuItem.Click += new System.EventHandler(this.退出程序ToolStripMenuItem_Click);
             // 
+            // skinGroupBoxScreen
+            // 
+            this.skinGroupBoxScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinGroupBoxScreen.BackColor = System.Drawing.Color.Transparent;
+            this.skinGroupBoxScreen.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxScreen.Controls.Add(this.comboBoxDisk);
+            this.skinGroupBoxScreen.Controls.Add(this.labelDisk);
+            this.skinGroupBoxScreen.ForeColor = System.Drawing.Color.Black;
+            this.skinGroupBoxScreen.Location = new System.Drawing.Point(12, 579);
+            this.skinGroupBoxScreen.Name = "skinGroupBoxScreen";
+            this.skinGroupBoxScreen.Radius = 5;
+            this.skinGroupBoxScreen.RectBackColor = System.Drawing.Color.White;
+            this.skinGroupBoxScreen.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.skinGroupBoxScreen.Size = new System.Drawing.Size(1175, 40);
+            this.skinGroupBoxScreen.TabIndex = 15;
+            this.skinGroupBoxScreen.TabStop = false;
+            this.skinGroupBoxScreen.Text = "数据列表筛选工具";
+            this.skinGroupBoxScreen.TitleBorderColor = System.Drawing.Color.Transparent;
+            this.skinGroupBoxScreen.TitleRadius = 5;
+            this.skinGroupBoxScreen.TitleRectBackColor = System.Drawing.Color.White;
+            this.skinGroupBoxScreen.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
+            // 
+            // comboBoxDisk
+            // 
+            this.comboBoxDisk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDisk.FormattingEnabled = true;
+            this.comboBoxDisk.Location = new System.Drawing.Point(150, 15);
+            this.comboBoxDisk.Name = "comboBoxDisk";
+            this.comboBoxDisk.Size = new System.Drawing.Size(80, 20);
+            this.comboBoxDisk.TabIndex = 1;
+            this.comboBoxDisk.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDisk_SelectedIndexChanged);
+            // 
+            // labelDisk
+            // 
+            this.labelDisk.Location = new System.Drawing.Point(7, 15);
+            this.labelDisk.Name = "labelDisk";
+            this.labelDisk.Size = new System.Drawing.Size(145, 20);
+            this.labelDisk.TabIndex = 0;
+            this.labelDisk.Text = "按游戏所在磁盘分区筛选:";
+            this.labelDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1707,8 +1727,9 @@
             this.CaptionBackColorTop = System.Drawing.Color.Snow;
             this.CaptionHeight = 25;
             this.ClientSize = new System.Drawing.Size(1200, 790);
-            this.ControlBoxActive = System.Drawing.Color.Black;
-            this.ControlBoxDeactive = System.Drawing.Color.Black;
+            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.skinGroupBoxScreen);
             this.Controls.Add(this.skinGroupBoxThisTime);
             this.Controls.Add(this.skinGroupBoxAdvice);
             this.Controls.Add(this.skinGroupBoxLog);
@@ -1722,6 +1743,7 @@
             this.Radius = 10;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "本地游戏启动中心 (LocalGameLaunchCenter) ---- 版本：v1.0";
+            this.TitleCenter = true;
             this.MaximumSizeChanged += new System.EventHandler(this.FormMain_MaximumSizeChanged);
             this.MinimumSizeChanged += new System.EventHandler(this.FormMain_MinimumSizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -1752,6 +1774,7 @@
             this.skinGroupBoxAdvice.PerformLayout();
             this.skinGroupBoxThisTime.ResumeLayout(false);
             this.contextMenuStripMain.ResumeLayout(false);
+            this.skinGroupBoxScreen.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1783,9 +1806,6 @@
         private System.Windows.Forms.ToolStripMenuItem 帮助中心HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于程序AToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 使用说明ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 声明ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 先选择想要启动的模拟器软件项然后点击运行此模拟器即可ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 本程序无任何木马病毒请放心使用ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonCheck;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -1809,22 +1829,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem 获取最新版本程序ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem 版本信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 版本v10ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem 作者ZhangLeiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 联系QQ微信2213407066ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 图片文本素材均来自网络ToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIconMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
         private System.Windows.Forms.ToolStripMenuItem 退出程序ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 快捷操作提示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 双击此图标可最小化最大化显示主窗口ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonFiles;
-        private System.Windows.Forms.ToolStripMenuItem 打开我的数据文件夹ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开PC游戏快捷方式文件夹ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开模拟器软件快捷方式文件夹ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private CCWin.SkinControl.SkinContextMenuStrip skinContextMenuPCStrip;
@@ -1881,6 +1891,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem 删除已备份的存档ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonTop;
+        private System.Windows.Forms.ToolStripSplitButton toolStripDropDownButtonFiles;
+        private System.Windows.Forms.ToolStripMenuItem 打开我的数据文件夹ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 打开PC游戏快捷方式文件夹ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 打开模拟器软件快捷方式文件夹ToolStripMenuItem;
+        private CCWin.SkinControl.SkinButton skinButtonDVD300Start;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDVD300Games;
+        private CCWin.SkinControl.SkinGroupBox skinGroupBoxScreen;
+        private System.Windows.Forms.ComboBox comboBoxDisk;
+        private System.Windows.Forms.Label labelDisk;
+        private System.Windows.Forms.ToolStripMenuItem 关于此程序ToolStripMenuItem;
     }
 }
 
