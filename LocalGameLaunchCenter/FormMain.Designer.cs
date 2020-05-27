@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStripTip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelTip = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelResult = new System.Windows.Forms.ToolStripStatusLabel();
@@ -66,6 +66,8 @@
             this.skinTabControlSelect = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPagePC = new CCWin.SkinControl.SkinTabPage();
             this.groupBoxPCType = new CCWin.SkinControl.SkinGroupBox();
+            this.labelPCFileState = new System.Windows.Forms.Label();
+            this.labelPCFileStateTip = new System.Windows.Forms.Label();
             this.linkLabelPCSay = new System.Windows.Forms.LinkLabel();
             this.richTextBoxPCTip = new CCWin.SkinControl.SkinTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,7 +81,8 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skinTabPageEmu = new CCWin.SkinControl.SkinTabPage();
             this.skinGroupBoxEmuType = new CCWin.SkinControl.SkinGroupBox();
-            this.skinButtonDVD300Start = new CCWin.SkinControl.SkinButton();
+            this.labelEmuFileState = new System.Windows.Forms.Label();
+            this.labelEmuFileStateTip = new System.Windows.Forms.Label();
             this.linkLabelEmuSay = new System.Windows.Forms.LinkLabel();
             this.richTextBoxEmuTip = new CCWin.SkinControl.SkinTextBox();
             this.buttonEmuStart = new CCWin.SkinControl.SkinButton();
@@ -104,7 +107,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButtonFiles = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripDropDownButtonFiles = new System.Windows.Forms.ToolStripDropDownButton();
             this.打开我的数据文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开PC游戏快捷方式文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开模拟器软件快捷方式文件夹ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -307,15 +310,15 @@
             // 快捷方式lnkToolStripMenuItem
             // 
             this.快捷方式lnkToolStripMenuItem.Name = "快捷方式lnkToolStripMenuItem";
-            this.快捷方式lnkToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.快捷方式lnkToolStripMenuItem.Text = "[推荐]快捷方式(.lnk)";
+            this.快捷方式lnkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.快捷方式lnkToolStripMenuItem.Text = "快捷方式(.lnk)";
             this.快捷方式lnkToolStripMenuItem.Click += new System.EventHandler(this.快捷方式lnkToolStripMenuItem_Click);
             // 
             // 启动执行程序exeToolStripMenuItem
             // 
             this.启动执行程序exeToolStripMenuItem.Name = "启动执行程序exeToolStripMenuItem";
-            this.启动执行程序exeToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.启动执行程序exeToolStripMenuItem.Text = "[不推荐]启动执行程序(.exe)";
+            this.启动执行程序exeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.启动执行程序exeToolStripMenuItem.Text = "启动执行程序(.exe)";
             this.启动执行程序exeToolStripMenuItem.Click += new System.EventHandler(this.启动执行程序exeToolStripMenuItem_Click);
             // 
             // 运行此游戏的修改器程序ToolStripMenuItem
@@ -496,6 +499,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPCType.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxPCType.BorderColor = System.Drawing.Color.Maroon;
+            this.groupBoxPCType.Controls.Add(this.labelPCFileState);
+            this.groupBoxPCType.Controls.Add(this.labelPCFileStateTip);
             this.groupBoxPCType.Controls.Add(this.skinButtonPCMenu);
             this.groupBoxPCType.Controls.Add(this.linkLabelPCSay);
             this.groupBoxPCType.Controls.Add(this.richTextBoxPCTip);
@@ -516,6 +521,27 @@
             this.groupBoxPCType.TitleRadius = 5;
             this.groupBoxPCType.TitleRectBackColor = System.Drawing.Color.White;
             this.groupBoxPCType.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
+            // 
+            // labelPCFileState
+            // 
+            this.labelPCFileState.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPCFileState.ForeColor = System.Drawing.Color.Green;
+            this.labelPCFileState.Location = new System.Drawing.Point(237, 177);
+            this.labelPCFileState.Name = "labelPCFileState";
+            this.labelPCFileState.Size = new System.Drawing.Size(279, 25);
+            this.labelPCFileState.TabIndex = 18;
+            this.labelPCFileState.Text = "请选择游戏数据";
+            this.labelPCFileState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelPCFileStateTip
+            // 
+            this.labelPCFileStateTip.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPCFileStateTip.Location = new System.Drawing.Point(140, 177);
+            this.labelPCFileStateTip.Name = "labelPCFileStateTip";
+            this.labelPCFileStateTip.Size = new System.Drawing.Size(101, 25);
+            this.labelPCFileStateTip.TabIndex = 17;
+            this.labelPCFileStateTip.Text = "游戏文件状态 :";
+            this.labelPCFileStateTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabelPCSay
             // 
@@ -620,21 +646,21 @@
             // dataGridViewPC
             // 
             this.dataGridViewPC.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.dataGridViewPC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.dataGridViewPC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewPC.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewPC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewPC.ColumnFont = null;
             this.dataGridViewPC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewPC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -644,14 +670,14 @@
             this.dataGridViewTextBoxColumn10});
             this.dataGridViewPC.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewPC.ContextMenuStrip = this.skinContextMenuPCStrip;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewPC.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewPC.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewPC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewPC.EnableHeadersVisualStyles = false;
             this.dataGridViewPC.GridColor = System.Drawing.Color.Black;
@@ -665,11 +691,11 @@
             this.dataGridViewPC.ReadOnly = true;
             this.dataGridViewPC.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewPC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewPC.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewPC.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewPC.RowTemplate.Height = 23;
             this.dataGridViewPC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPC.Size = new System.Drawing.Size(1166, 216);
@@ -740,7 +766,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxEmuType.BackColor = System.Drawing.Color.Transparent;
             this.skinGroupBoxEmuType.BorderColor = System.Drawing.Color.Maroon;
-            this.skinGroupBoxEmuType.Controls.Add(this.skinButtonDVD300Start);
+            this.skinGroupBoxEmuType.Controls.Add(this.labelEmuFileState);
+            this.skinGroupBoxEmuType.Controls.Add(this.labelEmuFileStateTip);
             this.skinGroupBoxEmuType.Controls.Add(this.skinButtonEmuMenu);
             this.skinGroupBoxEmuType.Controls.Add(this.linkLabelEmuSay);
             this.skinGroupBoxEmuType.Controls.Add(this.richTextBoxEmuTip);
@@ -748,7 +775,7 @@
             this.skinGroupBoxEmuType.Controls.Add(this.label1);
             this.skinGroupBoxEmuType.Controls.Add(this.pictureBoxEmu);
             this.skinGroupBoxEmuType.ForeColor = System.Drawing.Color.Black;
-            this.skinGroupBoxEmuType.Location = new System.Drawing.Point(3, 350);
+            this.skinGroupBoxEmuType.Location = new System.Drawing.Point(3, 304);
             this.skinGroupBoxEmuType.Name = "skinGroupBoxEmuType";
             this.skinGroupBoxEmuType.Radius = 5;
             this.skinGroupBoxEmuType.RectBackColor = System.Drawing.Color.White;
@@ -762,26 +789,26 @@
             this.skinGroupBoxEmuType.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBoxEmuType.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
             // 
-            // skinButtonDVD300Start
+            // labelEmuFileState
             // 
-            this.skinButtonDVD300Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.skinButtonDVD300Start.BackColor = System.Drawing.Color.Transparent;
-            this.skinButtonDVD300Start.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.skinButtonDVD300Start.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.skinButtonDVD300Start.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButtonDVD300Start.DownBack = null;
-            this.skinButtonDVD300Start.DownBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.skinButtonDVD300Start.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinButtonDVD300Start.Image = ((System.Drawing.Image)(resources.GetObject("skinButtonDVD300Start.Image")));
-            this.skinButtonDVD300Start.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.skinButtonDVD300Start.Location = new System.Drawing.Point(711, 122);
-            this.skinButtonDVD300Start.MouseBack = null;
-            this.skinButtonDVD300Start.Name = "skinButtonDVD300Start";
-            this.skinButtonDVD300Start.NormlBack = null;
-            this.skinButtonDVD300Start.Size = new System.Drawing.Size(287, 25);
-            this.skinButtonDVD300Start.TabIndex = 18;
-            this.skinButtonDVD300Start.Text = "运行 DVD中文游戏300";
-            this.skinButtonDVD300Start.UseVisualStyleBackColor = false;
+            this.labelEmuFileState.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelEmuFileState.ForeColor = System.Drawing.Color.Green;
+            this.labelEmuFileState.Location = new System.Drawing.Point(243, 120);
+            this.labelEmuFileState.Name = "labelEmuFileState";
+            this.labelEmuFileState.Size = new System.Drawing.Size(213, 25);
+            this.labelEmuFileState.TabIndex = 20;
+            this.labelEmuFileState.Text = "请选择模拟器数据";
+            this.labelEmuFileState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelEmuFileStateTip
+            // 
+            this.labelEmuFileStateTip.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelEmuFileStateTip.Location = new System.Drawing.Point(130, 120);
+            this.labelEmuFileStateTip.Name = "labelEmuFileStateTip";
+            this.labelEmuFileStateTip.Size = new System.Drawing.Size(114, 25);
+            this.labelEmuFileStateTip.TabIndex = 19;
+            this.labelEmuFileStateTip.Text = "模拟器文件状态 :";
+            this.labelEmuFileStateTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabelEmuSay
             // 
@@ -906,21 +933,21 @@
             // skinDataGridViewEmu
             // 
             this.skinDataGridViewEmu.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.skinDataGridViewEmu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.skinDataGridViewEmu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.skinDataGridViewEmu.BackgroundColor = System.Drawing.SystemColors.Window;
             this.skinDataGridViewEmu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.skinDataGridViewEmu.ColumnFont = null;
             this.skinDataGridViewEmu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.skinDataGridViewEmu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.skinDataGridViewEmu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.skinDataGridViewEmu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.skinDataGridViewEmu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -930,14 +957,14 @@
             this.Column10});
             this.skinDataGridViewEmu.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridViewEmu.ContextMenuStrip = this.skinContextMenuEmuStrip;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.skinDataGridViewEmu.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.skinDataGridViewEmu.DefaultCellStyle = dataGridViewCellStyle3;
             this.skinDataGridViewEmu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinDataGridViewEmu.EnableHeadersVisualStyles = false;
             this.skinDataGridViewEmu.GridColor = System.Drawing.Color.Black;
@@ -951,11 +978,11 @@
             this.skinDataGridViewEmu.ReadOnly = true;
             this.skinDataGridViewEmu.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.skinDataGridViewEmu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.skinDataGridViewEmu.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.skinDataGridViewEmu.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.skinDataGridViewEmu.RowTemplate.Height = 23;
             this.skinDataGridViewEmu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.skinDataGridViewEmu.Size = new System.Drawing.Size(1166, 271);
@@ -1188,7 +1215,7 @@
             this.toolStripDropDownButtonFiles.Image = global::LocalGameLaunchCenter.ResourceApp.文件夹2;
             this.toolStripDropDownButtonFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonFiles.Name = "toolStripDropDownButtonFiles";
-            this.toolStripDropDownButtonFiles.Size = new System.Drawing.Size(124, 22);
+            this.toolStripDropDownButtonFiles.Size = new System.Drawing.Size(121, 22);
             this.toolStripDropDownButtonFiles.Text = "打开相关文件夹";
             // 
             // 打开我的数据文件夹ToolStripMenuItem
@@ -1484,7 +1511,7 @@
             // 
             this.使用说明ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.帮助;
             this.使用说明ToolStripMenuItem.Name = "使用说明ToolStripMenuItem";
-            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.使用说明ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.使用说明ToolStripMenuItem.Text = "使用说明";
             this.使用说明ToolStripMenuItem.Click += new System.EventHandler(this.使用说明ToolStripMenuItem_Click);
             // 
@@ -1523,8 +1550,8 @@
             this.toolStripMenuItemDVD300Games.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripMenuItemDVD300Games.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemDVD300Games.Image")));
             this.toolStripMenuItemDVD300Games.Name = "toolStripMenuItemDVD300Games";
-            this.toolStripMenuItemDVD300Games.Size = new System.Drawing.Size(238, 21);
-            this.toolStripMenuItemDVD300Games.Text = "运行附赠程序 DVD中文游戏300 PC版";
+            this.toolStripMenuItemDVD300Games.Size = new System.Drawing.Size(262, 21);
+            this.toolStripMenuItemDVD300Games.Text = "运行附赠程序 DVD中文游戏300 PC怀旧版";
             this.toolStripMenuItemDVD300Games.Click += new System.EventHandler(this.ToolStripMenuItemDVD300Games_Click);
             // 
             // richTextBoxLog
@@ -1616,7 +1643,7 @@
             // 
             // labelThisTime
             // 
-            this.labelThisTime.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelThisTime.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelThisTime.Location = new System.Drawing.Point(7, 17);
             this.labelThisTime.Name = "labelThisTime";
             this.labelThisTime.Size = new System.Drawing.Size(399, 40);
@@ -1727,8 +1754,7 @@
             this.CaptionBackColorTop = System.Drawing.Color.Snow;
             this.CaptionHeight = 25;
             this.ClientSize = new System.Drawing.Size(1200, 790);
-            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ControlBoxActive = System.Drawing.Color.Black;
             this.Controls.Add(this.skinGroupBoxScreen);
             this.Controls.Add(this.skinGroupBoxThisTime);
             this.Controls.Add(this.skinGroupBoxAdvice);
@@ -1891,16 +1917,19 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem 删除已备份的存档ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonTop;
-        private System.Windows.Forms.ToolStripSplitButton toolStripDropDownButtonFiles;
-        private System.Windows.Forms.ToolStripMenuItem 打开我的数据文件夹ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开PC游戏快捷方式文件夹ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开模拟器软件快捷方式文件夹ToolStripMenuItem;
-        private CCWin.SkinControl.SkinButton skinButtonDVD300Start;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDVD300Games;
         private CCWin.SkinControl.SkinGroupBox skinGroupBoxScreen;
         private System.Windows.Forms.ComboBox comboBoxDisk;
         private System.Windows.Forms.Label labelDisk;
         private System.Windows.Forms.ToolStripMenuItem 关于此程序ToolStripMenuItem;
+        private System.Windows.Forms.Label labelPCFileState;
+        private System.Windows.Forms.Label labelPCFileStateTip;
+        private System.Windows.Forms.Label labelEmuFileState;
+        private System.Windows.Forms.Label labelEmuFileStateTip;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonFiles;
+        private System.Windows.Forms.ToolStripMenuItem 打开我的数据文件夹ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 打开PC游戏快捷方式文件夹ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 打开模拟器软件快捷方式文件夹ToolStripMenuItem;
     }
 }
 

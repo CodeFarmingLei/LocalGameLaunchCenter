@@ -240,6 +240,8 @@ namespace LocalGameLaunchCenter
             {
                 comboBoxDisk.Items.Add((char)i + @":\");
             }
+            //设置磁盘分区选择默认选中第一个数据
+            comboBoxDisk.SelectedIndex = 0;
         }
 
         #endregion
@@ -383,39 +385,47 @@ namespace LocalGameLaunchCenter
             PCFilePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
             PCStartExeName = this.dataGridViewPC.SelectedRows[0].Cells[4].Value.ToString();
 
-            //部分游戏进行单独处理
-            if (PCModifierName.Equals("洛克人Zero_ZX遗产合集"))
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = PCFilePath + PCStartExeName;
+            psi.UseShellExecute = false;
+            psi.WorkingDirectory = PCFilePath;
+            psi.CreateNoWindow = true;
+
+            if (Directory.Exists(PCFilePath) && System.IO.File.Exists(PCFilePath + PCStartExeName))
             {
-                MessageBox.Show("由于游戏的独特验证方式(会直接验证启动程序下的游戏目录文件)，通过此程序直接启动会出现异常。\n请在打开的目录下启动 MZZXLC_Start.exe 程序来启动游戏。", "此游戏启动提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                Process.Start(PCFilePath);
                 this.WindowState = FormWindowState.Minimized;   //最小化
-            }
-            else if (PCModifierName.Equals("死或生5：最后一战"))
-            {
-                MessageBox.Show("由于游戏的独特验证方式(会直接验证启动程序下的游戏目录文件)，通过此程序直接启动会出现异常。\n请在打开的目录下启动 Launcher.exe 程序来启动游戏。", "此游戏启动提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                Process.Start(PCFilePath);
+                Process.Start(psi);
                 //填充日志信息
                 thisLog = richTextBoxLog.Text;
                 richTextBoxLog.Text = "";
                 richTextBoxLog.Text += DateTime.Now + " ---- 程序已运行，进程名：" + PCStartExeName + "\n" + thisLog;
-                this.WindowState = FormWindowState.Minimized;   //最小化
             }
-            else    //常规启动
+            else
             {
-                if (Directory.Exists(PCFilePath) && System.IO.File.Exists(PCFilePath + PCStartExeName))
-                {
-                    this.WindowState = FormWindowState.Minimized;   //最小化
-                    Process.Start(PCFilePath + PCStartExeName);
-                    //填充日志信息
-                    thisLog = richTextBoxLog.Text;
-                    richTextBoxLog.Text = "";
-                    richTextBoxLog.Text += DateTime.Now + " ---- 程序已运行，进程名：" + PCStartExeName + "\n" + thisLog;
-                }
-                else
-                {
-                    MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + PCFilePath + "" + PCStartExeName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + PCFilePath + "" + PCStartExeName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            //部分游戏进行单独处理
+            //if (PCModifierName.Equals("洛克人Zero_ZX遗产合集"))
+            //{
+            //    MessageBox.Show("由于游戏的独特验证方式(会直接验证启动程序下的游戏目录文件)，通过此程序直接启动会出现异常。\n请在打开的目录下启动 MZZXLC_Start.exe 程序来启动游戏。", "此游戏启动提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //    Process.Start(PCFilePath);
+            //    this.WindowState = FormWindowState.Minimized;   //最小化
+            //}
+            //else if (PCModifierName.Equals("死或生5：最后一战"))
+            //{
+            //    MessageBox.Show("由于游戏的独特验证方式(会直接验证启动程序下的游戏目录文件)，通过此程序直接启动会出现异常。\n请在打开的目录下启动 Launcher.exe 程序来启动游戏。", "此游戏启动提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //    Process.Start(PCFilePath);
+            //    //填充日志信息
+            //    thisLog = richTextBoxLog.Text;
+            //    richTextBoxLog.Text = "";
+            //    richTextBoxLog.Text += DateTime.Now + " ---- 程序已运行，进程名：" + PCStartExeName + "\n" + thisLog;
+            //    this.WindowState = FormWindowState.Minimized;   //最小化
+            //}
+            //else    //常规启动
+            //{
+
+            //}
         }
 
         /// <summary>
@@ -454,10 +464,18 @@ namespace LocalGameLaunchCenter
         {
             EmuFilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
             emuName = this.skinDataGridViewEmu.SelectedRows[0].Cells[3].Value.ToString();
+
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = EmuFilePath + emuName;
+            psi.UseShellExecute = false;
+            psi.WorkingDirectory = EmuFilePath;
+            psi.CreateNoWindow = true;
+
             if (Directory.Exists(EmuFilePath) && System.IO.File.Exists(EmuFilePath + emuName))
             {
                 this.WindowState = FormWindowState.Minimized;   //最小化
-                Process.Start(EmuFilePath + @"\" + emuName);
+                Process.Start(psi);
+                //Process.Start(EmuFilePath + @"\" + emuName);
                 //填充日志信息
                 thisLog = richTextBoxLog.Text;
                 richTextBoxLog.Text = "";
@@ -504,10 +522,25 @@ namespace LocalGameLaunchCenter
         public void SelectPCDataRows()
         {
             PCModifierName = this.dataGridViewPC.SelectedRows[0].Cells[0].Value.ToString();
+            PCFilePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
             //设置图像路径
             string picName = PCImg + PCModifierName + ".jpg";
             //设置提示文本路径
             string tipText = PCContent + PCModifierName + ".txt";
+
+            //验证游戏文件状态
+            if (System.IO.Directory.Exists(PCFilePath))
+            {
+                //设置状态信息
+                this.labelPCFileState.ForeColor = Color.Green;
+                this.labelPCFileState.Text = "文件已存在,可以正常游玩!!";
+            }
+            else
+            {
+                //设置状态信息
+                this.labelPCFileState.ForeColor = Color.Red;
+                this.labelPCFileState.Text = "文件未存在!!请检查游戏目录是否存在...";
+            }
 
             //验证所需文件是否存在
             if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
@@ -533,16 +566,32 @@ namespace LocalGameLaunchCenter
         public void SelectEmuDataRows()
         {
             platformName = this.skinDataGridViewEmu.SelectedRows[0].Cells[0].Value.ToString();
+            EmuFilePath = this.skinDataGridViewEmu.SelectedRows[0].Cells[2].Value.ToString();
             //设置图像路径
             string picName = EmuImg + platformName + ".jpg";
             //设置提示文本路径
             string tipText = EmuContent + platformName + ".txt";
+
+            //验证游戏文件状态
+            if (System.IO.Directory.Exists(EmuFilePath))
+            {
+                //设置状态信息
+                this.labelEmuFileState.ForeColor = Color.Green;
+                this.labelEmuFileState.Text = "文件已存在,可以正常游玩!!";
+            }
+            else
+            {
+                //设置状态信息
+                this.labelEmuFileState.ForeColor = Color.Red;
+                this.labelEmuFileState.Text = "文件未存在!!请检查游戏目录是否存在...";
+            }
 
             //验证所需文件是否存在
             if (System.IO.File.Exists(picName) && System.IO.File.Exists(tipText))
             {
                 //读取图片文件
                 this.pictureBoxEmu.Load(picName);
+
                 //创建读取器
                 StreamReader mySr = new StreamReader(tipText, Encoding.GetEncoding("UTF-8"));
                 content = mySr.ReadToEnd();  //读取整个文本文档
@@ -883,7 +932,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void DataGridViewPC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            PCGameStartlnk();
+            PCGameStartExe();
         }
 
         /// <summary>
@@ -903,7 +952,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void SkinDataGridViewEmu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EmuStartlnk();
+            EmuStart();
         }
 
         #endregion
@@ -915,7 +964,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            EmuStartlnk();
+            EmuStart();
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -991,7 +1040,7 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void ButtonPCStart_Click(object sender, EventArgs e)
         {
-            PCGameStartlnk();
+            PCGameStartExe();
         }
 
         private void SkinTabControlSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1690,5 +1739,6 @@ namespace LocalGameLaunchCenter
             FormHelp FormHelp = new FormHelp();
             FormHelp.Show();
         }
+
     }
 }

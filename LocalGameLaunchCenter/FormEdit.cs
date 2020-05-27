@@ -268,6 +268,11 @@ namespace LocalGameLaunchCenter
                     mySw.Close();   //关闭写入器
                     myFs.Close();   //关闭文件流
 
+                    //保存图片
+                    if (OpenFileStr != null && skinPictureBoxPCImg.Image != null)
+                    {
+                        File.Copy(OpenFileStr, ImgFilePath + textBoxGameName.Text + @".jpg", true);
+                    }
                 }
                 else if (TypeName == "Emu")
                 {
@@ -298,6 +303,12 @@ namespace LocalGameLaunchCenter
                     mySw.Write(skinTextBoxEmuTip.Text);  //将控件文本写入文件
                     mySw.Close();   //关闭写入器
                     myFs.Close();   //关闭文件流
+
+                    //保存图片
+                    if (OpenFileStr != null && skinPictureBoxPCImg.Image != null)
+                    {
+                        File.Copy(OpenFileStr, ImgFilePath + textBoxName.Text + @".jpg", true);
+                    }
                 }
                 MessageBox.Show("数据保存成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();   //关闭此窗口
@@ -325,7 +336,10 @@ namespace LocalGameLaunchCenter
                     myFs.Close();   //关闭文件流
 
                     //保存图片
-                    File.Copy(OpenFileStr, ImgFilePath + textBoxGameName.Text + @".jpg", true);
+                    if (OpenFileStr != null && skinPictureBoxPCImg.Image != null)
+                    {
+                        File.Copy(OpenFileStr, ImgFilePath + textBoxGameName.Text + @".jpg", true);
+                    }
                 }
                 else if (TypeName == "Emu")
                 {
@@ -348,7 +362,10 @@ namespace LocalGameLaunchCenter
                     myFs.Close();   //关闭文件流
 
                     //保存图片
-                    File.Copy(OpenFileStr, ImgFilePath + textBoxName.Text + @".jpg", true);
+                    if (OpenFileStr != null && skinPictureBoxPCImg.Image != null)
+                    {
+                        File.Copy(OpenFileStr, ImgFilePath + textBoxName.Text + @".jpg", true);
+                    }
                 }
                 MessageBox.Show("数据新增成功!! \n重新打开程序或者刷新数据即可查看更新的内容。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();   //关闭此窗口
