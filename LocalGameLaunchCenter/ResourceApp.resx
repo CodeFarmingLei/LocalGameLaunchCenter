@@ -121,6 +121,9 @@
   <data name="DeveloperImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\developerimg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DirectXLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DirectXLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Emu" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9941,6 +9944,9 @@
         D8Km6UUVkahRRRQAUUUUAFFFFABRRRQAUUUUAf/Z
 </value>
   </data>
+  <data name="微软Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\微软Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="快捷方式" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwg
@@ -12324,6 +12330,9 @@
         2J5tmOk0YabVuf473yI5dN/8G25V7n2Ew9UXMwuziavqU/Jo9s/g3AXikQ5Wfquoy+Intj9PyxWLFnC2
         otWLdFu3G9TREREMoLuZMzPmQAAAAAAAAAH/2Q==
 </value>
+  </data>
+  <data name="游侠Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\游侠Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="游戏手柄" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

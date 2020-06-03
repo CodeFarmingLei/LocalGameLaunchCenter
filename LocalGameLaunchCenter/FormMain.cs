@@ -483,7 +483,7 @@ namespace LocalGameLaunchCenter
             }
             else
             {
-                MessageBox.Show(@"本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + EmuFilePath + "" + emuName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + EmuFilePath + "" + emuName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1051,13 +1051,22 @@ namespace LocalGameLaunchCenter
         private void 微软常用运行库合集ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //调用IE浏览器  
-            System.Diagnostics.Process.Start("iexplore.exe", "http://www.pc6.com/softview/SoftView_104246.html");
+            //System.Diagnostics.Process.Start("iexplore.exe", "http://www.pc6.com/softview/SoftView_104246.html");
+
+            //使用默认浏览器打开网站
+            System.Diagnostics.Process.Start("http://www.pc6.com/softview/SoftView_104246.html");
         }
 
         private void DX修复工具ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //调用IE浏览器  
-            System.Diagnostics.Process.Start("iexplore.exe", "https://www.onlinedown.net/soft/120082.htm");
+            //使用默认浏览器打开网站
+            System.Diagnostics.Process.Start("https://www.onlinedown.net/soft/120082.htm");
+        }
+
+        private void 游戏常用运行库游侠网ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //使用默认浏览器打开网站
+            System.Diagnostics.Process.Start("https://www.ali213.net/zhuanti/yxk/");
         }
 
         /// <summary>
@@ -1740,5 +1749,37 @@ namespace LocalGameLaunchCenter
             FormHelp.Show();
         }
 
+        /// <summary>
+        /// 运行模拟器金手指工具
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SkinButtonGoldenFinger_Click(object sender, EventArgs e)
+        {
+            string exeName = "EmuCheat模拟器金手指工具";
+            string path = @"EmuCheat2010\";
+            string startExeName = "EmuCheat2010.exe";
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = path + startExeName;
+            psi.UseShellExecute = false;
+            psi.WorkingDirectory = path;
+            psi.CreateNoWindow = true;
+
+            if (Directory.Exists(path) && System.IO.File.Exists(path + startExeName))
+            {
+                this.WindowState = FormWindowState.Minimized;   //最小化
+                Process.Start(psi);
+                //填充日志信息
+                thisLog = richTextBoxLog.Text;
+                richTextBoxLog.Text = "";
+                richTextBoxLog.Text += DateTime.Now + " ---- 程序已运行，进程名：" + exeName + "\n" + thisLog;
+            }
+            else
+            {
+                MessageBox.Show("本次打开异常，可能原因如下：\n1.要打开的路径或者文件不存在\n2.可能您修改了文件或文件夹的名称\n\n路径信息：" + path + startExeName + "", "打开异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        
     }
 }

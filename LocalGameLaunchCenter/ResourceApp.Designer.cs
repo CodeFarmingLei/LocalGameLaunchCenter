@@ -73,6 +73,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap DirectXLogo {
+            get {
+                object obj = ResourceManager.GetObject("DirectXLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap Emu {
             get {
                 object obj = ResourceManager.GetObject("Emu", resourceCulture);
@@ -243,6 +253,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 微软Logo {
+            get {
+                object obj = ResourceManager.GetObject("微软Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 快捷方式 {
             get {
                 object obj = ResourceManager.GetObject("快捷方式", resourceCulture);
@@ -316,6 +336,16 @@ namespace LocalGameLaunchCenter {
         public static System.Drawing.Bitmap 清空 {
             get {
                 object obj = ResourceManager.GetObject("清空", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 游侠Logo {
+            get {
+                object obj = ResourceManager.GetObject("游侠Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

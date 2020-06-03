@@ -169,6 +169,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="CreateFolder.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -190,6 +191,7 @@
     <Content Include="PCPath.xml" />
     <None Include="Resources\GamePad2.ico" />
     <None Include="Resources\Emu默认图像.jpg" />
+    <None Include="Resources\DirectXLogo.png" />
     <Content Include="Resources\Main.jpg" />
     <None Include="Resources\日志.jpg" />
     <None Include="Resources\清空.jpg" />
@@ -216,6 +218,8 @@
     <None Include="Resources\取消置顶.png" />
     <None Include="Resources\置顶.png" />
     <None Include="Resources\DeveloperImg.png" />
+    <None Include="Resources\微软Logo.jpg" />
+    <None Include="Resources\游侠Logo.jpg" />
     <Content Include="UserConfig.xml" />
     <None Include="Resources\Windows应用程序.jpg" />
     <None Include="Resources\家用机.jpg" />
