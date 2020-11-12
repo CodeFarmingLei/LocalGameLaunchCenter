@@ -62,6 +62,8 @@
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.查看此游戏的占用空间ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skinButtonEmuMenu = new CCWin.SkinControl.SkinButton();
             this.skinTabControlSelect = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPagePC = new CCWin.SkinControl.SkinTabPage();
@@ -129,6 +131,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonRunSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBoxSearch = new System.Windows.Forms.ToolStripTextBox();
             this.skinMenuStrip1 = new CCWin.SkinControl.SkinMenuStrip();
             this.程序功能TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.将本程序添加到桌面快捷方式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,7 +145,7 @@
             this.帮助中心HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于程序AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.获取最新版本程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.检查更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.关于此程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDVD300Games = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,7 +165,6 @@
             this.skinGroupBoxScreen = new CCWin.SkinControl.SkinGroupBox();
             this.comboBoxDisk = new System.Windows.Forms.ComboBox();
             this.labelDisk = new System.Windows.Forms.Label();
-            this.toolStripTextBoxSearch = new System.Windows.Forms.ToolStripTextBox();
             this.statusStripTip.SuspendLayout();
             this.skinContextMenuPCStrip.SuspendLayout();
             this.skinTabControlSelect.SuspendLayout();
@@ -217,14 +219,14 @@
             this.toolStripStatusLabelRunCount.Name = "toolStripStatusLabelRunCount";
             this.toolStripStatusLabelRunCount.Size = new System.Drawing.Size(962, 17);
             this.toolStripStatusLabelRunCount.Spring = true;
-            this.toolStripStatusLabelRunCount.Text = "程序总启动次数:";
+            this.toolStripStatusLabelRunCount.Text = "程序总启动次数: ";
             this.toolStripStatusLabelRunCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonPCStart
             // 
             this.buttonPCStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPCStart.BackColor = System.Drawing.Color.Transparent;
-            this.buttonPCStart.BaseColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonPCStart.BaseColor = System.Drawing.Color.DodgerBlue;
             this.buttonPCStart.BorderColor = System.Drawing.Color.DodgerBlue;
             this.buttonPCStart.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonPCStart.DownBack = null;
@@ -245,7 +247,7 @@
             // 
             this.skinButtonPCMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinButtonPCMenu.BackColor = System.Drawing.Color.Transparent;
-            this.skinButtonPCMenu.BaseColor = System.Drawing.Color.DeepSkyBlue;
+            this.skinButtonPCMenu.BaseColor = System.Drawing.Color.DodgerBlue;
             this.skinButtonPCMenu.BorderColor = System.Drawing.Color.DodgerBlue;
             this.skinButtonPCMenu.ContextMenuStrip = this.skinContextMenuPCStrip;
             this.skinButtonPCMenu.ControlState = CCWin.SkinClass.ControlState.Normal;
@@ -269,14 +271,14 @@
             this.skinContextMenuPCStrip.Back = System.Drawing.Color.White;
             this.skinContextMenuPCStrip.BackRadius = 4;
             this.skinContextMenuPCStrip.Base = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(200)))), ((int)(((byte)(254)))));
-            this.skinContextMenuPCStrip.DropDownImageSeparator = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.skinContextMenuPCStrip.DropDownImageSeparator = System.Drawing.Color.DodgerBlue;
             this.skinContextMenuPCStrip.Fore = System.Drawing.Color.Black;
             this.skinContextMenuPCStrip.HoverFore = System.Drawing.Color.White;
             this.skinContextMenuPCStrip.ItemAnamorphosis = true;
-            this.skinContextMenuPCStrip.ItemBorder = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.skinContextMenuPCStrip.ItemBorder = System.Drawing.Color.SteelBlue;
             this.skinContextMenuPCStrip.ItemBorderShow = true;
-            this.skinContextMenuPCStrip.ItemHover = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
-            this.skinContextMenuPCStrip.ItemPressed = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.skinContextMenuPCStrip.ItemHover = System.Drawing.Color.DodgerBlue;
+            this.skinContextMenuPCStrip.ItemPressed = System.Drawing.Color.SteelBlue;
             this.skinContextMenuPCStrip.ItemRadius = 4;
             this.skinContextMenuPCStrip.ItemRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuPCStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -287,14 +289,16 @@
             this.添加快捷方式到桌面1ToolStripMenuItem,
             this.toolStripMenuItem6,
             this.编辑ToolStripMenuItem,
-            this.删除ToolStripMenuItem});
-            this.skinContextMenuPCStrip.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.删除ToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.查看此游戏的占用空间ToolStripMenuItem});
+            this.skinContextMenuPCStrip.ItemSplitter = System.Drawing.Color.DodgerBlue;
             this.skinContextMenuPCStrip.Name = "skinContextMenuStripEdit";
             this.skinContextMenuPCStrip.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinContextMenuPCStrip.Size = new System.Drawing.Size(185, 164);
+            this.skinContextMenuPCStrip.Size = new System.Drawing.Size(197, 192);
             this.skinContextMenuPCStrip.SkinAllColor = true;
             this.skinContextMenuPCStrip.TitleAnamorphosis = true;
-            this.skinContextMenuPCStrip.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
+            this.skinContextMenuPCStrip.TitleColor = System.Drawing.Color.DodgerBlue;
             this.skinContextMenuPCStrip.TitleRadius = 4;
             this.skinContextMenuPCStrip.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuPCStrip.Opening += new System.ComponentModel.CancelEventHandler(this.SkinContextMenuStripEdit_Opening);
@@ -306,7 +310,7 @@
             this.启动执行程序exeToolStripMenuItem});
             this.运行此游戏ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.Windows应用程序;
             this.运行此游戏ToolStripMenuItem.Name = "运行此游戏ToolStripMenuItem";
-            this.运行此游戏ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.运行此游戏ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.运行此游戏ToolStripMenuItem.Text = "运行此游戏";
             // 
             // 快捷方式lnkToolStripMenuItem
@@ -327,7 +331,7 @@
             // 
             this.运行此游戏的修改器程序ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.修改器;
             this.运行此游戏的修改器程序ToolStripMenuItem.Name = "运行此游戏的修改器程序ToolStripMenuItem";
-            this.运行此游戏的修改器程序ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.运行此游戏的修改器程序ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.运行此游戏的修改器程序ToolStripMenuItem.Text = "运行修改器程序";
             this.运行此游戏的修改器程序ToolStripMenuItem.Click += new System.EventHandler(this.运行此游戏的修改器程序ToolStripMenuItem_Click);
             // 
@@ -340,7 +344,7 @@
             this.删除已备份的存档ToolStripMenuItem});
             this.游戏存档管理ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.存档;
             this.游戏存档管理ToolStripMenuItem.Name = "游戏存档管理ToolStripMenuItem";
-            this.游戏存档管理ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.游戏存档管理ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.游戏存档管理ToolStripMenuItem.Text = "游戏存档管理";
             // 
             // 备份存档ToolStripMenuItem
@@ -379,7 +383,7 @@
             this.游戏存档路径ToolStripMenuItem});
             this.打开此游戏存档路径ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.文件夹2;
             this.打开此游戏存档路径ToolStripMenuItem.Name = "打开此游戏存档路径ToolStripMenuItem";
-            this.打开此游戏存档路径ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.打开此游戏存档路径ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.打开此游戏存档路径ToolStripMenuItem.Text = "打开此游戏相关路径";
             // 
             // 游戏所在位置ToolStripMenuItem
@@ -400,20 +404,20 @@
             // 
             this.添加快捷方式到桌面1ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.快捷方式;
             this.添加快捷方式到桌面1ToolStripMenuItem.Name = "添加快捷方式到桌面1ToolStripMenuItem";
-            this.添加快捷方式到桌面1ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.添加快捷方式到桌面1ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.添加快捷方式到桌面1ToolStripMenuItem.Text = "添加快捷方式到桌面";
             this.添加快捷方式到桌面1ToolStripMenuItem.Click += new System.EventHandler(this.添加快捷方式到桌面ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(181, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(193, 6);
             // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.编辑;
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
-            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.编辑ToolStripMenuItem.Text = "编辑此数据";
             this.编辑ToolStripMenuItem.Click += new System.EventHandler(this.编辑ToolStripMenuItem_Click);
             // 
@@ -421,16 +425,29 @@
             // 
             this.删除ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.删除;
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.删除ToolStripMenuItem.Text = "删除此数据";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(193, 6);
+            // 
+            // 查看此游戏的占用空间ToolStripMenuItem
+            // 
+            this.查看此游戏的占用空间ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.存储空间;
+            this.查看此游戏的占用空间ToolStripMenuItem.Name = "查看此游戏的占用空间ToolStripMenuItem";
+            this.查看此游戏的占用空间ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.查看此游戏的占用空间ToolStripMenuItem.Text = "查看此游戏的占用空间";
+            this.查看此游戏的占用空间ToolStripMenuItem.Click += new System.EventHandler(this.查看此游戏的占用空间ToolStripMenuItem_Click);
             // 
             // skinButtonEmuMenu
             // 
             this.skinButtonEmuMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinButtonEmuMenu.BackColor = System.Drawing.Color.Transparent;
-            this.skinButtonEmuMenu.BaseColor = System.Drawing.Color.DeepSkyBlue;
-            this.skinButtonEmuMenu.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.skinButtonEmuMenu.BaseColor = System.Drawing.Color.Goldenrod;
+            this.skinButtonEmuMenu.BorderColor = System.Drawing.Color.Orange;
             this.skinButtonEmuMenu.ContextMenuStrip = this.skinContextMenuPCStrip;
             this.skinButtonEmuMenu.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButtonEmuMenu.DownBack = null;
@@ -500,7 +517,7 @@
             this.groupBoxPCType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPCType.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxPCType.BorderColor = System.Drawing.Color.Maroon;
+            this.groupBoxPCType.BorderColor = System.Drawing.Color.DodgerBlue;
             this.groupBoxPCType.Controls.Add(this.labelPCFileState);
             this.groupBoxPCType.Controls.Add(this.labelPCFileStateTip);
             this.groupBoxPCType.Controls.Add(this.skinButtonPCMenu);
@@ -583,7 +600,7 @@
             this.richTextBoxPCTip.Name = "richTextBoxPCTip";
             this.richTextBoxPCTip.NormlBack = null;
             this.richTextBoxPCTip.Padding = new System.Windows.Forms.Padding(5);
-            this.richTextBoxPCTip.ReadOnly = false;
+            this.richTextBoxPCTip.ReadOnly = true;
             this.richTextBoxPCTip.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.richTextBoxPCTip.Size = new System.Drawing.Size(1026, 139);
             // 
@@ -595,6 +612,7 @@
             this.richTextBoxPCTip.SkinTxt.Location = new System.Drawing.Point(5, 5);
             this.richTextBoxPCTip.SkinTxt.Multiline = true;
             this.richTextBoxPCTip.SkinTxt.Name = "BaseText";
+            this.richTextBoxPCTip.SkinTxt.ReadOnly = true;
             this.richTextBoxPCTip.SkinTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.richTextBoxPCTip.SkinTxt.Size = new System.Drawing.Size(1016, 129);
             this.richTextBoxPCTip.SkinTxt.TabIndex = 0;
@@ -624,6 +642,7 @@
             this.pictureBoxPC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPC.TabIndex = 9;
             this.pictureBoxPC.TabStop = false;
+            this.pictureBoxPC.Click += new System.EventHandler(this.PictureBoxPC_Click);
             // 
             // groupBoxPC
             // 
@@ -631,7 +650,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxPC.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxPC.BorderColor = System.Drawing.Color.Maroon;
+            this.groupBoxPC.BorderColor = System.Drawing.Color.DodgerBlue;
             this.groupBoxPC.Controls.Add(this.dataGridViewPC);
             this.groupBoxPC.ForeColor = System.Drawing.Color.Black;
             this.groupBoxPC.Location = new System.Drawing.Point(3, 7);
@@ -659,7 +678,7 @@
             this.dataGridViewPC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -673,11 +692,12 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
+            this.dataGridViewPC.ColumnSelectBackColor = System.Drawing.Color.DodgerBlue;
             this.dataGridViewPC.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewPC.ContextMenuStrip = this.skinContextMenuPCStrip;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -685,8 +705,8 @@
             this.dataGridViewPC.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewPC.EnableHeadersVisualStyles = false;
-            this.dataGridViewPC.GridColor = System.Drawing.Color.Black;
-            this.dataGridViewPC.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dataGridViewPC.GridColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewPC.HeadFont = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridViewPC.HeadSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridViewPC.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewPC.LineNumberForeColor = System.Drawing.Color.Black;
@@ -698,17 +718,17 @@
             this.dataGridViewPC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewPC.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPC.RowTemplate.Height = 23;
             this.dataGridViewPC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPC.Size = new System.Drawing.Size(1166, 216);
-            this.dataGridViewPC.SkinGridColor = System.Drawing.Color.Black;
+            this.dataGridViewPC.SkinGridColor = System.Drawing.Color.DodgerBlue;
             this.dataGridViewPC.TabIndex = 4;
             this.dataGridViewPC.TitleBack = null;
             this.dataGridViewPC.TitleBackColorBegin = System.Drawing.Color.White;
-            this.dataGridViewPC.TitleBackColorEnd = System.Drawing.Color.DarkGray;
+            this.dataGridViewPC.TitleBackColorEnd = System.Drawing.Color.LightSteelBlue;
             this.toolTipMain.SetToolTip(this.dataGridViewPC, "操作提示：\r\n鼠标单击数据行：查看相关程序的详细信息。\r\n鼠标双击数据行：运行选中的程序。");
             this.dataGridViewPC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPC_CellClick);
             this.dataGridViewPC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPC_CellDoubleClick);
@@ -770,7 +790,7 @@
             this.skinGroupBoxEmuType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxEmuType.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxEmuType.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxEmuType.BorderColor = System.Drawing.Color.Goldenrod;
             this.skinGroupBoxEmuType.Controls.Add(this.skinButtonGoldenFinger);
             this.skinGroupBoxEmuType.Controls.Add(this.labelEmuFileState);
             this.skinGroupBoxEmuType.Controls.Add(this.labelEmuFileStateTip);
@@ -800,7 +820,7 @@
             this.skinButtonGoldenFinger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinButtonGoldenFinger.BackColor = System.Drawing.Color.Transparent;
             this.skinButtonGoldenFinger.BaseColor = System.Drawing.Color.Goldenrod;
-            this.skinButtonGoldenFinger.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.skinButtonGoldenFinger.BorderColor = System.Drawing.Color.Orange;
             this.skinButtonGoldenFinger.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButtonGoldenFinger.DownBack = null;
             this.skinButtonGoldenFinger.DownBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -871,7 +891,7 @@
             this.richTextBoxEmuTip.Name = "richTextBoxEmuTip";
             this.richTextBoxEmuTip.NormlBack = null;
             this.richTextBoxEmuTip.Padding = new System.Windows.Forms.Padding(5);
-            this.richTextBoxEmuTip.ReadOnly = false;
+            this.richTextBoxEmuTip.ReadOnly = true;
             this.richTextBoxEmuTip.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.richTextBoxEmuTip.Size = new System.Drawing.Size(1036, 82);
             // 
@@ -883,6 +903,7 @@
             this.richTextBoxEmuTip.SkinTxt.Location = new System.Drawing.Point(5, 5);
             this.richTextBoxEmuTip.SkinTxt.Multiline = true;
             this.richTextBoxEmuTip.SkinTxt.Name = "BaseText";
+            this.richTextBoxEmuTip.SkinTxt.ReadOnly = true;
             this.richTextBoxEmuTip.SkinTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.richTextBoxEmuTip.SkinTxt.Size = new System.Drawing.Size(1026, 72);
             this.richTextBoxEmuTip.SkinTxt.TabIndex = 0;
@@ -898,8 +919,8 @@
             // 
             this.buttonEmuStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEmuStart.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEmuStart.BaseColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonEmuStart.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonEmuStart.BaseColor = System.Drawing.Color.Goldenrod;
+            this.buttonEmuStart.BorderColor = System.Drawing.Color.Orange;
             this.buttonEmuStart.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonEmuStart.DownBack = null;
             this.buttonEmuStart.DownBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -932,6 +953,7 @@
             this.pictureBoxEmu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEmu.TabIndex = 6;
             this.pictureBoxEmu.TabStop = false;
+            this.pictureBoxEmu.Click += new System.EventHandler(this.PictureBoxEmu_Click);
             // 
             // skinGroupBoxEmu
             // 
@@ -939,7 +961,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxEmu.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxEmu.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxEmu.BorderColor = System.Drawing.Color.Goldenrod;
             this.skinGroupBoxEmu.Controls.Add(this.skinDataGridViewEmu);
             this.skinGroupBoxEmu.ForeColor = System.Drawing.Color.Black;
             this.skinGroupBoxEmu.Location = new System.Drawing.Point(3, 7);
@@ -967,7 +989,7 @@
             this.skinDataGridViewEmu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -981,11 +1003,12 @@
             this.Column8,
             this.Column9,
             this.Column10});
+            this.skinDataGridViewEmu.ColumnSelectBackColor = System.Drawing.Color.Goldenrod;
             this.skinDataGridViewEmu.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridViewEmu.ContextMenuStrip = this.skinContextMenuEmuStrip;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
@@ -993,8 +1016,8 @@
             this.skinDataGridViewEmu.DefaultCellStyle = dataGridViewCellStyle7;
             this.skinDataGridViewEmu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinDataGridViewEmu.EnableHeadersVisualStyles = false;
-            this.skinDataGridViewEmu.GridColor = System.Drawing.Color.Black;
-            this.skinDataGridViewEmu.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinDataGridViewEmu.GridColor = System.Drawing.Color.Goldenrod;
+            this.skinDataGridViewEmu.HeadFont = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinDataGridViewEmu.HeadSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.skinDataGridViewEmu.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridViewEmu.LineNumberForeColor = System.Drawing.Color.Black;
@@ -1006,17 +1029,17 @@
             this.skinDataGridViewEmu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridViewEmu.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.skinDataGridViewEmu.RowTemplate.Height = 23;
             this.skinDataGridViewEmu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.skinDataGridViewEmu.Size = new System.Drawing.Size(1166, 271);
-            this.skinDataGridViewEmu.SkinGridColor = System.Drawing.Color.Black;
+            this.skinDataGridViewEmu.SkinGridColor = System.Drawing.Color.Goldenrod;
             this.skinDataGridViewEmu.TabIndex = 4;
             this.skinDataGridViewEmu.TitleBack = null;
             this.skinDataGridViewEmu.TitleBackColorBegin = System.Drawing.Color.White;
-            this.skinDataGridViewEmu.TitleBackColorEnd = System.Drawing.Color.Gray;
+            this.skinDataGridViewEmu.TitleBackColorEnd = System.Drawing.Color.Wheat;
             this.toolTipMain.SetToolTip(this.skinDataGridViewEmu, "操作提示：\r\n鼠标单击数据行：查看相关程序的详细信息。\r\n鼠标双击数据行：运行选中的程序。\r\n");
             this.skinDataGridViewEmu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SkinDataGridViewEmu_CellClick);
             this.skinDataGridViewEmu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SkinDataGridViewEmu_CellDoubleClick);
@@ -1071,10 +1094,10 @@
             this.skinContextMenuEmuStrip.Fore = System.Drawing.Color.Black;
             this.skinContextMenuEmuStrip.HoverFore = System.Drawing.Color.White;
             this.skinContextMenuEmuStrip.ItemAnamorphosis = true;
-            this.skinContextMenuEmuStrip.ItemBorder = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.skinContextMenuEmuStrip.ItemBorder = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.skinContextMenuEmuStrip.ItemBorderShow = true;
-            this.skinContextMenuEmuStrip.ItemHover = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
-            this.skinContextMenuEmuStrip.ItemPressed = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.skinContextMenuEmuStrip.ItemHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.skinContextMenuEmuStrip.ItemPressed = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.skinContextMenuEmuStrip.ItemRadius = 4;
             this.skinContextMenuEmuStrip.ItemRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuEmuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1082,13 +1105,13 @@
             this.toolStripSeparator10,
             this.toolStripMenuItem13,
             this.toolStripMenuItem14});
-            this.skinContextMenuEmuStrip.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.skinContextMenuEmuStrip.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.skinContextMenuEmuStrip.Name = "skinContextMenuStripEdit";
             this.skinContextMenuEmuStrip.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
             this.skinContextMenuEmuStrip.Size = new System.Drawing.Size(197, 76);
             this.skinContextMenuEmuStrip.SkinAllColor = true;
             this.skinContextMenuEmuStrip.TitleAnamorphosis = true;
-            this.skinContextMenuEmuStrip.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
+            this.skinContextMenuEmuStrip.TitleColor = System.Drawing.Color.Goldenrod;
             this.skinContextMenuEmuStrip.TitleRadius = 4;
             this.skinContextMenuEmuStrip.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.All;
             // 
@@ -1209,8 +1232,8 @@
             this.toolStripDropDownButtonUser.Image = global::LocalGameLaunchCenter.ResourceApp.用户;
             this.toolStripDropDownButtonUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButtonUser.Name = "toolStripDropDownButtonUser";
-            this.toolStripDropDownButtonUser.Size = new System.Drawing.Size(76, 22);
-            this.toolStripDropDownButtonUser.Text = "用户信息";
+            this.toolStripDropDownButtonUser.Size = new System.Drawing.Size(100, 22);
+            this.toolStripDropDownButtonUser.Text = "用户使用信息";
             this.toolStripDropDownButtonUser.Click += new System.EventHandler(this.ToolStripDropDownButtonUser_Click);
             // 
             // toolStripSeparator1
@@ -1407,6 +1430,16 @@
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripTextBoxSearch
+            // 
+            this.toolStripTextBoxSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBoxSearch.ForeColor = System.Drawing.Color.Gray;
+            this.toolStripTextBoxSearch.Name = "toolStripTextBoxSearch";
+            this.toolStripTextBoxSearch.Size = new System.Drawing.Size(180, 25);
+            this.toolStripTextBoxSearch.Text = "在此输入要查找的程序名称";
+            this.toolStripTextBoxSearch.Enter += new System.EventHandler(this.ToolStripTextBoxSearch_Enter);
+            this.toolStripTextBoxSearch.Leave += new System.EventHandler(this.ToolStripTextBoxSearch_Leave);
+            // 
             // skinMenuStrip1
             // 
             this.skinMenuStrip1.Arrow = System.Drawing.Color.Black;
@@ -1525,6 +1558,7 @@
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click_1);
             // 
             // 帮助中心HToolStripMenuItem
             // 
@@ -1545,30 +1579,31 @@
             // 关于程序AToolStripMenuItem
             // 
             this.关于程序AToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.获取最新版本程序ToolStripMenuItem,
+            this.检查更新ToolStripMenuItem,
             this.toolStripMenuItem4,
             this.关于此程序ToolStripMenuItem});
             this.关于程序AToolStripMenuItem.Name = "关于程序AToolStripMenuItem";
             this.关于程序AToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.关于程序AToolStripMenuItem.Text = "关于程序(&A)";
             // 
-            // 获取最新版本程序ToolStripMenuItem
+            // 检查更新ToolStripMenuItem
             // 
-            this.获取最新版本程序ToolStripMenuItem.Name = "获取最新版本程序ToolStripMenuItem";
-            this.获取最新版本程序ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.获取最新版本程序ToolStripMenuItem.Text = "获取最新版本程序";
-            this.获取最新版本程序ToolStripMenuItem.Click += new System.EventHandler(this.获取最新版本程序ToolStripMenuItem_Click);
+            this.检查更新ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.更新;
+            this.检查更新ToolStripMenuItem.Name = "检查更新ToolStripMenuItem";
+            this.检查更新ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.检查更新ToolStripMenuItem.Text = "检查更新";
+            this.检查更新ToolStripMenuItem.Click += new System.EventHandler(this.获取最新版本程序ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(169, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(133, 6);
             // 
             // 关于此程序ToolStripMenuItem
             // 
             this.关于此程序ToolStripMenuItem.Image = global::LocalGameLaunchCenter.ResourceApp.关于;
             this.关于此程序ToolStripMenuItem.Name = "关于此程序ToolStripMenuItem";
-            this.关于此程序ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.关于此程序ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.关于此程序ToolStripMenuItem.Text = "关于此程序";
             this.关于此程序ToolStripMenuItem.Click += new System.EventHandler(this.关于此程序ToolStripMenuItem_Click);
             // 
@@ -1577,8 +1612,8 @@
             this.toolStripMenuItemDVD300Games.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripMenuItemDVD300Games.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemDVD300Games.Image")));
             this.toolStripMenuItemDVD300Games.Name = "toolStripMenuItemDVD300Games";
-            this.toolStripMenuItemDVD300Games.Size = new System.Drawing.Size(262, 21);
-            this.toolStripMenuItemDVD300Games.Text = "运行附赠程序 DVD中文游戏300 PC怀旧版";
+            this.toolStripMenuItemDVD300Games.Size = new System.Drawing.Size(261, 21);
+            this.toolStripMenuItemDVD300Games.Text = "运行附赠程序 VCD中文游戏300 PC怀旧版";
             this.toolStripMenuItemDVD300Games.Click += new System.EventHandler(this.ToolStripMenuItemDVD300Games_Click);
             // 
             // richTextBoxLog
@@ -1598,7 +1633,7 @@
             this.skinGroupBoxLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxLog.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxLog.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxLog.BorderColor = System.Drawing.Color.Gray;
             this.skinGroupBoxLog.Controls.Add(this.richTextBoxLog);
             this.skinGroupBoxLog.ForeColor = System.Drawing.Color.Black;
             this.skinGroupBoxLog.Location = new System.Drawing.Point(12, 625);
@@ -1619,7 +1654,7 @@
             // 
             this.skinGroupBoxAdvice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxAdvice.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxAdvice.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxAdvice.BorderColor = System.Drawing.Color.Green;
             this.skinGroupBoxAdvice.Controls.Add(this.labelAdvice);
             this.skinGroupBoxAdvice.ForeColor = System.Drawing.Color.Black;
             this.skinGroupBoxAdvice.Location = new System.Drawing.Point(777, 691);
@@ -1651,7 +1686,7 @@
             // 
             this.skinGroupBoxThisTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxThisTime.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxThisTime.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxThisTime.BorderColor = System.Drawing.Color.Black;
             this.skinGroupBoxThisTime.Controls.Add(this.labelThisTime);
             this.skinGroupBoxThisTime.ForeColor = System.Drawing.Color.Black;
             this.skinGroupBoxThisTime.Location = new System.Drawing.Point(777, 625);
@@ -1732,7 +1767,7 @@
             this.skinGroupBoxScreen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.skinGroupBoxScreen.BackColor = System.Drawing.Color.Transparent;
-            this.skinGroupBoxScreen.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxScreen.BorderColor = System.Drawing.Color.Purple;
             this.skinGroupBoxScreen.Controls.Add(this.comboBoxDisk);
             this.skinGroupBoxScreen.Controls.Add(this.labelDisk);
             this.skinGroupBoxScreen.ForeColor = System.Drawing.Color.Black;
@@ -1769,31 +1804,22 @@
             this.labelDisk.Text = "按游戏所在磁盘分区筛选:";
             this.labelDisk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // toolStripTextBoxSearch
-            // 
-            this.toolStripTextBoxSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBoxSearch.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripTextBoxSearch.Name = "toolStripTextBoxSearch";
-            this.toolStripTextBoxSearch.Size = new System.Drawing.Size(180, 25);
-            this.toolStripTextBoxSearch.Text = "在此输入要查找的程序名称";
-            this.toolStripTextBoxSearch.Enter += new System.EventHandler(this.ToolStripTextBoxSearch_Enter);
-            this.toolStripTextBoxSearch.Leave += new System.EventHandler(this.ToolStripTextBoxSearch_Leave);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.BorderColor = System.Drawing.Color.Black;
+            this.BorderRectangle = new System.Drawing.Rectangle(25, 25, 25, 25);
             this.CanResize = false;
             this.CaptionBackColorBottom = System.Drawing.Color.Black;
-            this.CaptionBackColorTop = System.Drawing.Color.Snow;
+            this.CaptionBackColorTop = System.Drawing.Color.White;
             this.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CaptionHeight = 25;
             this.ClientSize = new System.Drawing.Size(1200, 790);
             this.CloseBoxSize = new System.Drawing.Size(40, 20);
-            this.ControlBoxActive = System.Drawing.SystemColors.WindowText;
-            this.ControlBoxDeactive = System.Drawing.SystemColors.WindowText;
+            this.ControlBoxActive = System.Drawing.Color.Black;
+            this.ControlBoxDeactive = System.Drawing.Color.Black;
             this.Controls.Add(this.skinGroupBoxScreen);
             this.Controls.Add(this.skinGroupBoxThisTime);
             this.Controls.Add(this.skinGroupBoxAdvice);
@@ -1803,16 +1829,22 @@
             this.Controls.Add(this.statusStripTip);
             this.Controls.Add(this.skinMenuStrip1);
             this.EffectWidth = 8;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ICoOffset = new System.Drawing.Point(3, 0);
+            this.InnerBorderColor = System.Drawing.Color.DarkGray;
             this.MainMenuStrip = this.skinMenuStrip1;
             this.MaxSize = new System.Drawing.Size(40, 20);
             this.MiniSize = new System.Drawing.Size(40, 20);
+            this.Mobile = CCWin.MobileStyle.TitleMobile;
             this.Name = "FormMain";
             this.Radius = 10;
-            this.ShadowWidth = 5;
+            this.ShadowWidth = 6;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "本地游戏启动中心 (LocalGameLaunchCenter) ---- 版本：v1.0";
             this.TitleCenter = true;
+            this.TitleOffset = new System.Drawing.Point(0, 1);
+            this.TitleSuitColor = true;
             this.MaximumSizeChanged += new System.EventHandler(this.FormMain_MaximumSizeChanged);
             this.MinimumSizeChanged += new System.EventHandler(this.FormMain_MinimumSizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -1896,7 +1928,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonLog;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem 获取最新版本程序ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 检查更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.NotifyIcon notifyIconMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
@@ -1975,6 +2007,8 @@
         private CCWin.SkinControl.SkinButton skinButtonGoldenFinger;
         private System.Windows.Forms.ToolStripMenuItem 游戏常用运行库游侠网ToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxSearch;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem 查看此游戏的占用空间ToolStripMenuItem;
     }
 }
 

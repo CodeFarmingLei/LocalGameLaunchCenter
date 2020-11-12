@@ -79,6 +79,7 @@
             this.buttonClear.BackColor = System.Drawing.Color.Transparent;
             this.buttonClear.BaseColor = System.Drawing.Color.Salmon;
             this.buttonClear.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonClear.DownBack = null;
             this.buttonClear.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonClear.Location = new System.Drawing.Point(513, 502);
@@ -94,13 +95,14 @@
             // skinTabControlSelect
             // 
             this.skinTabControlSelect.AnimationStart = true;
-            this.skinTabControlSelect.AnimatorType = CCWin.SkinControl.AnimationType.HorizBlind;
+            this.skinTabControlSelect.AnimatorType = CCWin.SkinControl.AnimationType.Custom;
             this.skinTabControlSelect.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControlSelect.Controls.Add(this.skinTabPageSetting);
             this.skinTabControlSelect.Controls.Add(this.skinTabPageRepair);
             this.skinTabControlSelect.DrawType = CCWin.SkinControl.DrawStyle.Draw;
             this.skinTabControlSelect.HeadBack = null;
             this.skinTabControlSelect.ImgTxtOffset = new System.Drawing.Point(0, 0);
+            this.skinTabControlSelect.Interval = 15;
             this.skinTabControlSelect.ItemSize = new System.Drawing.Size(70, 36);
             this.skinTabControlSelect.Location = new System.Drawing.Point(7, 31);
             this.skinTabControlSelect.Name = "skinTabControlSelect";
@@ -507,18 +509,22 @@
             // 
             // FormSetting
             // 
+            this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.CancelButton = this.buttonClear;
             this.ClientSize = new System.Drawing.Size(630, 540);
-            this.ControlBoxActive = System.Drawing.Color.Black;
-            this.ControlBoxDeactive = System.Drawing.Color.Black;
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
             this.Controls.Add(this.skinLabelBr1);
             this.Controls.Add(this.skinTabControlSelect);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClear);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MaxSize = new System.Drawing.Size(40, 20);
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "设置中心";

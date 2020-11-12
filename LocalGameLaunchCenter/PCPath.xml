@@ -18,7 +18,7 @@
   </PCPath>
   <PCPath GameName="如龙：极2" GameType="动作" GamePath="F:\Yakuza Kiwami 2\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\Sega\YakuzaKiwami2" StartName="YakuzaKiwami2.exe">
   </PCPath>
-  <PCPath GameName="如龙0" GameType="动作" GamePath="D:\Yakuza.0.Patch.3.Beta\media\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\CPY_SAVES\CPY\638970" StartName="Yakuza0.exe">
+  <PCPath GameName="如龙0" GameType="动作" GamePath="F:\Yakuza.0.Patch.3.Beta\media\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\CPY_SAVES\CPY\638970" StartName="Yakuza0.exe">
   </PCPath>
   <PCPath GameName="生化危机1" GameType="动作" GamePath="I:\WindowsGameCenter\Biohazard.1.CHS.Green.Edition-ALI213\" SavePath="" StartName="Biohazard1.Reg.Fix.exe">
   </PCPath>
@@ -62,13 +62,13 @@
   </PCPath>
   <PCPath GameName="只狼：影逝二度" GameType="动作" GamePath="E:\Sekiro\" SavePath="C:\Users\ZHANGLEI\AppData\Roaming\Sekiro" StartName="sekiro.exe">
   </PCPath>
-  <PCPath GameName="洛克人11：命运的齿轮" GameType="动作" GamePath="D:\Mega Man 11\" SavePath="C:\Users\Public\Documents\Steam\CODEX\742300" StartName="game.exe">
+  <PCPath GameName="洛克人11：命运的齿轮" GameType="动作" GamePath="I:\WindowsGameCenter\Mega Man 11\" SavePath="C:\Users\Public\Documents\Steam\CODEX\742300" StartName="game.exe">
   </PCPath>
-  <PCPath GameName="洛克人Zero_ZX遗产合集" GameType="动作" GamePath="D:\Mega.Man.Zero.ZX.Legacy.Collection\" SavePath="D:\Mega.Man.Zero.ZX.Legacy.Collection\SteamEmu\Saves\RZZC" StartName="MZZXLC_Start.exe">
+  <PCPath GameName="洛克人Zero_ZX遗产合集" GameType="动作" GamePath="I:\WindowsGameCenter\Mega.Man.Zero.ZX.Legacy.Collection\" SavePath="I:\WindowsGameCenter\Mega.Man.Zero.ZX.Legacy.Collection\SteamEmu\Saves\RZZC" StartName="MZZXLC_Start.exe">
   </PCPath>
   <PCPath GameName="尼尔：机械纪元" GameType="动作" GamePath="F:\NieR Automata CPY\" SavePath="C:\Users\ZHANGLEI\Documents\NieR_Automata" StartName="NieRAutomata.exe">
   </PCPath>
-  <PCPath GameName="合金装备崛起：复仇" GameType="动作" GamePath="F:\METAL GEAR RISING REVENGEANCE\" SavePath="C:\Users\ZHANGLEI\Documents\MGR" StartName="METAL GEAR RISING REVENGEANCE.exe">
+  <PCPath GameName="合金装备崛起：复仇" GameType="动作" GamePath="I:\WindowsGameCenter\METAL GEAR RISING REVENGEANCE\" SavePath="C:\Users\ZHANGLEI\Documents\MGR" StartName="METAL GEAR RISING REVENGEANCE.exe">
   </PCPath>
   <PCPath GameName="讨鬼传：极" GameType="动作" GamePath="I:\WindowsGameCenter\TOUKIDEN Kiwami\" SavePath="C:\Users\ZHANGLEI\Documents\KoeiTecmo\TOUKIDEN KIWAMI" StartName="ToukidenKiwamiLauncher.exe">
   </PCPath>
@@ -78,7 +78,7 @@
   </PCPath>
   <PCPath GameName="猎天使魔女" GameType="动作" GamePath="I:\WindowsGameCenter\Bayonetta\" SavePath="E:\Bayonetta\OfflineStorage\User\remote" StartName="Bayonetta.exe">
   </PCPath>
-  <PCPath GameName="怒之铁拳4" GameType="动作" GamePath="E:\Streets.of.Rage.4.Multi.11.Proper\x64\" SavePath="" StartName="SOR4.exe">
+  <PCPath GameName="怒之铁拳4" GameType="动作" GamePath="I:\WindowsGameCenter\Streets.of.Rage.4.Multi.11.Proper\x64\" SavePath="C:\Users\ZHANGLEI\Documents\Streets of Rage 4 Save and Config" StartName="SOR4.exe">
   </PCPath>
   <PCPath GameName="镜之边缘" GameType="动作" GamePath="I:\WindowsGameCenter\Mirror's Edge\Binaries\" SavePath="C:\Users\ZHANGLEI\Documents\EA Games\Mirror's Edge\TdGame" StartName="MirrorsEdge.exe">
   </PCPath>
@@ -136,7 +136,7 @@
   </PCPath>
   <PCPath GameName="使命召唤10：幽灵" GameType="第一人称射击" GamePath="I:\WindowsGameCenter\Call.of.Duty.Ghosts.CHS\" SavePath="I:\WindowsGameCenter\Call.of.Duty.Ghosts.CHS\players2" StartName="iw6sp64_ship.exe">
   </PCPath>
-  <PCPath GameName="逆转裁判123精选集" GameType="文字/冒险" GamePath="D:\Phoenix.Wright.Ace.Attorney.Trilogy.Build.20190924\" SavePath="C:\Users\Public\Documents\Steam\CODEX\787480\remote" StartName="PWAAT.exe">
+  <PCPath GameName="逆转裁判123精选集" GameType="文字/冒险" GamePath="I:\WindowsGameCenter\Phoenix.Wright.Ace.Attorney.Trilogy.Build.20190924\" SavePath="C:\Users\Public\Documents\Steam\CODEX\787480\remote" StartName="PWAAT.exe">
   </PCPath>
   <PCPath GameName="星之梦HD" GameType="文字/冒险" GamePath="I:\WindowsGameCenter\PlanetarianHD_chs\" SavePath="F:\PlanetarianHD_chs\savedata_zh" StartName="LAUNCHER.exe">
   </PCPath>

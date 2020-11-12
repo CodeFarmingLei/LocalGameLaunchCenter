@@ -123,6 +123,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap TitleImg1 {
+            get {
+                object obj = ResourceManager.GetObject("TitleImg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap Windows应用程序 {
             get {
                 object obj = ResourceManager.GetObject("Windows应用程序", resourceCulture);
@@ -136,6 +146,16 @@ namespace LocalGameLaunchCenter {
         public static System.Drawing.Bitmap 下载 {
             get {
                 object obj = ResourceManager.GetObject("下载", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 主程序图标 {
+            get {
+                object obj = ResourceManager.GetObject("主程序图标", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +226,16 @@ namespace LocalGameLaunchCenter {
         public static System.Drawing.Bitmap 备份 {
             get {
                 object obj = ResourceManager.GetObject("备份", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 存储空间 {
+            get {
+                object obj = ResourceManager.GetObject("存储空间", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +363,16 @@ namespace LocalGameLaunchCenter {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap 更新 {
+            get {
+                object obj = ResourceManager.GetObject("更新", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap 清空 {
             get {
                 object obj = ResourceManager.GetObject("清空", resourceCulture);
@@ -396,6 +436,16 @@ namespace LocalGameLaunchCenter {
         public static System.Drawing.Bitmap 置顶 {
             get {
                 object obj = ResourceManager.GetObject("置顶", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap 置顶1 {
+            get {
+                object obj = ResourceManager.GetObject("置顶1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

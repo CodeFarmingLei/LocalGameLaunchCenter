@@ -420,15 +420,20 @@
             // 
             // FormUpdatelnk
             // 
+            this.AcceptButton = this.skinButtonImplement;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(579, 529);
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
             this.Controls.Add(this.skinGroupBoxLog);
             this.Controls.Add(this.skinGroupBoxPathTip);
             this.Controls.Add(this.skinButtonImplement);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MaxSize = new System.Drawing.Size(40, 20);
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormUpdatelnk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "批量更新快捷方式";

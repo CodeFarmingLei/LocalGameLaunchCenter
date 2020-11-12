@@ -205,7 +205,7 @@ namespace LocalGameLaunchCenter
             if (folderBrowserDialogPath.ShowDialog() == DialogResult.OK)
             {
                 //记录选中的目录
-                textBoxGamePath.Text = folderBrowserDialogPath.SelectedPath + @"\";
+                textBoxRomPath.Text = folderBrowserDialogPath.SelectedPath + @"\";
             }
         }
 

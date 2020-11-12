@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,11 +82,23 @@
     <Compile Include="FormEdit.Designer.cs">
       <DependentUpon>FormEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExit.Designer.cs">
+      <DependentUpon>FormExit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHelp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHelp.Designer.cs">
       <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImgRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImgRead.Designer.cs">
+      <DependentUpon>FormImgRead.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
@@ -115,7 +142,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceApp.resx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
@@ -123,8 +149,14 @@
     <EmbeddedResource Include="FormEdit.resx">
       <DependentUpon>FormEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExit.resx">
+      <DependentUpon>FormExit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHelp.resx">
       <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImgRead.resx">
+      <DependentUpon>FormImgRead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
@@ -157,8 +189,8 @@
     <EmbeddedResource Include="ResourceApp.resx">
       <SubType>Designer</SubType>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceApp.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>ResourceApp.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -175,6 +207,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App.txt" />
     <Content Include="AppConfig.xml" />
     <Content Include="bin\Debug\AppConfig.xml" />
     <None Include="bin\Debug\EmuPath.xml" />
@@ -193,39 +226,45 @@
     <None Include="Resources\Emu默认图像.jpg" />
     <None Include="Resources\DirectXLogo.png" />
     <Content Include="Resources\Main.jpg" />
-    <None Include="Resources\日志.jpg" />
-    <None Include="Resources\清空.jpg" />
-    <None Include="Resources\刷新.jpg" />
-    <None Include="Resources\文件夹2.jpg" />
-    <None Include="Resources\刷新2.jpg" />
-    <None Include="Resources\编辑.jpg" />
-    <None Include="Resources\删除.jpg" />
-    <None Include="Resources\游戏手柄.jpg" />
-    <None Include="Resources\帮助.jpg" />
-    <None Include="Resources\关于.jpg" />
-    <None Include="Resources\设置.jpg" />
-    <None Include="Resources\工具箱.jpg" />
-    <None Include="Resources\退出.jpg" />
-    <None Include="Resources\快捷方式.jpg" />
-    <None Include="Resources\新增.jpg" />
     <None Include="Resources\PC默认图像.jpg" />
-    <None Include="Resources\搜索.jpg" />
-    <None Include="Resources\用户.jpg" />
-    <None Include="Resources\修改器.jpg" />
-    <None Include="Resources\存档.jpg" />
-    <None Include="Resources\备份.jpg" />
-    <None Include="Resources\恢复.jpg" />
     <None Include="Resources\取消置顶.png" />
     <None Include="Resources\置顶.png" />
     <None Include="Resources\DeveloperImg.png" />
-    <None Include="Resources\微软Logo.jpg" />
-    <None Include="Resources\游侠Logo.jpg" />
+    <None Include="Resources\TitleImg1.jpg" />
+    <None Include="Resources\置顶1.png" />
+    <Content Include="Resources\Windows应用程序.png" />
+    <Content Include="Resources\下载.png" />
+    <Content Include="Resources\主程序图标.jpg" />
+    <Content Include="Resources\修改器.png" />
+    <Content Include="Resources\关于.png" />
+    <Content Include="Resources\删除.png" />
+    <Content Include="Resources\刷新.png" />
+    <Content Include="Resources\刷新2.png" />
+    <Content Include="Resources\备份.png" />
+    <None Include="Resources\存储空间.png" />
+    <Content Include="Resources\存档.png" />
+    <Content Include="Resources\家用机.png" />
+    <Content Include="Resources\工具箱.png" />
+    <Content Include="Resources\帮助.png" />
+    <Content Include="Resources\微软Logo.png" />
+    <Content Include="Resources\快捷方式.png" />
+    <Content Include="Resources\恢复.png" />
+    <Content Include="Resources\搜索.png" />
+    <Content Include="Resources\文件夹.png" />
+    <Content Include="Resources\文件夹2.png" />
+    <Content Include="Resources\新增.png" />
+    <Content Include="Resources\日志.png" />
+    <Content Include="Resources\更新.png" />
+    <Content Include="Resources\清空.png" />
+    <Content Include="Resources\游侠Logo.png" />
+    <Content Include="Resources\游戏图标_副本.jpg" />
+    <Content Include="Resources\游戏手柄.png" />
+    <Content Include="Resources\用户.png" />
+    <Content Include="Resources\磁盘.png" />
+    <Content Include="Resources\编辑.png" />
+    <Content Include="Resources\设置.png" />
+    <Content Include="Resources\退出.png" />
     <Content Include="UserConfig.xml" />
-    <None Include="Resources\Windows应用程序.jpg" />
-    <None Include="Resources\家用机.jpg" />
-    <None Include="Resources\下载.jpg" />
-    <None Include="Resources\文件夹.jpg" />
-    <None Include="Resources\磁盘.jpg" />
     <None Include="Resources\Wiiu.jpg" />
     <None Include="Resources\SS.jpg" />
     <None Include="Resources\Wii.jpg" />
@@ -269,6 +308,13 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

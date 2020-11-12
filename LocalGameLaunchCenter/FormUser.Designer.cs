@@ -199,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(550, 230);
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.skinWaterTextBoxRunCount);
             this.Controls.Add(this.skinLabelRunCount);
@@ -213,10 +214,12 @@
             this.Controls.Add(this.skinWaterTextBoxSex);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaxSize = new System.Drawing.Size(40, 20);
             this.MinimizeBox = false;
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "用户信息";
+            this.Text = "用户使用信息";
             this.Load += new System.EventHandler(this.FormUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBoxTitle)).EndInit();
             this.ResumeLayout(false);

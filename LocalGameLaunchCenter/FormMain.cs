@@ -17,6 +17,7 @@ namespace LocalGameLaunchCenter
         #region 主窗体相关变量
 
         public string content;                      //存储读取的简介文本
+        public DateTime StartDate;                   //存储程序启动时间
         string PCImg = null;                       //存储PC图片资源路径
         string EmuImg = null;                     //存储模拟器图片资源路径
         string PCContent = null;                 //PC简介文本资源路径
@@ -68,6 +69,8 @@ namespace LocalGameLaunchCenter
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            //记录当前程序启动时间
+            StartDate = DateTime.Now;
             //默认选中第一个选项卡
             skinTabControlSelect.SelectedTab = skinTabPagePC;
             //初始化验证磁盘
@@ -321,6 +324,91 @@ namespace LocalGameLaunchCenter
                 }
             }
 
+        }
+
+        #endregion
+
+        #region 计算空间占用方法
+
+        /// <summary>
+        /// 计算文件夹的占用空间方法
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static long GetFilesSize(string path)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            long length = 0;
+            foreach (FileSystemInfo fsi in directoryInfo.GetFileSystemInfos())
+            {
+                if (fsi is FileInfo)
+                {
+                    length += ((FileInfo)fsi).Length;
+                }
+                else
+                {
+                    length += GetFilesSize(fsi.FullName);
+                }
+            }
+            return length;
+        }
+
+        /// <summary>
+        /// 获取数值并进行相应显示效果转换
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public string GetSize(long b)
+        {
+            if (b.ToString().Length <= 10)
+                return GetMB(b);
+            if (b.ToString().Length >= 11 && b.ToString().Length <= 12)
+                return GetGB(b);
+            if (b.ToString().Length >= 13)
+                return GetTB(b);
+            return String.Empty;
+        }
+
+        /// <summary>
+        /// 将B转换为TB
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private string GetTB(long b)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                b /= 1024;
+            }
+            return b + "TB";
+        }
+
+        /// <summary>
+        /// 将B转换为GB
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private string GetGB(long b)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                b /= 1024;
+            }
+            return b + "GB";
+        }
+
+        /// <summary>
+        /// 将B转换为MB
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private string GetMB(long b)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                b /= 1024;
+            }
+            return b + "MB";
         }
 
         #endregion
@@ -674,30 +762,37 @@ namespace LocalGameLaunchCenter
                 DialogResult dr = MessageBox.Show("是否删除此数据？？(包括此数据的封面图片和简介文本文件)\n数据名称：" + PCName + "\n\n(提示：此操作不可逆!!)", "确认操作", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 if (dr == DialogResult.OK)
                 {
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load("PCPath.xml");   //加载配置xml文件
-                    XmlNode xNode = xmlDoc.SelectSingleNode("PCMenu");   //读取配置节点
-                    foreach (XmlNode node in xNode)
+                    if (this.dataGridViewPC.SelectedRows.Count != 1)
                     {
-                        //移除数据信息
-                        XmlElement xm = (XmlElement)node;
-                        if (xm.GetAttribute("GameName") == PCName)
+                        XmlDocument xmlDoc = new XmlDocument();
+                        xmlDoc.Load("PCPath.xml");   //加载配置xml文件
+                        XmlNode xNode = xmlDoc.SelectSingleNode("PCMenu");   //读取配置节点
+                        foreach (XmlNode node in xNode)
                         {
-                            xm.ParentNode.RemoveChild(xm);
-                            break;
+                            //移除数据信息
+                            XmlElement xm = (XmlElement)node;
+                            if (xm.GetAttribute("GameName") == PCName)
+                            {
+                                xm.ParentNode.RemoveChild(xm);
+                                break;
+                            }
                         }
+                        xmlDoc.Save("PCPath.xml");   //保存配置xml文件
+
+                        //删除图片文件
+                        pictureBoxPC.Load(DefaultImage + "PC.jpg");   //加载默认图像文件
+                        System.IO.File.Delete(PCImg + PCName + @".jpg");
+                        //删除简介文本文件
+                        richTextBoxPCTip.Text = null;
+                        System.IO.File.Delete(PCContent + PCName + @".txt");
+
+                        MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        SetPCData();    //刷新数据
                     }
-                    xmlDoc.Save("PCPath.xml");   //保存配置xml文件
-
-                    //删除图片文件
-                    pictureBoxPC.Load(DefaultImage + "PC.jpg");   //加载默认图像文件
-                    System.IO.File.Delete(PCImg + PCName + @".jpg");
-                    //删除简介文本文件
-                    richTextBoxPCTip.Text = null;
-                    System.IO.File.Delete(PCContent + PCName + @".txt");
-
-                    MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    SetPCData();    //刷新数据
+                    else
+                    {
+                        MessageBox.Show("本次删除失败，需至少保留一条数据","删除失败",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }
                 }
             }
             else if (skinTabControlSelect.SelectedTab == skinTabPageEmu)
@@ -706,30 +801,37 @@ namespace LocalGameLaunchCenter
                 DialogResult dr = MessageBox.Show("是否删除此数据？？(包括此数据的封面图片和简介文本文件)\n数据名称：" + EmuName + "\n\n(提示：此操作不可逆!!)", "确认操作", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 if (dr == DialogResult.OK)
                 {
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load("EmuPath.xml");   //加载配置xml文件
-                    XmlNode xNode = xmlDoc.SelectSingleNode("EmuMenu");   //读取配置节点
-                    foreach (XmlNode node in xNode)
+                    if (this.skinDataGridViewEmu.SelectedRows.Count != 1)
                     {
-                        //移除数据信息
-                        XmlElement xm = (XmlElement)node;
-                        if (xm.GetAttribute("name") == EmuName)
+                        XmlDocument xmlDoc = new XmlDocument();
+                        xmlDoc.Load("EmuPath.xml");   //加载配置xml文件
+                        XmlNode xNode = xmlDoc.SelectSingleNode("EmuMenu");   //读取配置节点
+                        foreach (XmlNode node in xNode)
                         {
-                            xm.ParentNode.RemoveChild(xm);
-                            break;
+                            //移除数据信息
+                            XmlElement xm = (XmlElement)node;
+                            if (xm.GetAttribute("name") == EmuName)
+                            {
+                                xm.ParentNode.RemoveChild(xm);
+                                break;
+                            }
                         }
+                        xmlDoc.Save("EmuPath.xml");   //保存配置xml文件
+
+                        //删除图片文件
+                        pictureBoxEmu.Load(DefaultImage + "Emu.jpg");    //加载默认图像文件
+                        System.IO.File.Delete(EmuImg + EmuName + @".jpg");
+                        //删除简介文本文件
+                        richTextBoxEmuTip.Text = null;
+                        System.IO.File.Delete(EmuContent + EmuName + @".txt");
+
+                        MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        SetEmuData();   //刷新数据
                     }
-                    xmlDoc.Save("EmuPath.xml");   //保存配置xml文件
-
-                    //删除图片文件
-                    pictureBoxEmu.Load(DefaultImage + "Emu.jpg");    //加载默认图像文件
-                    System.IO.File.Delete(EmuImg + EmuName + @".jpg");
-                    //删除简介文本文件
-                    richTextBoxEmuTip.Text = null;
-                    System.IO.File.Delete(EmuContent + EmuName + @".txt");
-
-                    MessageBox.Show("数据移除成功!!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    SetEmuData();   //刷新数据
+                    else
+                    {
+                        MessageBox.Show("本次删除失败，需至少保留一条数据", "删除失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
@@ -1135,17 +1237,22 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("是否退出本程序？？", "确认退出", MessageBoxButtons.OKCancel);
-            if (dr == DialogResult.OK)
-            {
-                SaveLog();
-                this.FormClosing -= new FormClosingEventHandler(this.FormMain_FormClosing);
-                Application.Exit();
-            }
-            else if (dr == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
+            e.Cancel = true;
+            FormExit FormExit = new FormExit();
+            FormExit.StartDate = this.StartDate;                    //传递程序启动时间，便于计算
+            FormExit.thisLogText = richTextBoxLog.Text;      //传递已生成的日志数据
+            FormExit.Show();
+            //DialogResult dr = MessageBox.Show("是否退出本程序？？", "确认退出", MessageBoxButtons.OKCancel);
+            //if (dr == DialogResult.OK)
+            //{
+            //    SaveLog();
+            //    this.FormClosing -= new FormClosingEventHandler(this.FormMain_FormClosing);
+            //    Application.Exit();
+            //}
+            //else if (dr == DialogResult.Cancel)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void ToolStripButtonLog_Click(object sender, EventArgs e)
@@ -1167,7 +1274,9 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void 退出程序ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormMain_FormClosing(null,null);
+            FormExit FormExit = new FormExit();
+            FormExit.StartDate = this.StartDate;    //传递程序启动时间，便于计算
+            FormExit.Show();
         }
 
         /// <summary>
@@ -1709,20 +1818,20 @@ namespace LocalGameLaunchCenter
         /// <param name="e"></param>
         private void ToolStripMenuItemDVD300Games_Click(object sender, EventArgs e)
         {
-            string DVD300StartPath = @"DVD300NesGames\DVD中文游戏300.exe";
+            string VCD300StartPath = @"VCD300Games\VCD中文游戏300.exe";
             ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = DVD300StartPath;
+            psi.FileName = VCD300StartPath;
             psi.UseShellExecute = false;
-            psi.WorkingDirectory = @"DVD300NesGames";
+            psi.WorkingDirectory = @"VCD300Games";
             psi.CreateNoWindow = true;
-            if (System.IO.File.Exists(DVD300StartPath))
+            if (System.IO.File.Exists(VCD300StartPath))
             {
                 this.WindowState = FormWindowState.Minimized;
                 System.Diagnostics.Process.Start(psi);
             }
             else
             {
-                MessageBox.Show("未找到 DVD中文游戏300 启动执行程序，错误原因可能如下：\n\n1.可能您修改了文件名称或移动了位置\n2.未将此程序添加到此程序的目录内\n\n请尝试重新安装程序或联系开发者解决此问题\n\n路径信息："+ DVD300StartPath + "", "程序启动失败",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("未找到 VCD中文游戏300 启动执行程序，错误原因可能如下：\n\n1.可能您修改了文件名称或移动了位置\n2.未将此程序添加到此程序的目录内\n\n请尝试重新安装程序或联系开发者解决此问题\n\n路径信息："+ VCD300StartPath + "", "程序启动失败",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
         }
@@ -1780,6 +1889,60 @@ namespace LocalGameLaunchCenter
             }
         }
 
-        
+        /// <summary>
+        /// PC游戏封面图点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxPC_Click(object sender, EventArgs e)
+        {
+            //打开图片预览窗口
+            FormImgRead FormImgRead = new FormImgRead();
+            FormImgRead.ThisTabSel = "PC";
+            FormImgRead.LoadimgPath = PCImg + PCModifierName + ".jpg";
+            FormImgRead.Show();
+        }
+
+        /// <summary>
+        /// Emu游戏封面图点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxEmu_Click(object sender, EventArgs e)
+        {
+            //打开图片预览窗口
+            FormImgRead FormImgRead = new FormImgRead();
+            FormImgRead.ThisTabSel = "Emu";
+            FormImgRead.LoadimgPath = EmuImg + platformName + ".jpg";
+            FormImgRead.Show();
+        }
+
+        private void 退出ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FormExit FormExit = new FormExit();
+            FormExit.StartDate = this.StartDate;                    //传递程序启动时间，便于计算
+            FormExit.thisLogText = richTextBoxLog.Text;      //传递已生成的日志数据
+            FormExit.Show();
+        }
+
+        /// <summary>
+        /// 查看此游戏的占用空间
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 查看此游戏的占用空间ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PCFilePath = this.dataGridViewPC.SelectedRows[0].Cells[2].Value.ToString();
+
+            if (Directory.Exists(PCFilePath))
+            {
+                MessageBox.Show($"当前游戏的占用内存大小为：{ GetMB(GetFilesSize(PCFilePath)) }\n共 {GetFilesSize(PCFilePath)} 字节(KB)，约等于 { GetGB(GetFilesSize(PCFilePath)) }, { GetTB(GetFilesSize(PCFilePath)) }\n", "提示信息");
+            }
+            else
+            {
+                MessageBox.Show("本次计算失败，可能原因如下：\n1.要计算的路径或者文件不存在\n\n路径信息：" + PCFilePath +"", "内存计算异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
     }
 }

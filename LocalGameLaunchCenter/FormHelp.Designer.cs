@@ -50,11 +50,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1020, 550);
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
             this.Controls.Add(this.richTextBoxHelp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1020, 550);
+            this.MaxSize = new System.Drawing.Size(40, 20);
             this.MinimumSize = new System.Drawing.Size(1020, 550);
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormHelp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "使用说明";

@@ -34,9 +34,12 @@
             this.skinLabelStaff = new CCWin.SkinControl.SkinLabel();
             this.skinGroupBoxStatement = new CCWin.SkinControl.SkinGroupBox();
             this.rtfRichTextBoxStatement = new CCWin.SkinControl.RtfRichTextBox();
+            this.skinGroupBoxUpDateLog = new CCWin.SkinControl.SkinGroupBox();
+            this.rtfRichTextBoxUpDateLog = new CCWin.SkinControl.RtfRichTextBox();
             this.groupBoxStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinGroupBoxStatement.SuspendLayout();
+            this.skinGroupBoxUpDateLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxStaff
@@ -46,7 +49,7 @@
             this.groupBoxStaff.Controls.Add(this.skinPictureBox1);
             this.groupBoxStaff.Controls.Add(this.skinLabelStaff);
             this.groupBoxStaff.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxStaff.Location = new System.Drawing.Point(7, 187);
+            this.groupBoxStaff.Location = new System.Drawing.Point(7, 540);
             this.groupBoxStaff.Name = "groupBoxStaff";
             this.groupBoxStaff.Radius = 5;
             this.groupBoxStaff.RectBackColor = System.Drawing.Color.White;
@@ -97,7 +100,7 @@
             this.skinGroupBoxStatement.Radius = 5;
             this.skinGroupBoxStatement.RectBackColor = System.Drawing.Color.White;
             this.skinGroupBoxStatement.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinGroupBoxStatement.Size = new System.Drawing.Size(486, 150);
+            this.skinGroupBoxStatement.Size = new System.Drawing.Size(486, 110);
             this.skinGroupBoxStatement.TabIndex = 10;
             this.skinGroupBoxStatement.TabStop = false;
             this.skinGroupBoxStatement.Text = "声明";
@@ -113,25 +116,60 @@
             this.rtfRichTextBoxStatement.Location = new System.Drawing.Point(3, 17);
             this.rtfRichTextBoxStatement.Name = "rtfRichTextBoxStatement";
             this.rtfRichTextBoxStatement.ReadOnly = true;
-            this.rtfRichTextBoxStatement.Size = new System.Drawing.Size(480, 130);
+            this.rtfRichTextBoxStatement.Size = new System.Drawing.Size(480, 90);
             this.rtfRichTextBoxStatement.TabIndex = 0;
             this.rtfRichTextBoxStatement.Text = "本程序为个人兴趣爱好开发，不以营利为目的。未经作者许可禁止修改本程序!!\n程序内无任何木马病毒及广告插件，请放心使用。\n\n*图片相关素材均来自网络。如果涉及侵权请" +
     "联系我，我会在第一时间进行删除。";
             this.rtfRichTextBoxStatement.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
+            // 
+            // skinGroupBoxUpDateLog
+            // 
+            this.skinGroupBoxUpDateLog.BackColor = System.Drawing.Color.Transparent;
+            this.skinGroupBoxUpDateLog.BorderColor = System.Drawing.Color.Maroon;
+            this.skinGroupBoxUpDateLog.Controls.Add(this.rtfRichTextBoxUpDateLog);
+            this.skinGroupBoxUpDateLog.ForeColor = System.Drawing.Color.Black;
+            this.skinGroupBoxUpDateLog.Location = new System.Drawing.Point(7, 147);
+            this.skinGroupBoxUpDateLog.Name = "skinGroupBoxUpDateLog";
+            this.skinGroupBoxUpDateLog.Radius = 5;
+            this.skinGroupBoxUpDateLog.RectBackColor = System.Drawing.Color.White;
+            this.skinGroupBoxUpDateLog.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.skinGroupBoxUpDateLog.Size = new System.Drawing.Size(486, 387);
+            this.skinGroupBoxUpDateLog.TabIndex = 11;
+            this.skinGroupBoxUpDateLog.TabStop = false;
+            this.skinGroupBoxUpDateLog.Text = "更新日志";
+            this.skinGroupBoxUpDateLog.TitleBorderColor = System.Drawing.Color.Transparent;
+            this.skinGroupBoxUpDateLog.TitleRadius = 5;
+            this.skinGroupBoxUpDateLog.TitleRectBackColor = System.Drawing.Color.White;
+            this.skinGroupBoxUpDateLog.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
+            // 
+            // rtfRichTextBoxUpDateLog
+            // 
+            this.rtfRichTextBoxUpDateLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtfRichTextBoxUpDateLog.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
+            this.rtfRichTextBoxUpDateLog.Location = new System.Drawing.Point(3, 17);
+            this.rtfRichTextBoxUpDateLog.Name = "rtfRichTextBoxUpDateLog";
+            this.rtfRichTextBoxUpDateLog.ReadOnly = true;
+            this.rtfRichTextBoxUpDateLog.Size = new System.Drawing.Size(480, 367);
+            this.rtfRichTextBoxUpDateLog.TabIndex = 0;
+            this.rtfRichTextBoxUpDateLog.Text = resources.GetString("rtfRichTextBoxUpDateLog.Text");
+            this.rtfRichTextBoxUpDateLog.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
             // 
             // FormAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(500, 320);
+            this.ClientSize = new System.Drawing.Size(500, 670);
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
+            this.Controls.Add(this.skinGroupBoxUpDateLog);
             this.Controls.Add(this.skinGroupBoxStatement);
             this.Controls.Add(this.groupBoxStaff);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 320);
+            this.MaxSize = new System.Drawing.Size(40, 20);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 320);
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "关于程序";
@@ -139,6 +177,7 @@
             this.groupBoxStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
             this.skinGroupBoxStatement.ResumeLayout(false);
+            this.skinGroupBoxUpDateLog.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,5 +189,7 @@
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
         private CCWin.SkinControl.SkinGroupBox skinGroupBoxStatement;
         private CCWin.SkinControl.RtfRichTextBox rtfRichTextBoxStatement;
+        private CCWin.SkinControl.SkinGroupBox skinGroupBoxUpDateLog;
+        private CCWin.SkinControl.RtfRichTextBox rtfRichTextBoxUpDateLog;
     }
 }

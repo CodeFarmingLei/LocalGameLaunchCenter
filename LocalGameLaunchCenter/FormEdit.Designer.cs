@@ -1020,6 +1020,7 @@
             this.buttonClear.BackColor = System.Drawing.Color.Transparent;
             this.buttonClear.BaseColor = System.Drawing.Color.Salmon;
             this.buttonClear.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonClear.DownBack = null;
             this.buttonClear.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonClear.Location = new System.Drawing.Point(426, 472);
@@ -1040,16 +1041,22 @@
             // 
             // FormEdit
             // 
+            this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
+            this.CancelButton = this.buttonClear;
             this.ClientSize = new System.Drawing.Size(680, 507);
+            this.CloseBoxSize = new System.Drawing.Size(40, 20);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.skinTabControlType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MaxSize = new System.Drawing.Size(40, 20);
+            this.MiniSize = new System.Drawing.Size(40, 20);
             this.Name = "FormEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "编辑数据";
